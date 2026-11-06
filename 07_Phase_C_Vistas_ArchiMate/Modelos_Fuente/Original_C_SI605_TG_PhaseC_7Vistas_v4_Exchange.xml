@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="model-si605-phasec-v4">
+  <name xml:lang="es">SI605 T&amp;G Phase C – Vistas pedagógicas 5to ciclo</name>
+  <documentation xml:lang="es">Escenario de aprendizaje. No representa la arquitectura real ni un inventario validado de T&amp;G Global. Version v4.</documentation>
+  <elements>
+    <element identifier="e-wms" xsi:type="ApplicationComponent"><name xml:lang="es">WMS packing</name></element>
+    <element identifier="e-quality" xsi:type="ApplicationComponent"><name xml:lang="es">Quality App</name></element>
+    <element identifier="e-erp" xsi:type="ApplicationComponent"><name xml:lang="es">ERP Export</name></element>
+    <element identifier="e-sheet" xsi:type="ApplicationComponent"><name xml:lang="es">Hoja puente de conciliación</name></element>
+    <element identifier="e-trace" xsi:type="ApplicationComponent"><name xml:lang="es">Traceability Component</name></element>
+    <element identifier="e-historyservice" xsi:type="ApplicationService"><name xml:lang="es">Lot History Query Service</name></element>
+    <element identifier="e-historyapi" xsi:type="ApplicationInterface"><name xml:lang="es">Lot History API</name></element>
+    <element identifier="e-eventinterface" xsi:type="ApplicationInterface"><name xml:lang="es">Lot Events Interface</name></element>
+    <element identifier="e-tracefunction" xsi:type="ApplicationFunction"><name xml:lang="es">Construir historial de lote</name></element>
+    <element identifier="e-validate" xsi:type="ApplicationFunction"><name xml:lang="es">Validación de eventos</name></element>
+    <element identifier="e-consumer" xsi:type="ApplicationComponent"><name xml:lang="es">Aplicación de consulta</name></element>
+    <element identifier="e-iot" xsi:type="ApplicationComponent"><name xml:lang="es">Captura IoT</name></element>
+    <element identifier="e-wmslot" xsi:type="DataObject"><name xml:lang="es">WMS Lot PK-0150</name></element>
+    <element identifier="e-qalot" xsi:type="DataObject"><name xml:lang="es">QA Lot LOT-150-A</name></element>
+    <element identifier="e-erplot" xsi:type="DataObject"><name xml:lang="es">ERP Lot EXP-7781</name></element>
+    <element identifier="e-orchard" xsi:type="DataObject"><name xml:lang="es">Orchard</name></element>
+    <element identifier="e-lot" xsi:type="DataObject"><name xml:lang="es">Lot</name></element>
+    <element identifier="e-lotevent" xsi:type="DataObject"><name xml:lang="es">LotEvent</name></element>
+    <element identifier="e-genealogy" xsi:type="DataObject"><name xml:lang="es">LotGenealogy</name></element>
+    <element identifier="e-qaresult" xsi:type="DataObject"><name xml:lang="es">QAResult</name></element>
+    <element identifier="e-temp" xsi:type="DataObject"><name xml:lang="es">TempReading</name></element>
+    <element identifier="e-history" xsi:type="DataObject"><name xml:lang="es">Lot History</name></element>
+    <element identifier="e-cap01" xsi:type="Capability"><name xml:lang="es">CAP-01 Trazabilidad</name></element>
+    <element identifier="e-bsv01" xsi:type="BusinessService"><name xml:lang="es">BSV-01 Historial auditable</name></element>
+  </elements>
+  <relationships>
+    <relationship identifier="rel01" source="e-orchard" target="e-lot" xsi:type="Association"/>
+    <relationship identifier="rel02" source="e-lot" target="e-lotevent" xsi:type="Association"/>
+    <relationship identifier="rel03" source="e-lot" target="e-genealogy" xsi:type="Association"/>
+    <relationship identifier="rel04" source="e-lot" target="e-qaresult" xsi:type="Association"/>
+    <relationship identifier="rel05" source="e-lot" target="e-temp" xsi:type="Association"/>
+    <relationship identifier="rel06" source="e-wms" target="e-sheet" xsi:type="Flow"/>
+    <relationship identifier="rel07" source="e-quality" target="e-sheet" xsi:type="Flow"/>
+    <relationship identifier="rel08" source="e-sheet" target="e-erp" xsi:type="Flow"/>
+    <relationship identifier="rel09" source="e-wms" target="e-validate" xsi:type="Flow"/>
+    <relationship identifier="rel10" source="e-quality" target="e-validate" xsi:type="Flow"/>
+    <relationship identifier="rel11" source="e-iot" target="e-validate" xsi:type="Flow"/>
+    <relationship identifier="rel12" source="e-validate" target="e-history" xsi:type="Access"/>
+    <relationship identifier="rel13" source="e-consumer" target="e-history" xsi:type="Access"/>
+    <relationship identifier="rel14" source="e-wms" target="e-eventinterface" xsi:type="Flow"/>
+    <relationship identifier="rel15" source="e-eventinterface" target="e-trace" xsi:type="Flow"/>
+    <relationship identifier="rel16" source="e-quality" target="e-trace" xsi:type="Flow"/>
+    <relationship identifier="rel17" source="e-trace" target="e-history" xsi:type="Access"/>
+    <relationship identifier="rel18" source="e-trace" target="e-tracefunction" xsi:type="Assignment"/>
+    <relationship identifier="rel19" source="e-tracefunction" target="e-historyservice" xsi:type="Realization"/>
+    <relationship identifier="rel20" source="e-historyservice" target="e-erp" xsi:type="Serving"/>
+    <relationship identifier="rel21" source="e-trace" target="e-historyapi" xsi:type="Assignment"/>
+    <relationship identifier="rel22" source="e-historyapi" target="e-historyservice" xsi:type="Association"/>
+    <relationship identifier="rel23" source="e-cap01" target="e-bsv01" xsi:type="Association"/>
+    <relationship identifier="rel24" source="e-bsv01" target="e-historyservice" xsi:type="Association"/>
+    <relationship identifier="rel25" source="e-historyservice" target="e-history" xsi:type="Access"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="view-D-V01" xsi:type="Diagram"><name xml:lang="es">D-V01 Datos actuales por sistema (Baseline)</name><documentation xml:lang="es">Qué identificadores distintos se usan y cuál equivalencia no está demostrada. Los códigos y aplicaciones son supuestos del caso; los tres Data Objects todavía no tienen una correspondencia validada.</documentation>
+        <node identifier="n-D-V01-wmslot" elementRef="e-wmslot" xsi:type="Element" x="40" y="70" w="220" h="85"/>
+        <node identifier="n-D-V01-qalot" elementRef="e-qalot" xsi:type="Element" x="340" y="70" w="220" h="85"/>
+        <node identifier="n-D-V01-erplot" elementRef="e-erplot" xsi:type="Element" x="640" y="70" w="220" h="85"/>
+
+      </view>
+      <view identifier="view-D-V02" xsi:type="Diagram"><name xml:lang="es">D-V02 Estructura de Datos Target</name><documentation xml:lang="es">Qué objetos permiten reconstruir una historia de lote. Lot es la identidad. Un Lot tiene múltiples eventos. Genealogy registra parent/child para split/merge; los detalles de cardinalidad constan en el diccionario.</documentation>
+        <node identifier="n-D-V02-orchard" elementRef="e-orchard" xsi:type="Element" x="40" y="60" w="220" h="85"/>
+        <node identifier="n-D-V02-lot" elementRef="e-lot" xsi:type="Element" x="350" y="60" w="220" h="85"/>
+        <node identifier="n-D-V02-lotevent" elementRef="e-lotevent" xsi:type="Element" x="660" y="60" w="220" h="85"/>
+        <node identifier="n-D-V02-genealogy" elementRef="e-genealogy" xsi:type="Element" x="40" y="245" w="220" h="85"/>
+        <node identifier="n-D-V02-qaresult" elementRef="e-qaresult" xsi:type="Element" x="350" y="245" w="220" h="85"/>
+        <node identifier="n-D-V02-temp" elementRef="e-temp" xsi:type="Element" x="660" y="245" w="220" h="85"/>
+        <connection identifier="c-D-V02-rel01" relationshipRef="rel01" source="n-D-V02-orchard" target="n-D-V02-lot"/>
+        <connection identifier="c-D-V02-rel02" relationshipRef="rel02" source="n-D-V02-lot" target="n-D-V02-lotevent"/>
+        <connection identifier="c-D-V02-rel03" relationshipRef="rel03" source="n-D-V02-lot" target="n-D-V02-genealogy"/>
+        <connection identifier="c-D-V02-rel04" relationshipRef="rel04" source="n-D-V02-lot" target="n-D-V02-qaresult"/>
+        <connection identifier="c-D-V02-rel05" relationshipRef="rel05" source="n-D-V02-lot" target="n-D-V02-temp"/>
+      </view>
+      <view identifier="view-D-V03" xsi:type="Diagram"><name xml:lang="es">D-V03 Lineage de Datos</name><documentation xml:lang="es">De qué sistemas y validaciones procede el historial mostrado al consumidor. La genealogía física sigue la fruta; Data Lineage sigue origen, transformación y uso de registros.</documentation>
+        <node identifier="n-D-V03-wms" elementRef="e-wms" xsi:type="Element" x="40" y="45" w="220" h="85"/>
+        <node identifier="n-D-V03-quality" elementRef="e-quality" xsi:type="Element" x="40" y="170" w="220" h="85"/>
+        <node identifier="n-D-V03-iot" elementRef="e-iot" xsi:type="Element" x="40" y="295" w="220" h="85"/>
+        <node identifier="n-D-V03-validate" elementRef="e-validate" xsi:type="Element" x="340" y="160" w="220" h="85"/>
+        <node identifier="n-D-V03-history" elementRef="e-history" xsi:type="Element" x="650" y="160" w="220" h="85"/>
+        <node identifier="n-D-V03-consumer" elementRef="e-consumer" xsi:type="Element" x="940" y="160" w="220" h="85"/>
+        <connection identifier="c-D-V03-rel09" relationshipRef="rel09" source="n-D-V03-wms" target="n-D-V03-validate"/>
+        <connection identifier="c-D-V03-rel10" relationshipRef="rel10" source="n-D-V03-quality" target="n-D-V03-validate"/>
+        <connection identifier="c-D-V03-rel11" relationshipRef="rel11" source="n-D-V03-iot" target="n-D-V03-validate"/>
+        <connection identifier="c-D-V03-rel12" relationshipRef="rel12" source="n-D-V03-validate" target="n-D-V03-history"/>
+        <connection identifier="c-D-V03-rel13" relationshipRef="rel13" source="n-D-V03-consumer" target="n-D-V03-history"/>
+      </view>
+      <view identifier="view-A-V01" xsi:type="Diagram"><name xml:lang="es">A-V01 Aplicaciones Baseline</name><documentation xml:lang="es">Dónde existen transferencias manuales y dependencia de una hoja puente. Escenario ilustrativo de sistemas heredados: la hoja puente aún puede ser necesaria para la continuidad.</documentation>
+        <node identifier="n-A-V01-wms" elementRef="e-wms" xsi:type="Element" x="40" y="120" w="220" h="85"/>
+        <node identifier="n-A-V01-quality" elementRef="e-quality" xsi:type="Element" x="40" y="270" w="220" h="85"/>
+        <node identifier="n-A-V01-sheet" elementRef="e-sheet" xsi:type="Element" x="360" y="195" w="220" h="85"/>
+        <node identifier="n-A-V01-erp" elementRef="e-erp" xsi:type="Element" x="720" y="195" w="220" h="85"/>
+        <connection identifier="c-A-V01-rel06" relationshipRef="rel06" source="n-A-V01-wms" target="n-A-V01-sheet"/>
+        <connection identifier="c-A-V01-rel07" relationshipRef="rel07" source="n-A-V01-quality" target="n-A-V01-sheet"/>
+        <connection identifier="c-A-V01-rel08" relationshipRef="rel08" source="n-A-V01-sheet" target="n-A-V01-erp"/>
+      </view>
+      <view identifier="view-A-V02" xsi:type="Diagram"><name xml:lang="es">A-V02 Componentes y Servicios Target</name><documentation xml:lang="es">Qué componente realiza la función y qué servicio/interfaz proporciona. Application Component, Application Function, Application Service e Application Interface son conceptos distintos.</documentation>
+        <node identifier="n-A-V02-wms" elementRef="e-wms" xsi:type="Element" x="40" y="45" w="220" h="85"/>
+        <node identifier="n-A-V02-quality" elementRef="e-quality" xsi:type="Element" x="40" y="200" w="220" h="85"/>
+        <node identifier="n-A-V02-trace" elementRef="e-trace" xsi:type="Element" x="345" y="120" w="220" h="85"/>
+        <node identifier="n-A-V02-tracefunction" elementRef="e-tracefunction" xsi:type="Element" x="620" y="40" w="220" h="85"/>
+        <node identifier="n-A-V02-historyservice" elementRef="e-historyservice" xsi:type="Element" x="900" y="40" w="220" h="85"/>
+        <node identifier="n-A-V02-historyapi" elementRef="e-historyapi" xsi:type="Element" x="900" y="220" w="220" h="85"/>
+        <connection identifier="c-A-V02-rel16" relationshipRef="rel16" source="n-A-V02-quality" target="n-A-V02-trace"/>
+        <connection identifier="c-A-V02-rel18" relationshipRef="rel18" source="n-A-V02-trace" target="n-A-V02-tracefunction"/>
+        <connection identifier="c-A-V02-rel19" relationshipRef="rel19" source="n-A-V02-tracefunction" target="n-A-V02-historyservice"/>
+        <connection identifier="c-A-V02-rel21" relationshipRef="rel21" source="n-A-V02-trace" target="n-A-V02-historyapi"/>
+        <connection identifier="c-A-V02-rel22" relationshipRef="rel22" source="n-A-V02-historyapi" target="n-A-V02-historyservice"/>
+      </view>
+      <view identifier="view-A-V03" xsi:type="Diagram"><name xml:lang="es">A-V03 Application Cooperation Target</name><documentation xml:lang="es">Cómo los componentes publican eventos, acceden a datos y prestan servicio. Flow, Access y Serving tienen significados diferentes; la consulta no traslada la autoridad de liberación a ERP.</documentation>
+        <node identifier="n-A-V03-wms" elementRef="e-wms" xsi:type="Element" x="40" y="45" w="220" h="85"/>
+        <node identifier="n-A-V03-quality" elementRef="e-quality" xsi:type="Element" x="40" y="205" w="220" h="85"/>
+        <node identifier="n-A-V03-eventinterface" elementRef="e-eventinterface" xsi:type="Element" x="325" y="45" w="220" h="85"/>
+        <node identifier="n-A-V03-trace" elementRef="e-trace" xsi:type="Element" x="595" y="90" w="220" h="85"/>
+        <node identifier="n-A-V03-history" elementRef="e-history" xsi:type="Element" x="595" y="280" w="220" h="85"/>
+        <node identifier="n-A-V03-historyservice" elementRef="e-historyservice" xsi:type="Element" x="870" y="90" w="220" h="85"/>
+        <node identifier="n-A-V03-erp" elementRef="e-erp" xsi:type="Element" x="870" y="270" w="220" h="85"/>
+        <node identifier="n-A-V03-tracefunction" elementRef="e-tracefunction" xsi:type="Element" x="325" y="280" w="220" h="85"/>
+        <connection identifier="c-A-V03-rel14" relationshipRef="rel14" source="n-A-V03-wms" target="n-A-V03-eventinterface"/>
+        <connection identifier="c-A-V03-rel15" relationshipRef="rel15" source="n-A-V03-eventinterface" target="n-A-V03-trace"/>
+        <connection identifier="c-A-V03-rel16" relationshipRef="rel16" source="n-A-V03-quality" target="n-A-V03-trace"/>
+        <connection identifier="c-A-V03-rel17" relationshipRef="rel17" source="n-A-V03-trace" target="n-A-V03-history"/>
+        <connection identifier="c-A-V03-rel18" relationshipRef="rel18" source="n-A-V03-trace" target="n-A-V03-tracefunction"/>
+        <connection identifier="c-A-V03-rel19" relationshipRef="rel19" source="n-A-V03-tracefunction" target="n-A-V03-historyservice"/>
+        <connection identifier="c-A-V03-rel20" relationshipRef="rel20" source="n-A-V03-historyservice" target="n-A-V03-erp"/>
+      </view>
+      <view identifier="view-X-V01" xsi:type="Diagram"><name xml:lang="es">X-V01 Integración Business Data Application</name><documentation xml:lang="es">Qué información y servicio de aplicación habilitan el servicio de negocio. CAP-01 es capacidad, BSV-01 es Business Service, Lot History es Data Object y Lot History Query Service es Application Service.</documentation>
+        <node identifier="n-X-V01-cap01" elementRef="e-cap01" xsi:type="Element" x="40" y="130" w="220" h="85"/>
+        <node identifier="n-X-V01-bsv01" elementRef="e-bsv01" xsi:type="Element" x="340" y="130" w="220" h="85"/>
+        <node identifier="n-X-V01-historyservice" elementRef="e-historyservice" xsi:type="Element" x="640" y="45" w="220" h="85"/>
+        <node identifier="n-X-V01-history" elementRef="e-history" xsi:type="Element" x="640" y="260" w="220" h="85"/>
+        <connection identifier="c-X-V01-rel23" relationshipRef="rel23" source="n-X-V01-cap01" target="n-X-V01-bsv01"/>
+        <connection identifier="c-X-V01-rel24" relationshipRef="rel24" source="n-X-V01-bsv01" target="n-X-V01-historyservice"/>
+        <connection identifier="c-X-V01-rel25" relationshipRef="rel25" source="n-X-V01-historyservice" target="n-X-V01-history"/>
+      </view>
+    </diagrams>
+  </views>
+</model>
