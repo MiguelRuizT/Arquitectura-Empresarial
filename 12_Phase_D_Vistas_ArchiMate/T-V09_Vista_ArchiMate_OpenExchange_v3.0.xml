@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="model-tg-T-V09">
+  <name xml:lang="es">T&amp;G T-V09</name>
+  <documentation xml:lang="es">CASO DIDÁCTICO HIPOTÉTICO T&amp;G. No constituye descripción factual de sistemas, infraestructura ni controles de una organización real. Valores y objetivos sujetos a validación de ingeniería, ciberseguridad, operación y patrocinador.</documentation>
+  <elements>
+    <element identifier="tg-d-e-PLC" xsi:type="Device">
+      <name xml:lang="es">PLC y HMI local</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-SCADA" xsi:type="SystemSoftware">
+      <name xml:lang="es">SCADA / MOM local</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-EDGE" xsi:type="Device">
+      <name xml:lang="es">Gateway industrial edge</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-EDGE-RUN" xsi:type="SystemSoftware">
+      <name xml:lang="es">Runtime + cola durable edge</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-WAN" xsi:type="CommunicationNetwork">
+      <name xml:lang="es">WAN redundante selectiva</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-DATA-ING" xsi:type="Node">
+      <name xml:lang="es">Ingesta de telemetría</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-BROKER" xsi:type="SystemSoftware">
+      <name xml:lang="es">Event broker + dedupe</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-EVENT-STORE" xsi:type="SystemSoftware">
+      <name xml:lang="es">Event store / series temporales</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-API-RUNTIME" xsi:type="Node">
+      <name xml:lang="es">Runtime APIs y aplicaciones</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-OBS" xsi:type="Node">
+      <name xml:lang="es">Monitoreo / logs / backups</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-REPLICA" xsi:type="Node">
+      <name xml:lang="es">Replica / recuperación</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="tg-d-r-073" source="tg-d-e-PLC" target="tg-d-e-SCADA" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-074" source="tg-d-e-SCADA" target="tg-d-e-EDGE" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-080" source="tg-d-e-EDGE" target="tg-d-e-EDGE-RUN" xsi:type="Assignment"/>
+    <relationship identifier="tg-d-r-084" source="tg-d-e-DATA-ING" target="tg-d-e-BROKER" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-085" source="tg-d-e-BROKER" target="tg-d-e-EVENT-STORE" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-090" source="tg-d-e-EVENT-STORE" target="tg-d-e-API-RUNTIME" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-115" source="tg-d-e-WAN" target="tg-d-e-DATA-ING" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-124" source="tg-d-e-EDGE-RUN" target="tg-d-e-WAN" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-125" source="tg-d-e-OBS" target="tg-d-e-EVENT-STORE" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-126" source="tg-d-e-EVENT-STORE" target="tg-d-e-REPLICA" xsi:type="Flow"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="tg-d-v-T-V09" xsi:type="Diagram">
+        <name xml:lang="es">T-V09 · Availability &amp; Continuity</name>
+        <documentation xml:lang="es">Dominios de falla: PLC/SCADA continúan control local, edge retiene eventos y plataforma permite recuperación de consultas.</documentation>
+        <node identifier="tg-d-v-T-V09-n01" elementRef="tg-d-e-PLC" xsi:type="Element" x="32" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V09-n02" elementRef="tg-d-e-SCADA" xsi:type="Element" x="284" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V09-n03" elementRef="tg-d-e-EDGE" xsi:type="Element" x="536" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V09-n04" elementRef="tg-d-e-EDGE-RUN" xsi:type="Element" x="788" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V09-n05" elementRef="tg-d-e-WAN" xsi:type="Element" x="32" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V09-n06" elementRef="tg-d-e-DATA-ING" xsi:type="Element" x="284" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V09-n07" elementRef="tg-d-e-BROKER" xsi:type="Element" x="536" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V09-n08" elementRef="tg-d-e-EVENT-STORE" xsi:type="Element" x="788" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V09-n09" elementRef="tg-d-e-API-RUNTIME" xsi:type="Element" x="32" y="285" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V09-n10" elementRef="tg-d-e-OBS" xsi:type="Element" x="284" y="285" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V09-n11" elementRef="tg-d-e-REPLICA" xsi:type="Element" x="536" y="285" w="215" h="68"/>
+        <connection identifier="tg-d-v-T-V09-c01" relationshipRef="tg-d-r-073" source="tg-d-v-T-V09-n01" target="tg-d-v-T-V09-n02" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V09-c02" relationshipRef="tg-d-r-074" source="tg-d-v-T-V09-n02" target="tg-d-v-T-V09-n03" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V09-c03" relationshipRef="tg-d-r-080" source="tg-d-v-T-V09-n03" target="tg-d-v-T-V09-n04" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V09-c04" relationshipRef="tg-d-r-124" source="tg-d-v-T-V09-n04" target="tg-d-v-T-V09-n05" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V09-c05" relationshipRef="tg-d-r-115" source="tg-d-v-T-V09-n05" target="tg-d-v-T-V09-n06" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V09-c06" relationshipRef="tg-d-r-084" source="tg-d-v-T-V09-n06" target="tg-d-v-T-V09-n07" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V09-c07" relationshipRef="tg-d-r-085" source="tg-d-v-T-V09-n07" target="tg-d-v-T-V09-n08" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V09-c08" relationshipRef="tg-d-r-090" source="tg-d-v-T-V09-n08" target="tg-d-v-T-V09-n09" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V09-c09" relationshipRef="tg-d-r-125" source="tg-d-v-T-V09-n10" target="tg-d-v-T-V09-n08" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V09-c10" relationshipRef="tg-d-r-126" source="tg-d-v-T-V09-n08" target="tg-d-v-T-V09-n11" xsi:type="Relationship"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="model-tg-T-V04">
+  <name xml:lang="es">T&amp;G T-V04</name>
+  <documentation xml:lang="es">CASO DIDÁCTICO HIPOTÉTICO T&amp;G. No constituye descripción factual de sistemas, infraestructura ni controles de una organización real. Valores y objetivos sujetos a validación de ingeniería, ciberseguridad, operación y patrocinador.</documentation>
+  <elements>
+    <element identifier="tg-d-e-SENSOR" xsi:type="Device">
+      <name xml:lang="es">Sensor IIoT temperatura</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-EDGE" xsi:type="Device">
+      <name xml:lang="es">Gateway industrial edge</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-EDGE-RUN" xsi:type="SystemSoftware">
+      <name xml:lang="es">Runtime + cola durable edge</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-DMZ" xsi:type="Node">
+      <name xml:lang="es">DMZ industrial</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-DATA-ING" xsi:type="Node">
+      <name xml:lang="es">Ingesta de telemetría</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-BROKER" xsi:type="SystemSoftware">
+      <name xml:lang="es">Event broker + dedupe</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-EVENT-STORE" xsi:type="SystemSoftware">
+      <name xml:lang="es">Event store / series temporales</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-API-RUNTIME" xsi:type="Node">
+      <name xml:lang="es">Runtime APIs y aplicaciones</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-LOT" xsi:type="Artifact">
+      <name xml:lang="es">Payload LotEvent firmado</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-QA-AUDIT" xsi:type="Artifact">
+      <name xml:lang="es">Registro auditable decisión QA</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="tg-d-r-075" source="tg-d-e-SENSOR" target="tg-d-e-EDGE" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-080" source="tg-d-e-EDGE" target="tg-d-e-EDGE-RUN" xsi:type="Assignment"/>
+    <relationship identifier="tg-d-r-081" source="tg-d-e-EDGE-RUN" target="tg-d-e-DMZ" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-083" source="tg-d-e-DMZ" target="tg-d-e-DATA-ING" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-084" source="tg-d-e-DATA-ING" target="tg-d-e-BROKER" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-085" source="tg-d-e-BROKER" target="tg-d-e-EVENT-STORE" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-089" source="tg-d-e-EDGE-RUN" target="tg-d-e-LOT" xsi:type="Access"/>
+    <relationship identifier="tg-d-r-090" source="tg-d-e-EVENT-STORE" target="tg-d-e-API-RUNTIME" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-091" source="tg-d-e-API-RUNTIME" target="tg-d-e-QA-AUDIT" xsi:type="Access"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="tg-d-v-T-V04" xsi:type="Diagram">
+        <name xml:lang="es">T-V04 · Processing · Evento a historia de lote</name>
+        <documentation xml:lang="es">Trazado extremo a extremo: captura, validación, buffer, ingesta segura, deduplicación y consulta; la decisión QA queda fuera de automatismos IoT.</documentation>
+        <node identifier="tg-d-v-T-V04-n01" elementRef="tg-d-e-SENSOR" xsi:type="Element" x="32" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V04-n02" elementRef="tg-d-e-EDGE" xsi:type="Element" x="284" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V04-n03" elementRef="tg-d-e-EDGE-RUN" xsi:type="Element" x="536" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V04-n04" elementRef="tg-d-e-LOT" xsi:type="Element" x="788" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V04-n05" elementRef="tg-d-e-DMZ" xsi:type="Element" x="32" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V04-n06" elementRef="tg-d-e-DATA-ING" xsi:type="Element" x="284" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V04-n07" elementRef="tg-d-e-BROKER" xsi:type="Element" x="536" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V04-n08" elementRef="tg-d-e-EVENT-STORE" xsi:type="Element" x="788" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V04-n09" elementRef="tg-d-e-API-RUNTIME" xsi:type="Element" x="32" y="285" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V04-n10" elementRef="tg-d-e-QA-AUDIT" xsi:type="Element" x="284" y="285" w="215" h="68"/>
+        <connection identifier="tg-d-v-T-V04-c01" relationshipRef="tg-d-r-075" source="tg-d-v-T-V04-n01" target="tg-d-v-T-V04-n02" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V04-c02" relationshipRef="tg-d-r-080" source="tg-d-v-T-V04-n02" target="tg-d-v-T-V04-n03" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V04-c03" relationshipRef="tg-d-r-089" source="tg-d-v-T-V04-n03" target="tg-d-v-T-V04-n04" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V04-c04" relationshipRef="tg-d-r-081" source="tg-d-v-T-V04-n03" target="tg-d-v-T-V04-n05" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V04-c05" relationshipRef="tg-d-r-083" source="tg-d-v-T-V04-n05" target="tg-d-v-T-V04-n06" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V04-c06" relationshipRef="tg-d-r-084" source="tg-d-v-T-V04-n06" target="tg-d-v-T-V04-n07" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V04-c07" relationshipRef="tg-d-r-085" source="tg-d-v-T-V04-n07" target="tg-d-v-T-V04-n08" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V04-c08" relationshipRef="tg-d-r-090" source="tg-d-v-T-V04-n08" target="tg-d-v-T-V04-n09" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V04-c09" relationshipRef="tg-d-r-091" source="tg-d-v-T-V04-n09" target="tg-d-v-T-V04-n10" xsi:type="Relationship"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

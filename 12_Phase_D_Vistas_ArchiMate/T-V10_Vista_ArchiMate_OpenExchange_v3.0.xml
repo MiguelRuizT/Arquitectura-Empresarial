@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="model-tg-T-V10">
+  <name xml:lang="es">T&amp;G T-V10</name>
+  <documentation xml:lang="es">CASO DIDÁCTICO HIPOTÉTICO T&amp;G. No constituye descripción factual de sistemas, infraestructura ni controles de una organización real. Valores y objetivos sujetos a validación de ingeniería, ciberseguridad, operación y patrocinador.</documentation>
+  <elements>
+    <element identifier="tg-d-e-ABB3" xsi:type="TechnologyService">
+      <name xml:lang="es">ABB03 Conduits seguros</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-ABB4" xsi:type="TechnologyService">
+      <name xml:lang="es">ABB04 Transporte resiliente</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-ABB5" xsi:type="TechnologyService">
+      <name xml:lang="es">ABB05 Persistencia</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-GAP1" xsi:type="Gap">
+      <name xml:lang="es">GAP-T02 · cola offline</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-GAP2" xsi:type="Gap">
+      <name xml:lang="es">GAP-T03 · IT/OT</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-GAP3" xsi:type="Gap">
+      <name xml:lang="es">GAP-T04 · LotId canónico</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-WP1" xsi:type="WorkPackage">
+      <name xml:lang="es">TD-RC02 Edge resiliente</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-WP2" xsi:type="WorkPackage">
+      <name xml:lang="es">TD-RC03 DMZ IT/OT</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-WP3" xsi:type="WorkPackage">
+      <name xml:lang="es">TD-RC04 Event platform</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="tg-d-r-127" source="tg-d-e-GAP1" target="tg-d-e-WP1" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-128" source="tg-d-e-GAP2" target="tg-d-e-WP2" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-129" source="tg-d-e-GAP3" target="tg-d-e-WP3" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-130" source="tg-d-e-WP1" target="tg-d-e-ABB4" xsi:type="Realization"/>
+    <relationship identifier="tg-d-r-131" source="tg-d-e-WP2" target="tg-d-e-ABB3" xsi:type="Realization"/>
+    <relationship identifier="tg-d-r-132" source="tg-d-e-WP3" target="tg-d-e-ABB5" xsi:type="Realization"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="tg-d-v-T-V10" xsi:type="Diagram">
+        <name xml:lang="es">T-V10 · Gaps &amp; Roadmap Candidates</name>
+        <documentation xml:lang="es">Transformación candidata no aprobada: brechas T02/T03/T04 vinculadas a paquetes de trabajo para Phase E.</documentation>
+        <node identifier="tg-d-v-T-V10-n01" elementRef="tg-d-e-GAP1" xsi:type="Element" x="32" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V10-n02" elementRef="tg-d-e-GAP2" xsi:type="Element" x="284" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V10-n03" elementRef="tg-d-e-GAP3" xsi:type="Element" x="536" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V10-n04" elementRef="tg-d-e-WP1" xsi:type="Element" x="788" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V10-n05" elementRef="tg-d-e-WP2" xsi:type="Element" x="32" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V10-n06" elementRef="tg-d-e-WP3" xsi:type="Element" x="284" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V10-n07" elementRef="tg-d-e-ABB4" xsi:type="Element" x="536" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V10-n08" elementRef="tg-d-e-ABB3" xsi:type="Element" x="788" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V10-n09" elementRef="tg-d-e-ABB5" xsi:type="Element" x="32" y="285" w="215" h="68"/>
+        <connection identifier="tg-d-v-T-V10-c01" relationshipRef="tg-d-r-127" source="tg-d-v-T-V10-n01" target="tg-d-v-T-V10-n04" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V10-c02" relationshipRef="tg-d-r-128" source="tg-d-v-T-V10-n02" target="tg-d-v-T-V10-n05" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V10-c03" relationshipRef="tg-d-r-129" source="tg-d-v-T-V10-n03" target="tg-d-v-T-V10-n06" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V10-c04" relationshipRef="tg-d-r-130" source="tg-d-v-T-V10-n04" target="tg-d-v-T-V10-n07" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V10-c05" relationshipRef="tg-d-r-131" source="tg-d-v-T-V10-n05" target="tg-d-v-T-V10-n08" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V10-c06" relationshipRef="tg-d-r-132" source="tg-d-v-T-V10-n06" target="tg-d-v-T-V10-n09" xsi:type="Relationship"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

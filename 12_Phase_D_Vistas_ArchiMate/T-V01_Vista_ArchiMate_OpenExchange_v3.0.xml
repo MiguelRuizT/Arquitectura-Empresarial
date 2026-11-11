@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="model-tg-T-V01">
+  <name xml:lang="es">T&amp;G T-V01</name>
+  <documentation xml:lang="es">CASO DIDÁCTICO HIPOTÉTICO T&amp;G. No constituye descripción factual de sistemas, infraestructura ni controles de una organización real. Valores y objetivos sujetos a validación de ingeniería, ciberseguridad, operación y patrocinador.</documentation>
+  <elements>
+    <element identifier="tg-d-e-BASE-SEN" xsi:type="Device">
+      <name xml:lang="es">Baseline · registrador frío</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-BASE-PLC" xsi:type="Device">
+      <name xml:lang="es">Baseline · PLC packing</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-BASE-SCA" xsi:type="SystemSoftware">
+      <name xml:lang="es">Baseline · SCADA local</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-BASE-LAN" xsi:type="CommunicationNetwork">
+      <name xml:lang="es">Baseline · LAN industrial</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-BASE-WMS" xsi:type="Node">
+      <name xml:lang="es">Baseline · WMS local</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-BASE-ERP" xsi:type="Node">
+      <name xml:lang="es">Baseline · servidor ERP / QA</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-FARM" xsi:type="Facility">
+      <name xml:lang="es">Huerto / Orchard</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-PACK" xsi:type="Facility">
+      <name xml:lang="es">Whakatū packhouse</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-COLD" xsi:type="Facility">
+      <name xml:lang="es">Centro frío / transporte</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="tg-d-r-065" source="tg-d-e-FARM" target="tg-d-e-BASE-SEN" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-066" source="tg-d-e-PACK" target="tg-d-e-BASE-PLC" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-067" source="tg-d-e-BASE-PLC" target="tg-d-e-BASE-SCA" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-068" source="tg-d-e-BASE-SCA" target="tg-d-e-BASE-LAN" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-069" source="tg-d-e-BASE-WMS" target="tg-d-e-BASE-ERP" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-070" source="tg-d-e-COLD" target="tg-d-e-BASE-SEN" xsi:type="Association"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="tg-d-v-T-V01" xsi:type="Diagram">
+        <name xml:lang="es">T-V01 · Environments &amp; Locations · Baseline</name>
+        <documentation xml:lang="es">Entornos y ubicaciones AS-IS; sujetos a inventario OT, sin presumir infraestructuras reales.</documentation>
+        <node identifier="tg-d-v-T-V01-n01" elementRef="tg-d-e-FARM" xsi:type="Element" x="32" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V01-n02" elementRef="tg-d-e-BASE-SEN" xsi:type="Element" x="284" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V01-n03" elementRef="tg-d-e-PACK" xsi:type="Element" x="536" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V01-n04" elementRef="tg-d-e-BASE-PLC" xsi:type="Element" x="788" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V01-n05" elementRef="tg-d-e-BASE-SCA" xsi:type="Element" x="32" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V01-n06" elementRef="tg-d-e-BASE-LAN" xsi:type="Element" x="284" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V01-n07" elementRef="tg-d-e-BASE-WMS" xsi:type="Element" x="536" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V01-n08" elementRef="tg-d-e-COLD" xsi:type="Element" x="788" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V01-n09" elementRef="tg-d-e-BASE-ERP" xsi:type="Element" x="32" y="285" w="215" h="68"/>
+        <connection identifier="tg-d-v-T-V01-c01" relationshipRef="tg-d-r-065" source="tg-d-v-T-V01-n01" target="tg-d-v-T-V01-n02" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V01-c02" relationshipRef="tg-d-r-066" source="tg-d-v-T-V01-n03" target="tg-d-v-T-V01-n04" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V01-c03" relationshipRef="tg-d-r-067" source="tg-d-v-T-V01-n04" target="tg-d-v-T-V01-n05" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V01-c04" relationshipRef="tg-d-r-068" source="tg-d-v-T-V01-n05" target="tg-d-v-T-V01-n06" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V01-c05" relationshipRef="tg-d-r-069" source="tg-d-v-T-V01-n07" target="tg-d-v-T-V01-n09" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V01-c06" relationshipRef="tg-d-r-070" source="tg-d-v-T-V01-n08" target="tg-d-v-T-V01-n02" xsi:type="Relationship"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="model-tg-T-V05">
+  <name xml:lang="es">T&amp;G T-V05</name>
+  <documentation xml:lang="es">CASO DIDÁCTICO HIPOTÉTICO T&amp;G. No constituye descripción factual de sistemas, infraestructura ni controles de una organización real. Valores y objetivos sujetos a validación de ingeniería, ciberseguridad, operación y patrocinador.</documentation>
+  <elements>
+    <element identifier="tg-d-e-CLOUD" xsi:type="Node">
+      <name xml:lang="es">Entorno cloud / Enterprise IT</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-SENSOR" xsi:type="Device">
+      <name xml:lang="es">Sensor IIoT temperatura</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-CAM" xsi:type="Device">
+      <name xml:lang="es">Cámara industrial CV</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-ACTUATOR" xsi:type="Equipment">
+      <name xml:lang="es">Cinta / actuadores</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-PLC" xsi:type="Device">
+      <name xml:lang="es">PLC y HMI local</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-SCADA" xsi:type="SystemSoftware">
+      <name xml:lang="es">SCADA / MOM local</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-EDGE" xsi:type="Device">
+      <name xml:lang="es">Gateway industrial edge</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-DMZ" xsi:type="Node">
+      <name xml:lang="es">DMZ industrial</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-FIREWALL" xsi:type="Device">
+      <name xml:lang="es">Firewall OT / bastión</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-WAN" xsi:type="CommunicationNetwork">
+      <name xml:lang="es">WAN redundante selectiva</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-OTNET" xsi:type="CommunicationNetwork">
+      <name xml:lang="es">Red OT segmentada</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+    <element identifier="tg-d-e-API-RUNTIME" xsi:type="Node">
+      <name xml:lang="es">Runtime APIs y aplicaciones</name>
+      <documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="tg-d-r-074" source="tg-d-e-SCADA" target="tg-d-e-EDGE" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-092" source="tg-d-e-SENSOR" target="tg-d-e-OTNET" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-093" source="tg-d-e-ACTUATOR" target="tg-d-e-PLC" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-094" source="tg-d-e-CAM" target="tg-d-e-EDGE" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-095" source="tg-d-e-PLC" target="tg-d-e-OTNET" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-096" source="tg-d-e-OTNET" target="tg-d-e-SCADA" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-097" source="tg-d-e-EDGE" target="tg-d-e-FIREWALL" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-098" source="tg-d-e-FIREWALL" target="tg-d-e-DMZ" xsi:type="Association"/>
+    <relationship identifier="tg-d-r-099" source="tg-d-e-DMZ" target="tg-d-e-WAN" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-100" source="tg-d-e-WAN" target="tg-d-e-CLOUD" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-101" source="tg-d-e-CLOUD" target="tg-d-e-API-RUNTIME" xsi:type="Association"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="tg-d-v-T-V05" xsi:type="Diagram">
+        <name xml:lang="es">T-V05 · Networked Computing &amp; Hardware</name>
+        <documentation xml:lang="es">Hardware de referencia: sensores, PLC, SCADA, edge, firewall OT, interconexión y runtime de datos.</documentation>
+        <node identifier="tg-d-v-T-V05-n01" elementRef="tg-d-e-SENSOR" xsi:type="Element" x="32" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n02" elementRef="tg-d-e-CAM" xsi:type="Element" x="284" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n03" elementRef="tg-d-e-ACTUATOR" xsi:type="Element" x="536" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n04" elementRef="tg-d-e-PLC" xsi:type="Element" x="788" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n05" elementRef="tg-d-e-SCADA" xsi:type="Element" x="32" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n06" elementRef="tg-d-e-OTNET" xsi:type="Element" x="284" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n07" elementRef="tg-d-e-EDGE" xsi:type="Element" x="536" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n08" elementRef="tg-d-e-FIREWALL" xsi:type="Element" x="788" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n09" elementRef="tg-d-e-DMZ" xsi:type="Element" x="32" y="285" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n10" elementRef="tg-d-e-WAN" xsi:type="Element" x="284" y="285" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n11" elementRef="tg-d-e-CLOUD" xsi:type="Element" x="536" y="285" w="215" h="68"/>
+        <node identifier="tg-d-v-T-V05-n12" elementRef="tg-d-e-API-RUNTIME" xsi:type="Element" x="788" y="285" w="215" h="68"/>
+        <connection identifier="tg-d-v-T-V05-c01" relationshipRef="tg-d-r-092" source="tg-d-v-T-V05-n01" target="tg-d-v-T-V05-n06" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V05-c02" relationshipRef="tg-d-r-093" source="tg-d-v-T-V05-n03" target="tg-d-v-T-V05-n04" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V05-c03" relationshipRef="tg-d-r-094" source="tg-d-v-T-V05-n02" target="tg-d-v-T-V05-n07" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V05-c04" relationshipRef="tg-d-r-095" source="tg-d-v-T-V05-n04" target="tg-d-v-T-V05-n06" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V05-c05" relationshipRef="tg-d-r-096" source="tg-d-v-T-V05-n06" target="tg-d-v-T-V05-n05" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V05-c06" relationshipRef="tg-d-r-074" source="tg-d-v-T-V05-n05" target="tg-d-v-T-V05-n07" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V05-c07" relationshipRef="tg-d-r-097" source="tg-d-v-T-V05-n07" target="tg-d-v-T-V05-n08" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V05-c08" relationshipRef="tg-d-r-098" source="tg-d-v-T-V05-n08" target="tg-d-v-T-V05-n09" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V05-c09" relationshipRef="tg-d-r-099" source="tg-d-v-T-V05-n09" target="tg-d-v-T-V05-n10" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V05-c10" relationshipRef="tg-d-r-100" source="tg-d-v-T-V05-n10" target="tg-d-v-T-V05-n11" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-T-V05-c11" relationshipRef="tg-d-r-101" source="tg-d-v-T-V05-n11" target="tg-d-v-T-V05-n12" xsi:type="Relationship"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

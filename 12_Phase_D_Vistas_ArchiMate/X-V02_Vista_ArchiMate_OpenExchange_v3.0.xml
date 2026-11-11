@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="model-tg-X-V02">
+  <name xml:lang="es">T&amp;G X-V02</name>
+  <documentation xml:lang="es">CASO DIDÁCTICO HIPOTÉTICO T&amp;G. No constituye descripción factual de sistemas, infraestructura ni controles de una organización real. Valores y objetivos sujetos a validación de ingeniería, ciberseguridad, operación y patrocinador.</documentation>
+  <elements><element identifier="tg-b-b-srv" xsi:type="BusinessService"><name>Historial auditable de lote</name></element><element identifier="tg-c-e-trace" xsi:type="ApplicationComponent"><name xml:lang="es">Traceability Component</name></element>
+    <element identifier="tg-c-e-historyservice" xsi:type="ApplicationService"><name xml:lang="es">Lot History Query Service</name></element>
+    <element identifier="tg-c-e-lotevent" xsi:type="DataObject"><name xml:lang="es">LotEvent</name></element>
+    <element identifier="tg-d-e-EDGE" xsi:type="Device"><name xml:lang="es">Gateway industrial edge</name><documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation></element><element identifier="tg-d-e-DATASTORE" xsi:type="Node"><name xml:lang="es">Industrial data platform</name><documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation></element><element identifier="tg-d-e-API-RUNTIME" xsi:type="Node"><name xml:lang="es">Runtime APIs y aplicaciones</name><documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation></element><element identifier="tg-d-e-QA-AUDIT" xsi:type="Artifact"><name xml:lang="es">Registro auditable decisión QA</name><documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation></element><element identifier="tg-d-e-ABB4" xsi:type="TechnologyService"><name xml:lang="es">ABB04 Transporte resiliente</name><documentation xml:lang="es">T&amp;G caso didáctico. Elemento conceptual Phase D, no confirma compra/implantación ni nivel de cumplimiento.</documentation></element></elements>
+  <relationships>
+    <relationship identifier="tg-d-r-079" source="tg-d-e-DATASTORE" target="tg-d-e-API-RUNTIME" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-091" source="tg-d-e-API-RUNTIME" target="tg-d-e-QA-AUDIT" xsi:type="Access"/>
+    <relationship identifier="tg-d-r-133" source="tg-d-e-EDGE" target="tg-d-e-ABB4" xsi:type="Serving"/>
+    <relationship identifier="tg-d-r-134" source="tg-d-e-ABB4" target="tg-d-e-DATASTORE" xsi:type="Flow"/>
+    <relationship identifier="tg-d-r-135" source="tg-d-e-API-RUNTIME" target="tg-c-e-trace" xsi:type="Serving"/>
+    <relationship identifier="tg-d-r-136" source="tg-c-e-trace" target="tg-c-e-historyservice" xsi:type="Assignment"/>
+    <relationship identifier="tg-d-r-137" source="tg-c-e-trace" target="tg-c-e-lotevent" xsi:type="Access"/>
+    <relationship identifier="tg-d-r-138" source="tg-c-e-historyservice" target="tg-b-b-srv" xsi:type="Serving"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="tg-d-v-X-V02" xsi:type="Diagram">
+        <name xml:lang="es">X-V02 · Vista integrada B–Data–Application–Technology</name>
+        <documentation xml:lang="es">Cadena verificable para BSV-01: negocio → datos → aplicaciones → servicios IT/OT sin otorgar autoridad QA a sensores.</documentation>
+        <node identifier="tg-d-v-X-V02-n01" elementRef="tg-b-b-srv" xsi:type="Element" x="32" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-X-V02-n02" elementRef="tg-c-e-lotevent" xsi:type="Element" x="284" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-X-V02-n03" elementRef="tg-c-e-trace" xsi:type="Element" x="536" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-X-V02-n04" elementRef="tg-c-e-historyservice" xsi:type="Element" x="788" y="45" w="215" h="68"/>
+        <node identifier="tg-d-v-X-V02-n05" elementRef="tg-d-e-EDGE" xsi:type="Element" x="32" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-X-V02-n06" elementRef="tg-d-e-ABB4" xsi:type="Element" x="284" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-X-V02-n07" elementRef="tg-d-e-DATASTORE" xsi:type="Element" x="536" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-X-V02-n08" elementRef="tg-d-e-API-RUNTIME" xsi:type="Element" x="788" y="165" w="215" h="68"/>
+        <node identifier="tg-d-v-X-V02-n09" elementRef="tg-d-e-QA-AUDIT" xsi:type="Element" x="32" y="285" w="215" h="68"/>
+        <connection identifier="tg-d-v-X-V02-c01" relationshipRef="tg-d-r-133" source="tg-d-v-X-V02-n05" target="tg-d-v-X-V02-n06" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-X-V02-c02" relationshipRef="tg-d-r-134" source="tg-d-v-X-V02-n06" target="tg-d-v-X-V02-n07" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-X-V02-c03" relationshipRef="tg-d-r-079" source="tg-d-v-X-V02-n07" target="tg-d-v-X-V02-n08" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-X-V02-c04" relationshipRef="tg-d-r-135" source="tg-d-v-X-V02-n08" target="tg-d-v-X-V02-n03" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-X-V02-c05" relationshipRef="tg-d-r-136" source="tg-d-v-X-V02-n03" target="tg-d-v-X-V02-n04" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-X-V02-c06" relationshipRef="tg-d-r-137" source="tg-d-v-X-V02-n03" target="tg-d-v-X-V02-n02" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-X-V02-c07" relationshipRef="tg-d-r-138" source="tg-d-v-X-V02-n04" target="tg-d-v-X-V02-n01" xsi:type="Relationship"/>
+        <connection identifier="tg-d-v-X-V02-c08" relationshipRef="tg-d-r-091" source="tg-d-v-X-V02-n08" target="tg-d-v-X-V02-n09" xsi:type="Relationship"/>
+      </view>
+    </diagrams>
+  </views>
+</model>
