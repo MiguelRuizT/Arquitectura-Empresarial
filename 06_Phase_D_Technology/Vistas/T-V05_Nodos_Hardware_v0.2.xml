@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd" identifier="model-T-V05">
+  <name xml:lang="es">PC3 Fase D · Nodos y hardware · Grupo 03</name>
+  <documentation xml:lang="es">Vista T-V05 extraída literalmente de los informes integrados del Grupo 03.</documentation>
+  <elements>
+    <element identifier="nt-01" xsi:type="Node">
+      <name xml:lang="es">N-T01 Edge Gateway industrial</name>
+    </element>
+    <element identifier="nt-02" xsi:type="Node">
+      <name xml:lang="es">N-T02 Edge de reserva</name>
+    </element>
+    <element identifier="nt-03" xsi:type="Node">
+      <name xml:lang="es">N-T03 Terminal móvil offline-first</name>
+    </element>
+    <element identifier="nt-04" xsi:type="Node">
+      <name xml:lang="es">N-T04 Router WAN + respaldo móvil</name>
+    </element>
+    <element identifier="nt-05" xsi:type="Node">
+      <name xml:lang="es">N-T05 Firewall OT/DMZ</name>
+    </element>
+    <element identifier="nt-06" xsi:type="Node">
+      <name xml:lang="es">N-T06 Nodo DMZ (broker/proxy)</name>
+    </element>
+    <element identifier="nt-07" xsi:type="Node">
+      <name xml:lang="es">N-T07 HMI/SCADA + CABSA</name>
+    </element>
+    <element identifier="nt-08" xsi:type="Node">
+      <name xml:lang="es">N-T08 PLC refrig y túnel</name>
+    </element>
+    <element identifier="nt-09" xsi:type="Node">
+      <name xml:lang="es">N-T09 Switch OT (cada planta)</name>
+    </element>
+    <element identifier="nt-10" xsi:type="Node">
+      <name xml:lang="es">N-T10 Servidor Cloud (broker, event)</name>
+    </element>
+    <element identifier="nt-11" xsi:type="Node">
+      <name xml:lang="es">N-T11 Servidor Cloud (API, IAM)</name>
+    </element>
+    <element identifier="nt-12" xsi:type="Node">
+      <name xml:lang="es">N-T12 UPS (edge, red, firewall)</name>
+    </element>
+    <element identifier="nt-13" xsi:type="Node">
+      <name xml:lang="es">N-T13 Lectores RFID/código</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="r1" source="nt-01" target="nt-02" xsi:type="Association" />
+    <relationship identifier="r2" source="nt-01" target="nt-06" xsi:type="Association" />
+    <relationship identifier="r3" source="nt-01" target="nt-04" xsi:type="Association" />
+    <relationship identifier="r4" source="nt-05" target="nt-01" xsi:type="Association" />
+    <relationship identifier="r5" source="nt-05" target="nt-06" xsi:type="Association" />
+    <relationship identifier="r6" source="nt-08" target="nt-07" xsi:type="Association" />
+    <relationship identifier="r7" source="nt-07" target="nt-01" xsi:type="Association" />
+    <relationship identifier="r8" source="nt-03" target="nt-04" xsi:type="Association" />
+    <relationship identifier="r9" source="nt-04" target="nt-10" xsi:type="Association" />
+    <relationship identifier="r10" source="nt-10" target="nt-11" xsi:type="Association" />
+    <relationship identifier="r11" source="nt-12" target="nt-01" xsi:type="Assignment" />
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="T-V05" xsi:type="Diagram">
+        <name xml:lang="es">Nodos y hardware</name>
+        <node identifier="n-nt-01" elementRef="nt-01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-02" elementRef="nt-02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-03" elementRef="nt-03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-04" elementRef="nt-04" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-05" elementRef="nt-05" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-06" elementRef="nt-06" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-07" elementRef="nt-07" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-08" elementRef="nt-08" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-09" elementRef="nt-09" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-10" elementRef="nt-10" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-11" elementRef="nt-11" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-12" elementRef="nt-12" x="670" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-13" elementRef="nt-13" x="10" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="c-r1" relationshipRef="r1" source="n-nt-01" target="n-nt-02" xsi:type="Relationship" />
+        <connection identifier="c-r2" relationshipRef="r2" source="n-nt-01" target="n-nt-06" xsi:type="Relationship" />
+        <connection identifier="c-r3" relationshipRef="r3" source="n-nt-01" target="n-nt-04" xsi:type="Relationship" />
+        <connection identifier="c-r4" relationshipRef="r4" source="n-nt-05" target="n-nt-01" xsi:type="Relationship" />
+        <connection identifier="c-r5" relationshipRef="r5" source="n-nt-05" target="n-nt-06" xsi:type="Relationship" />
+        <connection identifier="c-r6" relationshipRef="r6" source="n-nt-08" target="n-nt-07" xsi:type="Relationship" />
+        <connection identifier="c-r7" relationshipRef="r7" source="n-nt-07" target="n-nt-01" xsi:type="Relationship" />
+        <connection identifier="c-r8" relationshipRef="r8" source="n-nt-03" target="n-nt-04" xsi:type="Relationship" />
+        <connection identifier="c-r9" relationshipRef="r9" source="n-nt-04" target="n-nt-10" xsi:type="Relationship" />
+        <connection identifier="c-r10" relationshipRef="r10" source="n-nt-10" target="n-nt-11" xsi:type="Relationship" />
+        <connection identifier="c-r11" relationshipRef="r11" source="n-nt-12" target="n-nt-01" xsi:type="Relationship" />
+      </view>
+    </diagrams>
+  </views>
+</model>

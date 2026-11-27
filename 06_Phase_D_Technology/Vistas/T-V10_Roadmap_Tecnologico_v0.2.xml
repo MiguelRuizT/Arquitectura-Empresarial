@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd" identifier="model-T-V10">
+  <name xml:lang="es">PC3 Fase D · Roadmap tecnológico candidato · Grupo 03</name>
+  <documentation xml:lang="es">Vista T-V10 extraída literalmente de los informes integrados del Grupo 03.</documentation>
+  <elements>
+    <element identifier="trc-01" xsi:type="WorkPackage">
+      <name xml:lang="es">T-RC01 Inventario OT, zonas y reglas base (Ola 0)</name>
+    </element>
+    <element identifier="trc-02" xsi:type="WorkPackage">
+      <name xml:lang="es">T-RC02 Edge offline e integración OT piloto (Ola 1)</name>
+    </element>
+    <element identifier="trc-03" xsi:type="WorkPackage">
+      <name xml:lang="es">T-RC03 Observabilidad, acceso y recuperación (Ola 1-2)</name>
+    </element>
+    <element identifier="plat-c" xsi:type="Plateau">
+      <name xml:lang="es">Fase C completada (D-RC01, D-RC02, A-RC01, A-RC02)</name>
+    </element>
+    <element identifier="plat-d" xsi:type="Plateau">
+      <name xml:lang="es">Fase D cerrada (gate D → E)</name>
+    </element>
+    <element identifier="plat-e" xsi:type="Plateau">
+      <name xml:lang="es">Fase E · Selección de SBB y work packages</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="r1" source="plat-c" target="trc-01" xsi:type="Triggering" />
+    <relationship identifier="r2" source="trc-01" target="trc-02" xsi:type="Triggering" />
+    <relationship identifier="r3" source="trc-02" target="trc-03" xsi:type="Triggering" />
+    <relationship identifier="r4" source="trc-03" target="plat-d" xsi:type="Triggering" />
+    <relationship identifier="r5" source="plat-d" target="plat-e" xsi:type="Triggering" />
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="T-V10" xsi:type="Diagram">
+        <name xml:lang="es">Roadmap tecnológico candidato</name>
+        <node identifier="n-trc-01" elementRef="trc-01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-trc-02" elementRef="trc-02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-trc-03" elementRef="trc-03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-plat-c" elementRef="plat-c" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-plat-d" elementRef="plat-d" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-plat-e" elementRef="plat-e" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="c-r1" relationshipRef="r1" source="n-plat-c" target="n-trc-01" xsi:type="Relationship" />
+        <connection identifier="c-r2" relationshipRef="r2" source="n-trc-01" target="n-trc-02" xsi:type="Relationship" />
+        <connection identifier="c-r3" relationshipRef="r3" source="n-trc-02" target="n-trc-03" xsi:type="Relationship" />
+        <connection identifier="c-r4" relationshipRef="r4" source="n-trc-03" target="n-plat-d" xsi:type="Relationship" />
+        <connection identifier="c-r5" relationshipRef="r5" source="n-plat-d" target="n-plat-e" xsi:type="Relationship" />
+      </view>
+    </diagrams>
+  </views>
+</model>

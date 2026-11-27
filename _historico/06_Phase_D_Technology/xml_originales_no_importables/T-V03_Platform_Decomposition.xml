@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd"
+       identifier="model-phased-ruben">
+  <name xml:lang="es">PC3 Fase D · Bloque 6.1-7.3 · Grupo 03</name>
+  <documentation xml:lang="es">Vista T-V03 Platform Decomposition · Int. 4 Julio Rubén</documentation>
+  <elements>
+    <element identifier="tabb-01" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-01 Captura industrial</name>
+    </element>
+    <element identifier="tabb-02" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-02 Gateway resiliente</name>
+    </element>
+    <element identifier="tabb-03" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-03 Mensajería IT/OT</name>
+    </element>
+    <element identifier="tabb-04" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-04 Plataforma de eventos</name>
+    </element>
+    <element identifier="tabb-05" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-05 API Gateway + IAM</name>
+    </element>
+    <element identifier="tabb-06" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-06 Repositorio de apps</name>
+    </element>
+    <element identifier="abbc-01" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">ABB-C01 Datos canónicos</name>
+    </element>
+    <element identifier="abbc-02" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">ABB-C02 Integración industrial</name>
+    </element>
+    <element identifier="abbc-03" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">ABB-C03 Acceso controlado</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="r1" source="tabb-01" target="abbc-02" xsi:type="RealizationRelationship"/>
+    <relationship identifier="r2" source="tabb-02" target="abbc-02" xsi:type="RealizationRelationship"/>
+    <relationship identifier="r3" source="tabb-03" target="abbc-02" xsi:type="RealizationRelationship"/>
+    <relationship identifier="r4" source="tabb-03" target="abbc-03" xsi:type="RealizationRelationship"/>
+    <relationship identifier="r5" source="tabb-04" target="abbc-01" xsi:type="RealizationRelationship"/>
+    <relationship identifier="r6" source="tabb-05" target="abbc-03" xsi:type="RealizationRelationship"/>
+    <relationship identifier="r7" source="tabb-06" target="abbc-03" xsi:type="RealizationRelationship"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="T-V03" xsi:type="Diagram">
+        <name xml:lang="es">Platform Decomposition</name>
+      <node identifier="n-tabb-01" elementRef="tabb-01" x="10" y="10" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-tabb-02" elementRef="tabb-02" x="230" y="10" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-tabb-03" elementRef="tabb-03" x="450" y="10" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-tabb-04" elementRef="tabb-04" x="670" y="10" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-tabb-05" elementRef="tabb-05" x="10" y="100" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-tabb-06" elementRef="tabb-06" x="230" y="100" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-abbc-01" elementRef="abbc-01" x="450" y="100" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-abbc-02" elementRef="abbc-02" x="670" y="100" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-abbc-03" elementRef="abbc-03" x="10" y="190" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <connection identifier="c-r1" relationshipRef="r1" source="n-tabb-01" target="n-abbc-02"/>
+      <connection identifier="c-r2" relationshipRef="r2" source="n-tabb-02" target="n-abbc-02"/>
+      <connection identifier="c-r3" relationshipRef="r3" source="n-tabb-03" target="n-abbc-02"/>
+      <connection identifier="c-r4" relationshipRef="r4" source="n-tabb-03" target="n-abbc-03"/>
+      <connection identifier="c-r5" relationshipRef="r5" source="n-tabb-04" target="n-abbc-01"/>
+      <connection identifier="c-r6" relationshipRef="r6" source="n-tabb-05" target="n-abbc-03"/>
+      <connection identifier="c-r7" relationshipRef="r7" source="n-tabb-06" target="n-abbc-03"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

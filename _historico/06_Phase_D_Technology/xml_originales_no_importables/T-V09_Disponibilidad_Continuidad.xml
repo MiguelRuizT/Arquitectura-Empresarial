@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd"
+       identifier="model-T-V09">
+  <name xml:lang="es">PC3 Fase D · Disponibilidad y continuidad · Grupo 03</name>
+  <documentation xml:lang="es">Vista T-V09 extraída literalmente de los informes integrados del Grupo 03.</documentation>
+  <elements>
+    <element identifier="ft-01" xsi:type="TechnologyEvent">
+      <name xml:lang="es">FT-01 Cae WAN de una planta (6h · 24h · 72h)</name>
+    </element>
+    <element identifier="ft-02" xsi:type="TechnologyEvent">
+      <name xml:lang="es">FT-02 Broker entrega 200 eventos duplicados</name>
+    </element>
+    <element identifier="ft-03" xsi:type="TechnologyEvent">
+      <name xml:lang="es">FT-03 Compromiso DMZ sospechado</name>
+    </element>
+    <element identifier="ft-04" xsi:type="TechnologyEvent">
+      <name xml:lang="es">FT-04 API historial no disponible</name>
+    </element>
+    <element identifier="ft-05" xsi:type="TechnologyEvent">
+      <name xml:lang="es">FT-05 Reloj de nodo desfasado o sin NTP</name>
+    </element>
+    <element identifier="obs-01" xsi:type="Assessment">
+      <name xml:lang="es">OBS-01 Edad evento más antiguo</name>
+    </element>
+    <element identifier="obs-02" xsi:type="Assessment">
+      <name xml:lang="es">OBS-02 Ocupación del buffer</name>
+    </element>
+    <element identifier="obs-03" xsi:type="Assessment">
+      <name xml:lang="es">OBS-03 Desfase de reloj</name>
+    </element>
+    <element identifier="obs-04" xsi:type="Assessment">
+      <name xml:lang="es">OBS-04 Duplicados rechazados</name>
+    </element>
+    <element identifier="obs-05" xsi:type="Assessment">
+      <name xml:lang="es">OBS-05 Eventos en excepción</name>
+    </element>
+    <element identifier="obs-06" xsi:type="Assessment">
+      <name xml:lang="es">OBS-06 Vencimiento certificados</name>
+    </element>
+    <element identifier="obs-07" xsi:type="Assessment">
+      <name xml:lang="es">OBS-07 Disponibilidad ingesta/consulta</name>
+    </element>
+    <element identifier="obs-08" xsi:type="Assessment">
+      <name xml:lang="es">OBS-08 Buffer edge-remote</name>
+    </element>
+    <element identifier="rto-1" xsi:type="Requirement">
+      <name xml:lang="es">Control local (PLC/SCADA) RTO=N/A</name>
+    </element>
+    <element identifier="rto-2" xsi:type="Requirement">
+      <name xml:lang="es">Edge Gateway (ZT-03) RTO=≤ 1 h con equipo reserva</name>
+    </element>
+    <element identifier="rto-3" xsi:type="Requirement">
+      <name xml:lang="es">Ingesta cloud (broker, event store) RTO=≤ 4 h</name>
+    </element>
+    <element identifier="rto-4" xsi:type="Requirement">
+      <name xml:lang="es">API de consulta historial RTO=≤ 8 h en campaña</name>
+    </element>
+  </elements>
+  <relationships>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="T-V09" xsi:type="Diagram">
+        <name xml:lang="es">Disponibilidad y continuidad</name>
+      <node identifier="n-ft-01" elementRef="ft-01" x="10" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-ft-02" elementRef="ft-02" x="230" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-ft-03" elementRef="ft-03" x="450" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-ft-04" elementRef="ft-04" x="670" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-ft-05" elementRef="ft-05" x="10" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-obs-01" elementRef="obs-01" x="230" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-obs-02" elementRef="obs-02" x="450" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-obs-03" elementRef="obs-03" x="670" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-obs-04" elementRef="obs-04" x="10" y="190" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-obs-05" elementRef="obs-05" x="230" y="190" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-obs-06" elementRef="obs-06" x="450" y="190" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-obs-07" elementRef="obs-07" x="670" y="190" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-obs-08" elementRef="obs-08" x="10" y="280" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-rto-1" elementRef="rto-1" x="230" y="280" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-rto-2" elementRef="rto-2" x="450" y="280" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-rto-3" elementRef="rto-3" x="670" y="280" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-rto-4" elementRef="rto-4" x="10" y="370" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      </view>
+    </diagrams>
+  </views>
+</model>

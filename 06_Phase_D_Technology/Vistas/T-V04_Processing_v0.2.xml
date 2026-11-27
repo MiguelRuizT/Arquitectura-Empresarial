@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd" identifier="model-phased-ruben">
+  <name xml:lang="es">PC3 Fase D · Bloque 6.1-7.3 · Grupo 03</name>
+  <documentation xml:lang="es">Vista T-V04 Processing End-to-End · Int. 4 Julio Rubén</documentation>
+  <elements>
+    <element identifier="p1" xsi:type="TechnologyProcess">
+      <name xml:lang="es">1. Lectura física Pt100 (L1)</name>
+    </element>
+    <element identifier="p2" xsi:type="TechnologyProcess">
+      <name xml:lang="es">2. Normalización SCADA (L2)</name>
+    </element>
+    <element identifier="p3" xsi:type="TechnologyProcess">
+      <name xml:lang="es">3. Edge publica event_id (L3)</name>
+    </element>
+    <element identifier="p4" xsi:type="TechnologyProcess">
+      <name xml:lang="es">4. AC-03 correlación por intervalo</name>
+    </element>
+    <element identifier="p5" xsi:type="TechnologyProcess">
+      <name xml:lang="es">5. Buffer 24h si no hay WAN (AR-A03)</name>
+    </element>
+    <element identifier="p6" xsi:type="TechnologyProcess">
+      <name xml:lang="es">6. Broker DMZ TLS mutuo (L3.5)</name>
+    </element>
+    <element identifier="p7" xsi:type="TechnologyProcess">
+      <name xml:lang="es">7. Event store idempotente (L4)</name>
+    </element>
+    <element identifier="p8" xsi:type="TechnologyProcess">
+      <name xml:lang="es">8. Data Platform enriquece</name>
+    </element>
+    <element identifier="p9" xsi:type="TechnologyProcess">
+      <name xml:lang="es">9. API Gateway AS-03 autorizada</name>
+    </element>
+    <element identifier="p10" xsi:type="TechnologyProcess">
+      <name xml:lang="es">10. APP-05 ResultadoCalidad (STK-04)</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="r1" source="p1" target="p2" xsi:type="Triggering" />
+    <relationship identifier="r2" source="p2" target="p3" xsi:type="Triggering" />
+    <relationship identifier="r3" source="p3" target="p4" xsi:type="Triggering" />
+    <relationship identifier="r4" source="p4" target="p5" xsi:type="Triggering" />
+    <relationship identifier="r5" source="p5" target="p6" xsi:type="Triggering" />
+    <relationship identifier="r6" source="p6" target="p7" xsi:type="Triggering" />
+    <relationship identifier="r7" source="p7" target="p8" xsi:type="Triggering" />
+    <relationship identifier="r8" source="p8" target="p9" xsi:type="Triggering" />
+    <relationship identifier="r9" source="p9" target="p10" xsi:type="Triggering" />
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="T-V04" xsi:type="Diagram">
+        <name xml:lang="es">Processing End-to-End</name>
+        <node identifier="n-p1" elementRef="p1" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p2" elementRef="p2" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p3" elementRef="p3" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p4" elementRef="p4" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p5" elementRef="p5" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p6" elementRef="p6" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p7" elementRef="p7" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p8" elementRef="p8" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p9" elementRef="p9" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p10" elementRef="p10" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="c-r1" relationshipRef="r1" source="n-p1" target="n-p2" xsi:type="Relationship" />
+        <connection identifier="c-r2" relationshipRef="r2" source="n-p2" target="n-p3" xsi:type="Relationship" />
+        <connection identifier="c-r3" relationshipRef="r3" source="n-p3" target="n-p4" xsi:type="Relationship" />
+        <connection identifier="c-r4" relationshipRef="r4" source="n-p4" target="n-p5" xsi:type="Relationship" />
+        <connection identifier="c-r5" relationshipRef="r5" source="n-p5" target="n-p6" xsi:type="Relationship" />
+        <connection identifier="c-r6" relationshipRef="r6" source="n-p6" target="n-p7" xsi:type="Relationship" />
+        <connection identifier="c-r7" relationshipRef="r7" source="n-p7" target="n-p8" xsi:type="Relationship" />
+        <connection identifier="c-r8" relationshipRef="r8" source="n-p8" target="n-p9" xsi:type="Relationship" />
+        <connection identifier="c-r9" relationshipRef="r9" source="n-p9" target="n-p10" xsi:type="Relationship" />
+      </view>
+    </diagrams>
+  </views>
+</model>

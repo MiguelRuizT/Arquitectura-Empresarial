@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd" identifier="model-phased-ruben">
+  <name xml:lang="es">PC3 Fase D · Bloque 6.1-7.3 · Grupo 03</name>
+  <documentation xml:lang="es">Vista T-V02 Target ISA-95 · Int. 4 Julio Rubén</documentation>
+  <elements>
+    <element identifier="l1-plc" xsi:type="Node">
+      <name xml:lang="es">L1 · PLC industrial (T-COMP-02)</name>
+    </element>
+    <element identifier="l1-pt100" xsi:type="Node">
+      <name xml:lang="es">L1 · Sensores Pt100</name>
+    </element>
+    <element identifier="l2-hmi" xsi:type="Node">
+      <name xml:lang="es">L2 · HMI/SCADA (T-COMP-03)</name>
+    </element>
+    <element identifier="l3-edge" xsi:type="Node">
+      <name xml:lang="es">L3 · Edge Gateway (T-COMP-01)</name>
+    </element>
+    <element identifier="l35-broker" xsi:type="Node">
+      <name xml:lang="es">L3.5 · Broker MQTT (T-COMP-07)</name>
+    </element>
+    <element identifier="l4-event" xsi:type="Node">
+      <name xml:lang="es">L4 · Event store (T-COMP-04)</name>
+    </element>
+    <element identifier="l4-data" xsi:type="Node">
+      <name xml:lang="es">L4 · Data Platform (T-COMP-05)</name>
+    </element>
+    <element identifier="l4-api" xsi:type="Node">
+      <name xml:lang="es">L4 · API Gateway (T-COMP-06)</name>
+    </element>
+    <element identifier="l4-iam" xsi:type="Node">
+      <name xml:lang="es">L4 · IAM OIDC (T-COMP-08)</name>
+    </element>
+    <element identifier="l4-repo" xsi:type="Node">
+      <name xml:lang="es">L4 · Repositorio apps (T-COMP-09)</name>
+    </element>
+    <element identifier="app-05" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-05 ResultadoCalidad</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="r1" source="l1-plc" target="l2-hmi" xsi:type="Flow" />
+    <relationship identifier="r2" source="l1-pt100" target="l2-hmi" xsi:type="Flow" />
+    <relationship identifier="r3" source="l2-hmi" target="l3-edge" xsi:type="Flow" />
+    <relationship identifier="r4" source="l3-edge" target="l35-broker" xsi:type="Flow" />
+    <relationship identifier="r5" source="l35-broker" target="l4-event" xsi:type="Flow" />
+    <relationship identifier="r6" source="l4-event" target="l4-data" xsi:type="Flow" />
+    <relationship identifier="r7" source="l4-api" target="l4-event" xsi:type="Flow" />
+    <relationship identifier="r8" source="l4-api" target="l4-iam" xsi:type="Association" />
+    <relationship identifier="r9" source="l4-repo" target="app-05" xsi:type="Serving" />
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="T-V02" xsi:type="Diagram">
+        <name xml:lang="es">Target ISA-95</name>
+        <node identifier="n-l1-plc" elementRef="l1-plc" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l1-pt100" elementRef="l1-pt100" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l2-hmi" elementRef="l2-hmi" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l3-edge" elementRef="l3-edge" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l35-broker" elementRef="l35-broker" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l4-event" elementRef="l4-event" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l4-data" elementRef="l4-data" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l4-api" elementRef="l4-api" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l4-iam" elementRef="l4-iam" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l4-repo" elementRef="l4-repo" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-app-05" elementRef="app-05" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="c-r1" relationshipRef="r1" source="n-l1-plc" target="n-l2-hmi" xsi:type="Relationship" />
+        <connection identifier="c-r2" relationshipRef="r2" source="n-l1-pt100" target="n-l2-hmi" xsi:type="Relationship" />
+        <connection identifier="c-r3" relationshipRef="r3" source="n-l2-hmi" target="n-l3-edge" xsi:type="Relationship" />
+        <connection identifier="c-r4" relationshipRef="r4" source="n-l3-edge" target="n-l35-broker" xsi:type="Relationship" />
+        <connection identifier="c-r5" relationshipRef="r5" source="n-l35-broker" target="n-l4-event" xsi:type="Relationship" />
+        <connection identifier="c-r6" relationshipRef="r6" source="n-l4-event" target="n-l4-data" xsi:type="Relationship" />
+        <connection identifier="c-r7" relationshipRef="r7" source="n-l4-api" target="n-l4-event" xsi:type="Relationship" />
+        <connection identifier="c-r8" relationshipRef="r8" source="n-l4-api" target="n-l4-iam" xsi:type="Relationship" />
+        <connection identifier="c-r9" relationshipRef="r9" source="n-l4-repo" target="n-app-05" xsi:type="Relationship" />
+      </view>
+    </diagrams>
+  </views>
+</model>

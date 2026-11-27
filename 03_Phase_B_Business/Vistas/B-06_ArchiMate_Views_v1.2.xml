@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd" identifier="id-model-b06-v12">
+  <name xml:lang="es">B-06 v1.2 · Vistas ArchiMate B-V01 (Baseline) y B-V02 (Target) · Arándano exportable</name>
+  <elements>
+    <element identifier="id-STK-01" xsi:type="BusinessActor"><name xml:lang="es">STK-01 Gerencia de Operaciones</name></element>
+    <element identifier="id-STK-02" xsi:type="BusinessActor"><name xml:lang="es">STK-02 Jefes de Campo / Fundo</name></element>
+    <element identifier="id-STK-03" xsi:type="BusinessActor"><name xml:lang="es">STK-03 Supervisores de Planta / Packing</name></element>
+    <element identifier="id-STK-04" xsi:type="BusinessActor"><name xml:lang="es">STK-04 Calidad e Inocuidad</name></element>
+    <element identifier="id-STK-05" xsi:type="BusinessActor"><name xml:lang="es">STK-05 Logística y Despacho</name></element>
+    <element identifier="id-STK-06" xsi:type="BusinessActor"><name xml:lang="es">STK-06 Oficinas Comerciales</name></element>
+    <element identifier="id-STK-07" xsi:type="BusinessActor"><name xml:lang="es">STK-07 TI / OT</name></element>
+    <element identifier="id-STK-08" xsi:type="BusinessActor"><name xml:lang="es">STK-08 Importador</name></element>
+    <element identifier="id-STK-09" xsi:type="BusinessActor"><name xml:lang="es">STK-09 SENASA / Certificadoras</name></element>
+    <element identifier="id-DS" xsi:type="BusinessRole"><name xml:lang="es">Data Steward (rol nuevo, candidato STK-04)</name></element>
+    <element identifier="id-E1" xsi:type="BusinessProcess"><name xml:lang="es">E1 Cosecha en fundo</name></element>
+    <element identifier="id-E2" xsi:type="BusinessProcess"><name xml:lang="es">E2 Recepción, pesaje y enfriamiento</name></element>
+    <element identifier="id-E3" xsi:type="BusinessProcess"><name xml:lang="es">E3 Selección y clasificación</name></element>
+    <element identifier="id-E4" xsi:type="BusinessProcess"><name xml:lang="es">E4 Control de calidad e inocuidad</name></element>
+    <element identifier="id-E5" xsi:type="BusinessProcess"><name xml:lang="es">E5 Empaque y etiquetado</name></element>
+    <element identifier="id-E6" xsi:type="BusinessProcess"><name xml:lang="es">E6 Prefrío y cámara</name></element>
+    <element identifier="id-E7" xsi:type="BusinessProcess"><name xml:lang="es">E7 Despacho y documentación</name></element>
+    <element identifier="id-RCL" xsi:type="BusinessProcess"><name xml:lang="es">Responder reclamo o auditoría con evidencia</name></element>
+    <element identifier="id-BSV01" xsi:type="BusinessService"><name xml:lang="es">BSV-01 Identificación y genealogía del lote</name></element>
+    <element identifier="id-BSV02" xsi:type="BusinessService"><name xml:lang="es">BSV-02 Registro de eventos de condición</name></element>
+    <element identifier="id-BSV03" xsi:type="BusinessService"><name xml:lang="es">BSV-03 Consulta de historia y evidencia</name></element>
+    <element identifier="id-EV1" xsi:type="BusinessEvent"><name xml:lang="es">Lote creado</name></element>
+    <element identifier="id-EV2" xsi:type="BusinessEvent"><name xml:lang="es">Lote liberado o retenido</name></element>
+    <element identifier="id-EV3" xsi:type="BusinessEvent"><name xml:lang="es">Lote dividido (split)</name></element>
+    <element identifier="id-EV4" xsi:type="BusinessEvent"><name xml:lang="es">Lotes agrupados (merge)</name></element>
+    <element identifier="id-EV5" xsi:type="BusinessEvent"><name xml:lang="es">Custodia cambiada</name></element>
+    <element identifier="id-EV6" xsi:type="BusinessEvent"><name xml:lang="es">Lote despachado</name></element>
+    <element identifier="id-EV7" xsi:type="BusinessEvent"><name xml:lang="es">Excepción registrada (RD-06)</name></element>
+    <element identifier="id-O_JABA" xsi:type="BusinessObject"><name xml:lang="es">Jaba (rótulo de lote)</name></element>
+    <element identifier="id-O_LT" xsi:type="BusinessObject"><name xml:lang="es">Lote: ID distinto por tramo</name></element>
+    <element identifier="id-O_PESO" xsi:type="BusinessObject"><name xml:lang="es">Registro peso/hora (Excel)</name></element>
+    <element identifier="id-O_TEMP" xsi:type="BusinessObject"><name xml:lang="es">Registro temperatura (planilla)</name></element>
+    <element identifier="id-O_LIB" xsi:type="BusinessObject"><name xml:lang="es">Liberación</name></element>
+    <element identifier="id-O_ETQ" xsi:type="BusinessObject"><name xml:lang="es">Etiqueta de caja (PTI)</name></element>
+    <element identifier="id-O_PAL" xsi:type="BusinessObject"><name xml:lang="es">Pallet</name></element>
+    <element identifier="id-O_ENV" xsi:type="BusinessObject"><name xml:lang="es">Envío (contenedor)</name></element>
+    <element identifier="id-O_RCL" xsi:type="BusinessObject"><name xml:lang="es">Reclamo</name></element>
+    <element identifier="id-O_LOTE" xsi:type="BusinessObject"><name xml:lang="es">Lote (ID único e inmutable)</name></element>
+    <element identifier="id-O_EVT" xsi:type="BusinessObject"><name xml:lang="es">Evento de lote</name></element>
+    <element identifier="id-O_HIS" xsi:type="BusinessObject"><name xml:lang="es">Historia</name></element>
+    <element identifier="id-O_CUS" xsi:type="BusinessObject"><name xml:lang="es">Custodia</name></element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-r001" source="id-STK-02" target="id-E1" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r002" source="id-STK-03" target="id-E2" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r003" source="id-STK-03" target="id-E3" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r004" source="id-STK-03" target="id-E5" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r005" source="id-STK-03" target="id-E6" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r006" source="id-STK-04" target="id-E4" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r007" source="id-STK-05" target="id-E6" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r008" source="id-STK-05" target="id-E7" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r009" source="id-STK-06" target="id-E7" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r010" source="id-E1" target="id-E2" xsi:type="Flow"><name xml:lang="es">H1</name></relationship>
+    <relationship identifier="id-r011" source="id-E2" target="id-E3" xsi:type="Flow"><name xml:lang="es">H2</name></relationship>
+    <relationship identifier="id-r012" source="id-E3" target="id-E4" xsi:type="Flow"><name xml:lang="es">H3</name></relationship>
+    <relationship identifier="id-r013" source="id-E4" target="id-E5" xsi:type="Flow"><name xml:lang="es">H4</name></relationship>
+    <relationship identifier="id-r014" source="id-E5" target="id-E6" xsi:type="Flow"><name xml:lang="es">H5</name></relationship>
+    <relationship identifier="id-r015" source="id-E6" target="id-E7" xsi:type="Flow"><name xml:lang="es">H6</name></relationship>
+    <relationship identifier="id-r016" source="id-E7" target="id-STK-08" xsi:type="Flow"><name xml:lang="es">H7</name></relationship>
+    <relationship identifier="id-r017" source="id-E1" target="id-O_JABA" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r018" source="id-E1" target="id-O_PESO" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r019" source="id-E2" target="id-O_LT" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r020" source="id-E2" target="id-O_PESO" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r021" source="id-E2" target="id-O_TEMP" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r022" source="id-E4" target="id-O_LIB" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r023" source="id-E5" target="id-O_ETQ" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r024" source="id-E5" target="id-O_PAL" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r025" source="id-E6" target="id-O_TEMP" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r026" source="id-E7" target="id-O_TEMP" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r027" source="id-E7" target="id-O_ENV" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r028" source="id-STK-04" target="id-DS" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r029" source="id-DS" target="id-RCL" xsi:type="Assignment"></relationship>
+    <relationship identifier="id-r030" source="id-STK-07" target="id-BSV02" xsi:type="Association"></relationship>
+    <relationship identifier="id-r031" source="id-BSV01" target="id-STK-03" xsi:type="Serving"></relationship>
+    <relationship identifier="id-r032" source="id-BSV01" target="id-STK-04" xsi:type="Serving"></relationship>
+    <relationship identifier="id-r033" source="id-BSV01" target="id-STK-05" xsi:type="Serving"></relationship>
+    <relationship identifier="id-r034" source="id-BSV02" target="id-STK-04" xsi:type="Serving"></relationship>
+    <relationship identifier="id-r035" source="id-BSV02" target="id-STK-05" xsi:type="Serving"></relationship>
+    <relationship identifier="id-r036" source="id-BSV03" target="id-STK-06" xsi:type="Serving"></relationship>
+    <relationship identifier="id-r037" source="id-BSV03" target="id-STK-01" xsi:type="Serving"></relationship>
+    <relationship identifier="id-r038" source="id-BSV03" target="id-STK-08" xsi:type="Serving"></relationship>
+    <relationship identifier="id-r039" source="id-BSV03" target="id-STK-09" xsi:type="Serving"></relationship>
+    <relationship identifier="id-r040" source="id-E1" target="id-BSV01" xsi:type="Realization"></relationship>
+    <relationship identifier="id-r041" source="id-E5" target="id-BSV01" xsi:type="Realization"></relationship>
+    <relationship identifier="id-r042" source="id-E2" target="id-BSV02" xsi:type="Realization"></relationship>
+    <relationship identifier="id-r043" source="id-E3" target="id-BSV02" xsi:type="Realization"></relationship>
+    <relationship identifier="id-r044" source="id-E4" target="id-BSV02" xsi:type="Realization"></relationship>
+    <relationship identifier="id-r045" source="id-E5" target="id-BSV02" xsi:type="Realization"></relationship>
+    <relationship identifier="id-r046" source="id-E6" target="id-BSV02" xsi:type="Realization"></relationship>
+    <relationship identifier="id-r047" source="id-E7" target="id-BSV02" xsi:type="Realization"></relationship>
+    <relationship identifier="id-r048" source="id-RCL" target="id-BSV03" xsi:type="Realization"></relationship>
+    <relationship identifier="id-r049" source="id-E1" target="id-EV1" xsi:type="Triggering"></relationship>
+    <relationship identifier="id-r050" source="id-E4" target="id-EV2" xsi:type="Triggering"></relationship>
+    <relationship identifier="id-r051" source="id-E5" target="id-EV3" xsi:type="Triggering"></relationship>
+    <relationship identifier="id-r052" source="id-E5" target="id-EV4" xsi:type="Triggering"></relationship>
+    <relationship identifier="id-r053" source="id-E7" target="id-EV5" xsi:type="Triggering"></relationship>
+    <relationship identifier="id-r054" source="id-E7" target="id-EV6" xsi:type="Triggering"></relationship>
+    <relationship identifier="id-r055" source="id-E2" target="id-EV7" xsi:type="Triggering"></relationship>
+    <relationship identifier="id-r056" source="id-BSV01" target="id-O_LOTE" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r057" source="id-BSV02" target="id-O_EVT" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r058" source="id-BSV03" target="id-O_HIS" xsi:type="Access" accessType="Read"></relationship>
+    <relationship identifier="id-r059" source="id-O_HIS" target="id-O_EVT" xsi:type="Aggregation"></relationship>
+    <relationship identifier="id-r060" source="id-O_EVT" target="id-O_LOTE" xsi:type="Association"></relationship>
+    <relationship identifier="id-r061" source="id-O_LOTE" target="id-O_JABA" xsi:type="Aggregation"></relationship>
+    <relationship identifier="id-r062" source="id-O_PAL" target="id-O_LOTE" xsi:type="Association"></relationship>
+    <relationship identifier="id-r063" source="id-O_ENV" target="id-O_PAL" xsi:type="Aggregation"></relationship>
+    <relationship identifier="id-r064" source="id-O_RCL" target="id-O_ENV" xsi:type="Association"></relationship>
+    <relationship identifier="id-r065" source="id-EV2" target="id-O_LIB" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r066" source="id-EV5" target="id-O_CUS" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r067" source="id-EV6" target="id-O_ENV" xsi:type="Access" accessType="Write"></relationship>
+    <relationship identifier="id-r068" source="id-RCL" target="id-O_RCL" xsi:type="Access" accessType="Read"></relationship>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="id-view-v01" xsi:type="Diagram"><name xml:lang="es">B-V01 Baseline (AS-IS)</name>
+        <node identifier="n-v01-STK-01" elementRef="id-STK-01" xsi:type="Element" x="600" y="70" w="210" h="60"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-STK-07" elementRef="id-STK-07" xsi:type="Element" x="940" y="70" w="210" h="60"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-STK-02" elementRef="id-STK-02" xsi:type="Element" x="40" y="170" w="200" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-STK-03" elementRef="id-STK-03" xsi:type="Element" x="370" y="170" w="200" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-STK-04" elementRef="id-STK-04" xsi:type="Element" x="700" y="170" w="200" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-STK-05" elementRef="id-STK-05" xsi:type="Element" x="1030" y="170" w="200" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-STK-06" elementRef="id-STK-06" xsi:type="Element" x="1360" y="170" w="200" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-E1" elementRef="id-E1" xsi:type="Element" x="30" y="330" w="190" h="100"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-E2" elementRef="id-E2" xsi:type="Element" x="266" y="330" w="190" h="100"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-E3" elementRef="id-E3" xsi:type="Element" x="503" y="330" w="190" h="100"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-E4" elementRef="id-E4" xsi:type="Element" x="740" y="330" w="190" h="100"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-E5" elementRef="id-E5" xsi:type="Element" x="976" y="330" w="190" h="100"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-E6" elementRef="id-E6" xsi:type="Element" x="1213" y="330" w="190" h="100"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-E7" elementRef="id-E7" xsi:type="Element" x="1450" y="330" w="190" h="100"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-STK-08" elementRef="id-STK-08" xsi:type="Element" x="1700" y="330" w="270" h="100"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-STK-09" elementRef="id-STK-09" xsi:type="Element" x="1700" y="170" w="270" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-O_JABA" elementRef="id-O_JABA" xsi:type="Element" x="30" y="560" w="180" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-O_PESO" elementRef="id-O_PESO" xsi:type="Element" x="260" y="560" w="180" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-O_LT" elementRef="id-O_LT" xsi:type="Element" x="490" y="560" w="180" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-O_TEMP" elementRef="id-O_TEMP" xsi:type="Element" x="720" y="560" w="180" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-O_LIB" elementRef="id-O_LIB" xsi:type="Element" x="950" y="560" w="180" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-O_ETQ" elementRef="id-O_ETQ" xsi:type="Element" x="1180" y="560" w="180" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-O_PAL" elementRef="id-O_PAL" xsi:type="Element" x="1410" y="560" w="180" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-O_ENV" elementRef="id-O_ENV" xsi:type="Element" x="1640" y="560" w="180" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v01-F1" xsi:type="Label" x="30" y="700" w="300" h="60"><label xml:lang="es">F1 · E1–E2 · hora de corte a mano; 45 min sin registro</label><style><fillColor r="253" g="236" b="234"/></style></node>
+        <node identifier="n-v01-F2" xsi:type="Label" x="360" y="700" w="300" h="60"><label xml:lang="es">F2 · E3–E4 · lote de campo no confirmado en la línea</label><style><fillColor r="253" g="236" b="234"/></style></node>
+        <node identifier="n-v01-F3" xsi:type="Label" x="690" y="700" w="300" h="60"><label xml:lang="es">F3 · E5 · split/merge sin vínculo padre/hijo</label><style><fillColor r="253" g="236" b="234"/></style></node>
+        <node identifier="n-v01-F4" xsi:type="Label" x="1020" y="700" w="300" h="60"><label xml:lang="es">F4 · E6–E7 · pallet conciliado a mano con el envío</label><style><fillColor r="253" g="236" b="234"/></style></node>
+        <node identifier="n-v01-F5" xsi:type="Label" x="1350" y="700" w="300" h="60"><label xml:lang="es">F5 · E2, E6, E7 · temperatura sin vínculo al lote</label><style><fillColor r="253" g="236" b="234"/></style></node>
+        <node identifier="n-v01-F6" xsi:type="Label" x="1680" y="700" w="300" h="60"><label xml:lang="es">F6 · Transversal · sin dueño del dato ni KPI común</label><style><fillColor r="253" g="236" b="234"/></style></node>
+        <connection identifier="c-v01-r001" relationshipRef="id-r001" xsi:type="Relationship" source="n-v01-STK-02" target="n-v01-E1"/>
+        <connection identifier="c-v01-r002" relationshipRef="id-r002" xsi:type="Relationship" source="n-v01-STK-03" target="n-v01-E2"/>
+        <connection identifier="c-v01-r003" relationshipRef="id-r003" xsi:type="Relationship" source="n-v01-STK-03" target="n-v01-E3"/>
+        <connection identifier="c-v01-r004" relationshipRef="id-r004" xsi:type="Relationship" source="n-v01-STK-03" target="n-v01-E5"/>
+        <connection identifier="c-v01-r005" relationshipRef="id-r005" xsi:type="Relationship" source="n-v01-STK-03" target="n-v01-E6"/>
+        <connection identifier="c-v01-r006" relationshipRef="id-r006" xsi:type="Relationship" source="n-v01-STK-04" target="n-v01-E4"/>
+        <connection identifier="c-v01-r007" relationshipRef="id-r007" xsi:type="Relationship" source="n-v01-STK-05" target="n-v01-E6"/>
+        <connection identifier="c-v01-r008" relationshipRef="id-r008" xsi:type="Relationship" source="n-v01-STK-05" target="n-v01-E7"/>
+        <connection identifier="c-v01-r009" relationshipRef="id-r009" xsi:type="Relationship" source="n-v01-STK-06" target="n-v01-E7"/>
+        <connection identifier="c-v01-r010" relationshipRef="id-r010" xsi:type="Relationship" source="n-v01-E1" target="n-v01-E2"/>
+        <connection identifier="c-v01-r011" relationshipRef="id-r011" xsi:type="Relationship" source="n-v01-E2" target="n-v01-E3"/>
+        <connection identifier="c-v01-r012" relationshipRef="id-r012" xsi:type="Relationship" source="n-v01-E3" target="n-v01-E4"/>
+        <connection identifier="c-v01-r013" relationshipRef="id-r013" xsi:type="Relationship" source="n-v01-E4" target="n-v01-E5"/>
+        <connection identifier="c-v01-r014" relationshipRef="id-r014" xsi:type="Relationship" source="n-v01-E5" target="n-v01-E6"/>
+        <connection identifier="c-v01-r015" relationshipRef="id-r015" xsi:type="Relationship" source="n-v01-E6" target="n-v01-E7"/>
+        <connection identifier="c-v01-r016" relationshipRef="id-r016" xsi:type="Relationship" source="n-v01-E7" target="n-v01-STK-08"/>
+        <connection identifier="c-v01-r017" relationshipRef="id-r017" xsi:type="Relationship" source="n-v01-E1" target="n-v01-O_JABA"/>
+        <connection identifier="c-v01-r018" relationshipRef="id-r018" xsi:type="Relationship" source="n-v01-E1" target="n-v01-O_PESO"/>
+        <connection identifier="c-v01-r019" relationshipRef="id-r019" xsi:type="Relationship" source="n-v01-E2" target="n-v01-O_LT"/>
+        <connection identifier="c-v01-r020" relationshipRef="id-r020" xsi:type="Relationship" source="n-v01-E2" target="n-v01-O_PESO"/>
+        <connection identifier="c-v01-r021" relationshipRef="id-r021" xsi:type="Relationship" source="n-v01-E2" target="n-v01-O_TEMP"/>
+        <connection identifier="c-v01-r022" relationshipRef="id-r022" xsi:type="Relationship" source="n-v01-E4" target="n-v01-O_LIB"/>
+        <connection identifier="c-v01-r023" relationshipRef="id-r023" xsi:type="Relationship" source="n-v01-E5" target="n-v01-O_ETQ"/>
+        <connection identifier="c-v01-r024" relationshipRef="id-r024" xsi:type="Relationship" source="n-v01-E5" target="n-v01-O_PAL"/>
+        <connection identifier="c-v01-r025" relationshipRef="id-r025" xsi:type="Relationship" source="n-v01-E6" target="n-v01-O_TEMP"/>
+        <connection identifier="c-v01-r026" relationshipRef="id-r026" xsi:type="Relationship" source="n-v01-E7" target="n-v01-O_TEMP"/>
+        <connection identifier="c-v01-r027" relationshipRef="id-r027" xsi:type="Relationship" source="n-v01-E7" target="n-v01-O_ENV"/>
+      </view>
+      <view identifier="id-view-v02" xsi:type="Diagram"><name xml:lang="es">B-V02 Target (TO-BE)</name>
+        <node identifier="n-v02-STK-01" elementRef="id-STK-01" xsi:type="Element" x="20" y="70" w="190" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-STK-02" elementRef="id-STK-02" xsi:type="Element" x="241" y="70" w="190" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-STK-03" elementRef="id-STK-03" xsi:type="Element" x="462" y="70" w="190" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-STK-04" elementRef="id-STK-04" xsi:type="Element" x="683" y="70" w="190" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-STK-05" elementRef="id-STK-05" xsi:type="Element" x="905" y="70" w="190" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-STK-06" elementRef="id-STK-06" xsi:type="Element" x="1126" y="70" w="190" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-STK-07" elementRef="id-STK-07" xsi:type="Element" x="1347" y="70" w="190" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-STK-08" elementRef="id-STK-08" xsi:type="Element" x="1568" y="70" w="190" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-STK-09" elementRef="id-STK-09" xsi:type="Element" x="1790" y="70" w="190" h="70"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-BSV01" elementRef="id-BSV01" xsi:type="Element" x="330" y="230" w="300" h="80"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-BSV02" elementRef="id-BSV02" xsi:type="Element" x="730" y="230" w="300" h="80"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-BSV03" elementRef="id-BSV03" xsi:type="Element" x="1130" y="230" w="300" h="80"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-DS" elementRef="id-DS" xsi:type="Element" x="1640" y="235" w="220" h="70"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-E1" elementRef="id-E1" xsi:type="Element" x="20" y="400" w="185" h="95"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-E2" elementRef="id-E2" xsi:type="Element" x="245" y="400" w="185" h="95"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-E3" elementRef="id-E3" xsi:type="Element" x="471" y="400" w="185" h="95"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-E4" elementRef="id-E4" xsi:type="Element" x="697" y="400" w="185" h="95"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-E5" elementRef="id-E5" xsi:type="Element" x="923" y="400" w="185" h="95"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-E6" elementRef="id-E6" xsi:type="Element" x="1149" y="400" w="185" h="95"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-E7" elementRef="id-E7" xsi:type="Element" x="1375" y="400" w="185" h="95"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-RCL" elementRef="id-RCL" xsi:type="Element" x="1640" y="400" w="300" h="95"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-EV7" elementRef="id-EV7" xsi:type="Element" x="20" y="580" w="200" h="60"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-EV1" elementRef="id-EV1" xsi:type="Element" x="266" y="580" w="200" h="60"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-EV2" elementRef="id-EV2" xsi:type="Element" x="513" y="580" w="200" h="60"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-EV3" elementRef="id-EV3" xsi:type="Element" x="760" y="580" w="200" h="60"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-EV4" elementRef="id-EV4" xsi:type="Element" x="1006" y="580" w="200" h="60"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-EV5" elementRef="id-EV5" xsi:type="Element" x="1253" y="580" w="200" h="60"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-EV6" elementRef="id-EV6" xsi:type="Element" x="1500" y="580" w="200" h="60"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-O_LIB" elementRef="id-O_LIB" xsi:type="Element" x="20" y="740" w="200" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-O_HIS" elementRef="id-O_HIS" xsi:type="Element" x="271" y="740" w="200" h="75"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-O_EVT" elementRef="id-O_EVT" xsi:type="Element" x="522" y="740" w="200" h="75"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-O_LOTE" elementRef="id-O_LOTE" xsi:type="Element" x="774" y="740" w="200" h="75"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-O_PAL" elementRef="id-O_PAL" xsi:type="Element" x="1025" y="740" w="200" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-O_ENV" elementRef="id-O_ENV" xsi:type="Element" x="1277" y="740" w="200" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-O_RCL" elementRef="id-O_RCL" xsi:type="Element" x="1528" y="740" w="200" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <node identifier="n-v02-O_CUS" elementRef="id-O_CUS" xsi:type="Element" x="1780" y="740" w="200" h="75"><style><fillColor r="198" g="232" b="176"/><lineColor r="78" g="154" b="46"/></style></node>
+        <node identifier="n-v02-O_JABA" elementRef="id-O_JABA" xsi:type="Element" x="774" y="880" w="200" h="75"><style><fillColor r="255" g="255" b="181"/><lineColor r="181" g="168" b="0"/></style></node>
+        <connection identifier="c-v02-r010" relationshipRef="id-r010" xsi:type="Relationship" source="n-v02-E1" target="n-v02-E2"/>
+        <connection identifier="c-v02-r011" relationshipRef="id-r011" xsi:type="Relationship" source="n-v02-E2" target="n-v02-E3"/>
+        <connection identifier="c-v02-r012" relationshipRef="id-r012" xsi:type="Relationship" source="n-v02-E3" target="n-v02-E4"/>
+        <connection identifier="c-v02-r013" relationshipRef="id-r013" xsi:type="Relationship" source="n-v02-E4" target="n-v02-E5"/>
+        <connection identifier="c-v02-r014" relationshipRef="id-r014" xsi:type="Relationship" source="n-v02-E5" target="n-v02-E6"/>
+        <connection identifier="c-v02-r015" relationshipRef="id-r015" xsi:type="Relationship" source="n-v02-E6" target="n-v02-E7"/>
+        <connection identifier="c-v02-r016" relationshipRef="id-r016" xsi:type="Relationship" source="n-v02-E7" target="n-v02-STK-08"/>
+        <connection identifier="c-v02-r028" relationshipRef="id-r028" xsi:type="Relationship" source="n-v02-STK-04" target="n-v02-DS"/>
+        <connection identifier="c-v02-r029" relationshipRef="id-r029" xsi:type="Relationship" source="n-v02-DS" target="n-v02-RCL"/>
+        <connection identifier="c-v02-r030" relationshipRef="id-r030" xsi:type="Relationship" source="n-v02-STK-07" target="n-v02-BSV02"/>
+        <connection identifier="c-v02-r031" relationshipRef="id-r031" xsi:type="Relationship" source="n-v02-BSV01" target="n-v02-STK-03"/>
+        <connection identifier="c-v02-r032" relationshipRef="id-r032" xsi:type="Relationship" source="n-v02-BSV01" target="n-v02-STK-04"/>
+        <connection identifier="c-v02-r033" relationshipRef="id-r033" xsi:type="Relationship" source="n-v02-BSV01" target="n-v02-STK-05"/>
+        <connection identifier="c-v02-r034" relationshipRef="id-r034" xsi:type="Relationship" source="n-v02-BSV02" target="n-v02-STK-04"/>
+        <connection identifier="c-v02-r035" relationshipRef="id-r035" xsi:type="Relationship" source="n-v02-BSV02" target="n-v02-STK-05"/>
+        <connection identifier="c-v02-r036" relationshipRef="id-r036" xsi:type="Relationship" source="n-v02-BSV03" target="n-v02-STK-06"/>
+        <connection identifier="c-v02-r037" relationshipRef="id-r037" xsi:type="Relationship" source="n-v02-BSV03" target="n-v02-STK-01"/>
+        <connection identifier="c-v02-r038" relationshipRef="id-r038" xsi:type="Relationship" source="n-v02-BSV03" target="n-v02-STK-08"/>
+        <connection identifier="c-v02-r039" relationshipRef="id-r039" xsi:type="Relationship" source="n-v02-BSV03" target="n-v02-STK-09"/>
+        <connection identifier="c-v02-r040" relationshipRef="id-r040" xsi:type="Relationship" source="n-v02-E1" target="n-v02-BSV01"/>
+        <connection identifier="c-v02-r041" relationshipRef="id-r041" xsi:type="Relationship" source="n-v02-E5" target="n-v02-BSV01"/>
+        <connection identifier="c-v02-r042" relationshipRef="id-r042" xsi:type="Relationship" source="n-v02-E2" target="n-v02-BSV02"/>
+        <connection identifier="c-v02-r043" relationshipRef="id-r043" xsi:type="Relationship" source="n-v02-E3" target="n-v02-BSV02"/>
+        <connection identifier="c-v02-r044" relationshipRef="id-r044" xsi:type="Relationship" source="n-v02-E4" target="n-v02-BSV02"/>
+        <connection identifier="c-v02-r045" relationshipRef="id-r045" xsi:type="Relationship" source="n-v02-E5" target="n-v02-BSV02"/>
+        <connection identifier="c-v02-r046" relationshipRef="id-r046" xsi:type="Relationship" source="n-v02-E6" target="n-v02-BSV02"/>
+        <connection identifier="c-v02-r047" relationshipRef="id-r047" xsi:type="Relationship" source="n-v02-E7" target="n-v02-BSV02"/>
+        <connection identifier="c-v02-r048" relationshipRef="id-r048" xsi:type="Relationship" source="n-v02-RCL" target="n-v02-BSV03"/>
+        <connection identifier="c-v02-r049" relationshipRef="id-r049" xsi:type="Relationship" source="n-v02-E1" target="n-v02-EV1"/>
+        <connection identifier="c-v02-r050" relationshipRef="id-r050" xsi:type="Relationship" source="n-v02-E4" target="n-v02-EV2"/>
+        <connection identifier="c-v02-r051" relationshipRef="id-r051" xsi:type="Relationship" source="n-v02-E5" target="n-v02-EV3"/>
+        <connection identifier="c-v02-r052" relationshipRef="id-r052" xsi:type="Relationship" source="n-v02-E5" target="n-v02-EV4"/>
+        <connection identifier="c-v02-r053" relationshipRef="id-r053" xsi:type="Relationship" source="n-v02-E7" target="n-v02-EV5"/>
+        <connection identifier="c-v02-r054" relationshipRef="id-r054" xsi:type="Relationship" source="n-v02-E7" target="n-v02-EV6"/>
+        <connection identifier="c-v02-r055" relationshipRef="id-r055" xsi:type="Relationship" source="n-v02-E2" target="n-v02-EV7"/>
+        <connection identifier="c-v02-r056" relationshipRef="id-r056" xsi:type="Relationship" source="n-v02-BSV01" target="n-v02-O_LOTE"/>
+        <connection identifier="c-v02-r057" relationshipRef="id-r057" xsi:type="Relationship" source="n-v02-BSV02" target="n-v02-O_EVT"/>
+        <connection identifier="c-v02-r058" relationshipRef="id-r058" xsi:type="Relationship" source="n-v02-BSV03" target="n-v02-O_HIS"/>
+        <connection identifier="c-v02-r059" relationshipRef="id-r059" xsi:type="Relationship" source="n-v02-O_HIS" target="n-v02-O_EVT"/>
+        <connection identifier="c-v02-r060" relationshipRef="id-r060" xsi:type="Relationship" source="n-v02-O_EVT" target="n-v02-O_LOTE"/>
+        <connection identifier="c-v02-r061" relationshipRef="id-r061" xsi:type="Relationship" source="n-v02-O_LOTE" target="n-v02-O_JABA"/>
+        <connection identifier="c-v02-r062" relationshipRef="id-r062" xsi:type="Relationship" source="n-v02-O_PAL" target="n-v02-O_LOTE"/>
+        <connection identifier="c-v02-r063" relationshipRef="id-r063" xsi:type="Relationship" source="n-v02-O_ENV" target="n-v02-O_PAL"/>
+        <connection identifier="c-v02-r064" relationshipRef="id-r064" xsi:type="Relationship" source="n-v02-O_RCL" target="n-v02-O_ENV"/>
+        <connection identifier="c-v02-r065" relationshipRef="id-r065" xsi:type="Relationship" source="n-v02-EV2" target="n-v02-O_LIB"/>
+        <connection identifier="c-v02-r066" relationshipRef="id-r066" xsi:type="Relationship" source="n-v02-EV5" target="n-v02-O_CUS"/>
+        <connection identifier="c-v02-r067" relationshipRef="id-r067" xsi:type="Relationship" source="n-v02-EV6" target="n-v02-O_ENV"/>
+        <connection identifier="c-v02-r068" relationshipRef="id-r068" xsi:type="Relationship" source="n-v02-RCL" target="n-v02-O_RCL"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

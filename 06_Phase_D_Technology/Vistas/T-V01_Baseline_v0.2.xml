@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd" identifier="model-phased-ruben">
+  <name xml:lang="es">PC3 Fase D · Bloque 6.1-7.3 · Grupo 03</name>
+  <documentation xml:lang="es">Vista T-V01 Baseline Environments &amp; Locations · Int. 4 Julio Rubén</documentation>
+  <elements>
+    <element identifier="loc-t01" xsi:type="Location">
+      <name xml:lang="es">LOC-T01 · 42 Fundos</name>
+    </element>
+    <element identifier="loc-t02" xsi:type="Location">
+      <name xml:lang="es">LOC-T02 · Planta Olmos</name>
+    </element>
+    <element identifier="loc-t03" xsi:type="Location">
+      <name xml:lang="es">LOC-T03 · Planta Jayanca</name>
+    </element>
+    <element identifier="loc-t04" xsi:type="Location">
+      <name xml:lang="es">LOC-T04 · Planta Ica</name>
+    </element>
+    <element identifier="loc-t05" xsi:type="Location">
+      <name xml:lang="es">LOC-T05 · Cámaras</name>
+    </element>
+    <element identifier="loc-t06" xsi:type="Location">
+      <name xml:lang="es">LOC-T06 · Túneles</name>
+    </element>
+    <element identifier="loc-t07" xsi:type="Location">
+      <name xml:lang="es">LOC-T07 · Chancay/Aero</name>
+    </element>
+    <element identifier="loc-t08" xsi:type="Location">
+      <name xml:lang="es">LOC-T08 · Oficinas Lima</name>
+    </element>
+    <element identifier="loc-t09" xsi:type="Location">
+      <name xml:lang="es">LOC-T09 · Nube SaaS</name>
+    </element>
+    <element identifier="plc-asis" xsi:type="Node">
+      <name xml:lang="es">PLC refrigeración (AS-IS)</name>
+    </element>
+    <element identifier="termo-asis" xsi:type="Node">
+      <name xml:lang="es">Termógrafos CABSA (AS-IS)</name>
+    </element>
+    <element identifier="excel-asis" xsi:type="ApplicationComponent">
+      <name xml:lang="es">Excel conciliación (APP-05 cand.)</name>
+    </element>
+    <element identifier="erp-asis" xsi:type="ApplicationComponent">
+      <name xml:lang="es">ERP (AS-IS, consulta)</name>
+    </element>
+    <element identifier="qa-asis" xsi:type="ApplicationComponent">
+      <name xml:lang="es">QA App (AS-IS)</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="r1" source="loc-t02" target="plc-asis" xsi:type="Aggregation" />
+    <relationship identifier="r2" source="loc-t05" target="plc-asis" xsi:type="Aggregation" />
+    <relationship identifier="r3" source="loc-t05" target="termo-asis" xsi:type="Aggregation" />
+    <relationship identifier="r4" source="loc-t06" target="termo-asis" xsi:type="Aggregation" />
+    <relationship identifier="r5" source="loc-t02" target="excel-asis" xsi:type="Aggregation" />
+    <relationship identifier="r6" source="loc-t08" target="erp-asis" xsi:type="Aggregation" />
+    <relationship identifier="r7" source="loc-t08" target="qa-asis" xsi:type="Aggregation" />
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="T-V01" xsi:type="Diagram">
+        <name xml:lang="es">Baseline Environments &amp; Locations</name>
+        <node identifier="n-loc-t01" elementRef="loc-t01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t02" elementRef="loc-t02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t03" elementRef="loc-t03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t04" elementRef="loc-t04" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t05" elementRef="loc-t05" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t06" elementRef="loc-t06" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t07" elementRef="loc-t07" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t08" elementRef="loc-t08" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t09" elementRef="loc-t09" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-plc-asis" elementRef="plc-asis" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-termo-asis" elementRef="termo-asis" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-excel-asis" elementRef="excel-asis" x="670" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-erp-asis" elementRef="erp-asis" x="10" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-qa-asis" elementRef="qa-asis" x="230" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="c-r1" relationshipRef="r1" source="n-loc-t02" target="n-plc-asis" xsi:type="Relationship" />
+        <connection identifier="c-r2" relationshipRef="r2" source="n-loc-t05" target="n-plc-asis" xsi:type="Relationship" />
+        <connection identifier="c-r3" relationshipRef="r3" source="n-loc-t05" target="n-termo-asis" xsi:type="Relationship" />
+        <connection identifier="c-r4" relationshipRef="r4" source="n-loc-t06" target="n-termo-asis" xsi:type="Relationship" />
+        <connection identifier="c-r5" relationshipRef="r5" source="n-loc-t02" target="n-excel-asis" xsi:type="Relationship" />
+        <connection identifier="c-r6" relationshipRef="r6" source="n-loc-t08" target="n-erp-asis" xsi:type="Relationship" />
+        <connection identifier="c-r7" relationshipRef="r7" source="n-loc-t08" target="n-qa-asis" xsi:type="Relationship" />
+      </view>
+    </diagrams>
+  </views>
+</model>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd"
+       identifier="model-X-V02">
+  <name xml:lang="es">PC3 Fase D · Vista integrada 4 capas · Grupo 03</name>
+  <documentation xml:lang="es">Vista X-V02 extraída literalmente de los informes integrados del Grupo 03.</documentation>
+  <elements>
+    <element identifier="bsv-01" xsi:type="BusinessService">
+      <name xml:lang="es">BSV-01 Historial auditable</name>
+    </element>
+    <element identifier="bsv-02" xsi:type="BusinessService">
+      <name xml:lang="es">BSV-02 Excepción resuelta</name>
+    </element>
+    <element identifier="bsv-03" xsi:type="BusinessService">
+      <name xml:lang="es">BSV-03 Consulta autorizada</name>
+    </element>
+    <element identifier="do-01" xsi:type="DataObject">
+      <name xml:lang="es">DO-01 Lote</name>
+    </element>
+    <element identifier="do-08" xsi:type="DataObject">
+      <name xml:lang="es">DO-08 EventoLote</name>
+    </element>
+    <element identifier="do-09" xsi:type="DataObject">
+      <name xml:lang="es">DO-09 Reclamo</name>
+    </element>
+    <element identifier="qr" xsi:type="DataObject">
+      <name xml:lang="es">ResultadoCalidad</name>
+    </element>
+    <element identifier="ac-01" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-01 Registro de lote</name>
+    </element>
+    <element identifier="ac-02" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-02 Captura de eventos</name>
+    </element>
+    <element identifier="ac-05" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-05 Consultas historial</name>
+    </element>
+    <element identifier="app-05" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-05 ResultadoCalidad (autoridad)</name>
+    </element>
+    <element identifier="tabb-02" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-02 Gateway resiliente</name>
+    </element>
+    <element identifier="tabb-04" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-04 Plataforma de eventos</name>
+    </element>
+    <element identifier="tabb-05" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-05 API Gateway + IAM</name>
+    </element>
+    <element identifier="tabb-06" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-06 Repo aplicaciones</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="r1" source="ac-01" target="bsv-01" xsi:type="RealizationRelationship"/>
+    <relationship identifier="r2" source="ac-02" target="bsv-01" xsi:type="RealizationRelationship"/>
+    <relationship identifier="r3" source="app-05" target="bsv-02" xsi:type="RealizationRelationship"/>
+    <relationship identifier="r4" source="ac-05" target="bsv-03" xsi:type="RealizationRelationship"/>
+    <relationship identifier="r5" source="ac-01" target="do-01" xsi:type="AccessRelationship"/>
+    <relationship identifier="r6" source="ac-02" target="do-08" xsi:type="AccessRelationship"/>
+    <relationship identifier="r7" source="ac-05" target="do-09" xsi:type="AccessRelationship"/>
+    <relationship identifier="r8" source="app-05" target="qr" xsi:type="AccessRelationship"/>
+    <relationship identifier="r9" source="ac-02" target="tabb-02" xsi:type="AssignmentRelationship"/>
+    <relationship identifier="r10" source="ac-02" target="tabb-04" xsi:type="AssignmentRelationship"/>
+    <relationship identifier="r11" source="ac-05" target="tabb-05" xsi:type="AssignmentRelationship"/>
+    <relationship identifier="r12" source="app-05" target="tabb-06" xsi:type="AssignmentRelationship"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="X-V02" xsi:type="Diagram">
+        <name xml:lang="es">Vista integrada 4 capas</name>
+      <node identifier="n-bsv-01" elementRef="bsv-01" x="10" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-bsv-02" elementRef="bsv-02" x="230" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-bsv-03" elementRef="bsv-03" x="450" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-do-01" elementRef="do-01" x="670" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-do-08" elementRef="do-08" x="10" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-do-09" elementRef="do-09" x="230" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-qr" elementRef="qr" x="450" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-ac-01" elementRef="ac-01" x="670" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-ac-02" elementRef="ac-02" x="10" y="190" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-ac-05" elementRef="ac-05" x="230" y="190" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-app-05" elementRef="app-05" x="450" y="190" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-tabb-02" elementRef="tabb-02" x="670" y="190" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-tabb-04" elementRef="tabb-04" x="10" y="280" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-tabb-05" elementRef="tabb-05" x="230" y="280" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-tabb-06" elementRef="tabb-06" x="450" y="280" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <connection identifier="c-r1" relationshipRef="r1" source="n-ac-01" target="n-bsv-01"/>
+      <connection identifier="c-r2" relationshipRef="r2" source="n-ac-02" target="n-bsv-01"/>
+      <connection identifier="c-r3" relationshipRef="r3" source="n-app-05" target="n-bsv-02"/>
+      <connection identifier="c-r4" relationshipRef="r4" source="n-ac-05" target="n-bsv-03"/>
+      <connection identifier="c-r5" relationshipRef="r5" source="n-ac-01" target="n-do-01"/>
+      <connection identifier="c-r6" relationshipRef="r6" source="n-ac-02" target="n-do-08"/>
+      <connection identifier="c-r7" relationshipRef="r7" source="n-ac-05" target="n-do-09"/>
+      <connection identifier="c-r8" relationshipRef="r8" source="n-app-05" target="n-qr"/>
+      <connection identifier="c-r9" relationshipRef="r9" source="n-ac-02" target="n-tabb-02"/>
+      <connection identifier="c-r10" relationshipRef="r10" source="n-ac-02" target="n-tabb-04"/>
+      <connection identifier="c-r11" relationshipRef="r11" source="n-ac-05" target="n-tabb-05"/>
+      <connection identifier="c-r12" relationshipRef="r12" source="n-app-05" target="n-tabb-06"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

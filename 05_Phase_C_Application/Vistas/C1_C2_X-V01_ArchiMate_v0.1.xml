@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="beta-pc3-bloque-4-4-a-5-7">
+<name xml:lang="es">Beta · PC3 Fase C · Bloque 4.4 a 5.7 (X-V01)</name>
+<documentation xml:lang="es">Complejo Agroindustrial Beta, Grupo 03. Elementos lógicos propuestos por el equipo [DE]; los nombres de aplicaciones existentes vienen de A-05 (APL-1 a APL-8). No describe sistemas confirmados de Beta. Importar en Archi con File › Import › Open Exchange XML Model.</documentation>
+<elements>
+<element identifier="beta-x-e-AC-01" xsi:type="ApplicationComponent"><name xml:lang="es">AC-01 Identidad y genealogía de lote</name></element>
+<element identifier="beta-x-e-AC-02" xsi:type="ApplicationComponent"><name xml:lang="es">AC-02 Ingesta de eventos de lote</name></element>
+<element identifier="beta-x-e-AC-03" xsi:type="ApplicationComponent"><name xml:lang="es">AC-03 Historial y evidencia de lote</name></element>
+<element identifier="beta-x-e-APP-05" xsi:type="ApplicationComponent"><name xml:lang="es">APP-05 Registro de Calidad y laboratorio</name></element>
+<element identifier="beta-x-e-AS-01" xsi:type="ApplicationService"><name xml:lang="es">AS-01 Identidad y genealogía</name></element>
+<element identifier="beta-x-e-AS-02" xsi:type="ApplicationService"><name xml:lang="es">AS-02 Registro de evento de lote</name></element>
+<element identifier="beta-x-e-AS-03" xsi:type="ApplicationService"><name xml:lang="es">AS-03 Consulta autorizada del historial</name></element>
+<element identifier="beta-x-e-AS-04" xsi:type="ApplicationService"><name xml:lang="es">AS-04 Consulta de estado de Calidad</name></element>
+<element identifier="beta-x-e-BP-E17" xsi:type="BusinessProcess"><name xml:lang="es">E1 a E7 Registro de eventos de condición</name></element>
+<element identifier="beta-x-e-BP-E35" xsi:type="BusinessProcess"><name xml:lang="es">E3 y E5 Selección, empaque y paletizado</name></element>
+<element identifier="beta-x-e-BP-E4" xsi:type="BusinessProcess"><name xml:lang="es">E4 Control de calidad y liberación</name></element>
+<element identifier="beta-x-e-BP-REC" xsi:type="BusinessProcess"><name xml:lang="es">Atención de reclamo y auditoría</name></element>
+<element identifier="beta-x-e-BSV-01" xsi:type="BusinessService"><name xml:lang="es">BSV-01 Identificación y genealogía del lote</name></element>
+<element identifier="beta-x-e-BSV-02" xsi:type="BusinessService"><name xml:lang="es">BSV-02 Registro de eventos de condición</name></element>
+<element identifier="beta-x-e-BSV-03" xsi:type="BusinessService"><name xml:lang="es">BSV-03 Consulta de historia y evidencia</name></element>
+<element identifier="beta-x-e-CAP-01" xsi:type="Capability"><name xml:lang="es">CAP-01 Trazabilidad de lote</name></element>
+<element identifier="beta-x-e-CAP-03" xsi:type="Capability"><name xml:lang="es">CAP-03 Captura digital en origen</name></element>
+<element identifier="beta-x-e-CAP-04" xsi:type="Capability"><name xml:lang="es">CAP-04 Calidad e inocuidad con evidencia</name></element>
+<element identifier="beta-x-e-CAP-06" xsi:type="Capability"><name xml:lang="es">CAP-06 Visibilidad de exportación</name></element>
+<element identifier="beta-x-e-DO-01" xsi:type="DataObject"><name xml:lang="es">DO-01 Lote</name></element>
+<element identifier="beta-x-e-DO-02" xsi:type="DataObject"><name xml:lang="es">DO-02 EventoLote</name></element>
+<element identifier="beta-x-e-DO-03" xsi:type="DataObject"><name xml:lang="es">DO-03 GenealogíaLote</name></element>
+<element identifier="beta-x-e-DO-04" xsi:type="DataObject"><name xml:lang="es">DO-04 ResultadoCalidad</name></element>
+<element identifier="beta-x-e-DO-HIST" xsi:type="DataObject"><name xml:lang="es">Historial de lote (producto de datos)</name></element>
+<element identifier="beta-x-e-R-EXT" xsi:type="BusinessRole"><name xml:lang="es">STK-08 Importadores · STK-09 SENASA</name></element>
+<element identifier="beta-x-e-R-STK04" xsi:type="BusinessRole"><name xml:lang="es">STK-04 Calidad e Inocuidad (Data Steward)</name></element>
+</elements><relationships>
+<relationship identifier="beta-x-r01" source="beta-x-e-BSV-01" target="beta-x-e-CAP-01" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r02" source="beta-x-e-BSV-02" target="beta-x-e-CAP-03" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r03" source="beta-x-e-BSV-03" target="beta-x-e-CAP-06" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r04" source="beta-x-e-BP-E4" target="beta-x-e-CAP-04" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r05" source="beta-x-e-BP-E35" target="beta-x-e-BSV-01" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r06" source="beta-x-e-BP-E17" target="beta-x-e-BSV-02" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r07" source="beta-x-e-BP-REC" target="beta-x-e-BSV-03" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r08" source="beta-x-e-R-STK04" target="beta-x-e-BP-E4" xsi:type="Assignment"><name xml:lang="es">decide liberar</name></relationship>
+<relationship identifier="beta-x-r09" source="beta-x-e-BSV-03" target="beta-x-e-R-STK04" xsi:type="Serving"></relationship>
+<relationship identifier="beta-x-r10" source="beta-x-e-BSV-03" target="beta-x-e-R-EXT" xsi:type="Serving"><name xml:lang="es">REQ-03</name></relationship>
+<relationship identifier="beta-x-r11" source="beta-x-e-AS-01" target="beta-x-e-BP-E35" xsi:type="Serving"></relationship>
+<relationship identifier="beta-x-r12" source="beta-x-e-AS-02" target="beta-x-e-BP-E17" xsi:type="Serving"></relationship>
+<relationship identifier="beta-x-r13" source="beta-x-e-AS-04" target="beta-x-e-BP-REC" xsi:type="Serving"><name xml:lang="es">solo informa</name></relationship>
+<relationship identifier="beta-x-r14" source="beta-x-e-AS-03" target="beta-x-e-BP-REC" xsi:type="Serving"></relationship>
+<relationship identifier="beta-x-r15" source="beta-x-e-AC-01" target="beta-x-e-AS-01" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r16" source="beta-x-e-AC-02" target="beta-x-e-AS-02" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r17" source="beta-x-e-APP-05" target="beta-x-e-AS-04" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r18" source="beta-x-e-AC-03" target="beta-x-e-AS-03" xsi:type="Realization"></relationship>
+<relationship identifier="beta-x-r19" source="beta-x-e-AC-01" target="beta-x-e-DO-01" xsi:type="Access"></relationship>
+<relationship identifier="beta-x-r20" source="beta-x-e-AC-01" target="beta-x-e-DO-03" xsi:type="Access"></relationship>
+<relationship identifier="beta-x-r21" source="beta-x-e-AC-02" target="beta-x-e-DO-02" xsi:type="Access"></relationship>
+<relationship identifier="beta-x-r22" source="beta-x-e-APP-05" target="beta-x-e-DO-04" xsi:type="Access"></relationship>
+<relationship identifier="beta-x-r23" source="beta-x-e-AC-03" target="beta-x-e-DO-HIST" xsi:type="Access"></relationship>
+</relationships><views><diagrams>
+<view identifier="beta-x-view-X-V01" xsi:type="Diagram"><name xml:lang="es">X-V01 Vista cross-layer: valor → negocio → aplicaciones → datos</name><documentation xml:lang="es">¿Cómo se conectan valor, dato y software? · Lectores: STK-01, Architecture Board · CN-C07</documentation>
+<node identifier="beta-x-n-X-V01-CAP-01" elementRef="beta-x-e-CAP-01" xsi:type="Element" x="30" y="30" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-CAP-03" elementRef="beta-x-e-CAP-03" xsi:type="Element" x="650" y="30" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-CAP-04" elementRef="beta-x-e-CAP-04" xsi:type="Element" x="960" y="30" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-R-EXT" elementRef="beta-x-e-R-EXT" xsi:type="Element" x="1270" y="30" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-CAP-06" elementRef="beta-x-e-CAP-06" xsi:type="Element" x="1580" y="30" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-BSV-01" elementRef="beta-x-e-BSV-01" xsi:type="Element" x="30" y="190" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-BSV-02" elementRef="beta-x-e-BSV-02" xsi:type="Element" x="650" y="190" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-R-STK04" elementRef="beta-x-e-R-STK04" xsi:type="Element" x="1270" y="190" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-BSV-03" elementRef="beta-x-e-BSV-03" xsi:type="Element" x="1580" y="190" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-BP-E35" elementRef="beta-x-e-BP-E35" xsi:type="Element" x="30" y="350" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-BP-E17" elementRef="beta-x-e-BP-E17" xsi:type="Element" x="650" y="350" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-BP-E4" elementRef="beta-x-e-BP-E4" xsi:type="Element" x="960" y="350" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-BP-REC" elementRef="beta-x-e-BP-REC" xsi:type="Element" x="1580" y="350" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-AS-01" elementRef="beta-x-e-AS-01" xsi:type="Element" x="30" y="510" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-AS-02" elementRef="beta-x-e-AS-02" xsi:type="Element" x="650" y="510" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-AS-04" elementRef="beta-x-e-AS-04" xsi:type="Element" x="960" y="510" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-AS-03" elementRef="beta-x-e-AS-03" xsi:type="Element" x="1580" y="510" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-AC-01" elementRef="beta-x-e-AC-01" xsi:type="Element" x="30" y="670" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-AC-02" elementRef="beta-x-e-AC-02" xsi:type="Element" x="650" y="670" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-APP-05" elementRef="beta-x-e-APP-05" xsi:type="Element" x="960" y="670" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-AC-03" elementRef="beta-x-e-AC-03" xsi:type="Element" x="1580" y="670" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-DO-01" elementRef="beta-x-e-DO-01" xsi:type="Element" x="30" y="830" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-DO-03" elementRef="beta-x-e-DO-03" xsi:type="Element" x="340" y="830" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-DO-02" elementRef="beta-x-e-DO-02" xsi:type="Element" x="650" y="830" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-DO-04" elementRef="beta-x-e-DO-04" xsi:type="Element" x="960" y="830" w="230" h="86"/>
+<node identifier="beta-x-n-X-V01-DO-HIST" elementRef="beta-x-e-DO-HIST" xsi:type="Element" x="1580" y="830" w="230" h="86"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r01" relationshipRef="beta-x-r01" xsi:type="Relationship" source="beta-x-n-X-V01-BSV-01" target="beta-x-n-X-V01-CAP-01"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r02" relationshipRef="beta-x-r02" xsi:type="Relationship" source="beta-x-n-X-V01-BSV-02" target="beta-x-n-X-V01-CAP-03"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r03" relationshipRef="beta-x-r03" xsi:type="Relationship" source="beta-x-n-X-V01-BSV-03" target="beta-x-n-X-V01-CAP-06"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r04" relationshipRef="beta-x-r04" xsi:type="Relationship" source="beta-x-n-X-V01-BP-E4" target="beta-x-n-X-V01-CAP-04"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r05" relationshipRef="beta-x-r05" xsi:type="Relationship" source="beta-x-n-X-V01-BP-E35" target="beta-x-n-X-V01-BSV-01"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r06" relationshipRef="beta-x-r06" xsi:type="Relationship" source="beta-x-n-X-V01-BP-E17" target="beta-x-n-X-V01-BSV-02"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r07" relationshipRef="beta-x-r07" xsi:type="Relationship" source="beta-x-n-X-V01-BP-REC" target="beta-x-n-X-V01-BSV-03"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r08" relationshipRef="beta-x-r08" xsi:type="Relationship" source="beta-x-n-X-V01-R-STK04" target="beta-x-n-X-V01-BP-E4"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r09" relationshipRef="beta-x-r09" xsi:type="Relationship" source="beta-x-n-X-V01-BSV-03" target="beta-x-n-X-V01-R-STK04"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r10" relationshipRef="beta-x-r10" xsi:type="Relationship" source="beta-x-n-X-V01-BSV-03" target="beta-x-n-X-V01-R-EXT"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r11" relationshipRef="beta-x-r11" xsi:type="Relationship" source="beta-x-n-X-V01-AS-01" target="beta-x-n-X-V01-BP-E35"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r12" relationshipRef="beta-x-r12" xsi:type="Relationship" source="beta-x-n-X-V01-AS-02" target="beta-x-n-X-V01-BP-E17"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r13" relationshipRef="beta-x-r13" xsi:type="Relationship" source="beta-x-n-X-V01-AS-04" target="beta-x-n-X-V01-BP-REC"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r14" relationshipRef="beta-x-r14" xsi:type="Relationship" source="beta-x-n-X-V01-AS-03" target="beta-x-n-X-V01-BP-REC"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r15" relationshipRef="beta-x-r15" xsi:type="Relationship" source="beta-x-n-X-V01-AC-01" target="beta-x-n-X-V01-AS-01"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r16" relationshipRef="beta-x-r16" xsi:type="Relationship" source="beta-x-n-X-V01-AC-02" target="beta-x-n-X-V01-AS-02"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r17" relationshipRef="beta-x-r17" xsi:type="Relationship" source="beta-x-n-X-V01-APP-05" target="beta-x-n-X-V01-AS-04"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r18" relationshipRef="beta-x-r18" xsi:type="Relationship" source="beta-x-n-X-V01-AC-03" target="beta-x-n-X-V01-AS-03"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r19" relationshipRef="beta-x-r19" xsi:type="Relationship" source="beta-x-n-X-V01-AC-01" target="beta-x-n-X-V01-DO-01"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r20" relationshipRef="beta-x-r20" xsi:type="Relationship" source="beta-x-n-X-V01-AC-01" target="beta-x-n-X-V01-DO-03"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r21" relationshipRef="beta-x-r21" xsi:type="Relationship" source="beta-x-n-X-V01-AC-02" target="beta-x-n-X-V01-DO-02"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r22" relationshipRef="beta-x-r22" xsi:type="Relationship" source="beta-x-n-X-V01-APP-05" target="beta-x-n-X-V01-DO-04"/>
+<connection identifier="beta-x-c-X-V01-beta-x-r23" relationshipRef="beta-x-r23" xsi:type="Relationship" source="beta-x-n-X-V01-AC-03" target="beta-x-n-X-V01-DO-HIST"/>
+</view>
+</diagrams></views></model>

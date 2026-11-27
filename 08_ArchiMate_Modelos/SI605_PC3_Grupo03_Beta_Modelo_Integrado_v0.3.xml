@@ -1,0 +1,2876 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="id-model-beta-pc3-v03" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd">
+  <name xml:lang="es">SI605 PC3 · Grupo 03 · Complejo Agroindustrial Beta · Value stream «Asegurar arándano exportable» · Modelo ArchiMate integrado B/C/D v0.3</name>
+  <documentation xml:lang="es">Modelo único que integra las vistas B-V01/B-V02 (Fase B), D-V01..D-V03, AP-V01..AP-V03, X-V01 (Fase C) y T-V01..T-V10, X-V02 (Fase D). Los IDs de la Fase C son la autoridad para componentes de aplicación y objetos de datos; los equivalentes de la Fase D se unificaron (ver Informe de cambios v0.3). Elementos lógicos propuestos por el equipo [DE]; no describe sistemas confirmados de Beta.</documentation>
+  <elements>
+    <element identifier="id-STK-01" xsi:type="BusinessActor">
+      <name xml:lang="es">STK-01 Gerencia de Operaciones</name>
+    </element>
+    <element identifier="id-STK-02" xsi:type="BusinessActor">
+      <name xml:lang="es">STK-02 Jefes de Campo / Fundo</name>
+    </element>
+    <element identifier="id-STK-03" xsi:type="BusinessActor">
+      <name xml:lang="es">STK-03 Supervisores de Planta / Packing</name>
+    </element>
+    <element identifier="id-STK-04" xsi:type="BusinessActor">
+      <name xml:lang="es">STK-04 Calidad e Inocuidad</name>
+    </element>
+    <element identifier="id-STK-05" xsi:type="BusinessActor">
+      <name xml:lang="es">STK-05 Logística y Despacho</name>
+    </element>
+    <element identifier="id-STK-06" xsi:type="BusinessActor">
+      <name xml:lang="es">STK-06 Oficinas Comerciales</name>
+    </element>
+    <element identifier="id-STK-07" xsi:type="BusinessActor">
+      <name xml:lang="es">STK-07 TI / OT</name>
+    </element>
+    <element identifier="id-STK-08" xsi:type="BusinessActor">
+      <name xml:lang="es">STK-08 Importador</name>
+    </element>
+    <element identifier="id-STK-09" xsi:type="BusinessActor">
+      <name xml:lang="es">STK-09 SENASA / Certificadoras</name>
+    </element>
+    <element identifier="id-DS" xsi:type="BusinessRole">
+      <name xml:lang="es">Data Steward (rol nuevo, candidato STK-04)</name>
+    </element>
+    <element identifier="id-E1" xsi:type="BusinessProcess">
+      <name xml:lang="es">E1 Cosecha en fundo</name>
+    </element>
+    <element identifier="id-E2" xsi:type="BusinessProcess">
+      <name xml:lang="es">E2 Recepción, pesaje y enfriamiento</name>
+    </element>
+    <element identifier="id-E3" xsi:type="BusinessProcess">
+      <name xml:lang="es">E3 Selección y clasificación</name>
+    </element>
+    <element identifier="id-E4" xsi:type="BusinessProcess">
+      <name xml:lang="es">E4 Control de calidad e inocuidad</name>
+    </element>
+    <element identifier="id-E5" xsi:type="BusinessProcess">
+      <name xml:lang="es">E5 Empaque y etiquetado</name>
+    </element>
+    <element identifier="id-E6" xsi:type="BusinessProcess">
+      <name xml:lang="es">E6 Prefrío y cámara</name>
+    </element>
+    <element identifier="id-E7" xsi:type="BusinessProcess">
+      <name xml:lang="es">E7 Despacho y documentación</name>
+    </element>
+    <element identifier="id-RCL" xsi:type="BusinessProcess">
+      <name xml:lang="es">Responder reclamo o auditoría con evidencia</name>
+    </element>
+    <element identifier="id-BSV01" xsi:type="BusinessService">
+      <name xml:lang="es">BSV-01 Identificación y genealogía del lote</name>
+    </element>
+    <element identifier="id-BSV02" xsi:type="BusinessService">
+      <name xml:lang="es">BSV-02 Registro de eventos de condición</name>
+    </element>
+    <element identifier="id-BSV03" xsi:type="BusinessService">
+      <name xml:lang="es">BSV-03 Consulta de historia y evidencia</name>
+    </element>
+    <element identifier="id-EV1" xsi:type="BusinessEvent">
+      <name xml:lang="es">Lote creado</name>
+    </element>
+    <element identifier="id-EV2" xsi:type="BusinessEvent">
+      <name xml:lang="es">Lote liberado o retenido</name>
+    </element>
+    <element identifier="id-EV3" xsi:type="BusinessEvent">
+      <name xml:lang="es">Lote dividido (split)</name>
+    </element>
+    <element identifier="id-EV4" xsi:type="BusinessEvent">
+      <name xml:lang="es">Lotes agrupados (merge)</name>
+    </element>
+    <element identifier="id-EV5" xsi:type="BusinessEvent">
+      <name xml:lang="es">Custodia cambiada</name>
+    </element>
+    <element identifier="id-EV6" xsi:type="BusinessEvent">
+      <name xml:lang="es">Lote despachado</name>
+    </element>
+    <element identifier="id-EV7" xsi:type="BusinessEvent">
+      <name xml:lang="es">Excepción registrada (RD-06)</name>
+    </element>
+    <element identifier="id-O_JABA" xsi:type="BusinessObject">
+      <name xml:lang="es">Jaba (rótulo de lote)</name>
+    </element>
+    <element identifier="id-O_LT" xsi:type="BusinessObject">
+      <name xml:lang="es">Lote: ID distinto por tramo</name>
+    </element>
+    <element identifier="id-O_PESO" xsi:type="BusinessObject">
+      <name xml:lang="es">Registro peso/hora (Excel)</name>
+    </element>
+    <element identifier="id-O_TEMP" xsi:type="BusinessObject">
+      <name xml:lang="es">Registro temperatura (planilla)</name>
+    </element>
+    <element identifier="id-O_LIB" xsi:type="BusinessObject">
+      <name xml:lang="es">Liberación</name>
+    </element>
+    <element identifier="id-O_ETQ" xsi:type="BusinessObject">
+      <name xml:lang="es">Etiqueta de caja (PTI)</name>
+    </element>
+    <element identifier="id-O_PAL" xsi:type="BusinessObject">
+      <name xml:lang="es">Pallet</name>
+    </element>
+    <element identifier="id-O_ENV" xsi:type="BusinessObject">
+      <name xml:lang="es">Envío (contenedor)</name>
+    </element>
+    <element identifier="id-O_RCL" xsi:type="BusinessObject">
+      <name xml:lang="es">Reclamo</name>
+    </element>
+    <element identifier="id-O_LOTE" xsi:type="BusinessObject">
+      <name xml:lang="es">Lote (ID único e inmutable)</name>
+    </element>
+    <element identifier="id-O_EVT" xsi:type="BusinessObject">
+      <name xml:lang="es">Evento de lote</name>
+    </element>
+    <element identifier="id-O_HIS" xsi:type="BusinessObject">
+      <name xml:lang="es">Historia</name>
+    </element>
+    <element identifier="id-O_CUS" xsi:type="BusinessObject">
+      <name xml:lang="es">Custodia</name>
+    </element>
+    <element identifier="id-AC_XLS" xsi:type="ApplicationComponent">
+      <name xml:lang="es">Hojas de cálculo (Excel) [HP]</name>
+    </element>
+    <element identifier="id-AC_SORT" xsi:type="ApplicationComponent">
+      <name xml:lang="es">Selectora Color/Soft Sorter [HP]</name>
+    </element>
+    <element identifier="id-AC_LAB" xsi:type="ApplicationComponent">
+      <name xml:lang="es">Registro de laboratorio (LIMS no confirmado) [NV]</name>
+    </element>
+    <element identifier="id-AC_CABSA" xsi:type="ApplicationComponent">
+      <name xml:lang="es">Termometría CABSA [HP] · Ica [NV]</name>
+    </element>
+    <element identifier="id-AC_ERP" xsi:type="ApplicationComponent">
+      <name xml:lang="es">ERP / WMS de despacho [NV]</name>
+    </element>
+    <element identifier="id-B_ROT" xsi:type="BusinessObject">
+      <name xml:lang="es">SRC-01 Rótulo de jaba · código de rótulo [SV]</name>
+    </element>
+    <element identifier="id-D_ING" xsi:type="DataObject">
+      <name xml:lang="es">SRC-02 Recepción y pesaje · N° de ingreso</name>
+    </element>
+    <element identifier="id-D_CORR" xsi:type="DataObject">
+      <name xml:lang="es">SRC-06 Corrida de selección · ID de corrida [NV]</name>
+    </element>
+    <element identifier="id-D_MUE" xsi:type="DataObject">
+      <name xml:lang="es">SRC-04 Resultado de laboratorio · código de muestra</name>
+    </element>
+    <element identifier="id-D_PAL" xsi:type="DataObject">
+      <name xml:lang="es">SRC-07 Etiqueta PTI y N° de pallet</name>
+    </element>
+    <element identifier="id-D_PLT" xsi:type="DataObject">
+      <name xml:lang="es">SRC-03 Planilla de temperatura · túnel + hora</name>
+    </element>
+    <element identifier="id-D_TRM" xsi:type="DataObject">
+      <name xml:lang="es">SRC-05 Termoregistro · ID de equipo + hora</name>
+    </element>
+    <element identifier="id-D_CONC" xsi:type="DataObject">
+      <name xml:lang="es">SRC-03 Conciliación pallet–envío (Excel)</name>
+    </element>
+    <element identifier="id-D_DOC" xsi:type="DataObject">
+      <name xml:lang="es">SRC-07 Documento de despacho · N° de contenedor</name>
+    </element>
+    <element identifier="id-DO1" xsi:type="DataObject">
+      <name xml:lang="es">DO-01 Lote · lot_id · COSECHA / PROCESO / PALLET</name>
+    </element>
+    <element identifier="id-DO2" xsi:type="DataObject">
+      <name xml:lang="es">DO-02 EventoLote · event_id</name>
+    </element>
+    <element identifier="id-DO3" xsi:type="DataObject">
+      <name xml:lang="es">DO-03 GenealogíaLote · padre + hijo + event_id</name>
+    </element>
+    <element identifier="id-DO4" xsi:type="DataObject">
+      <name xml:lang="es">DO-04 ResultadoCalidad · qa_id + versión</name>
+    </element>
+    <element identifier="id-DO5" xsi:type="DataObject">
+      <name xml:lang="es">DO-05 LecturaTemperatura · equipo_id + hora</name>
+    </element>
+    <element identifier="id-DO6" xsi:type="DataObject">
+      <name xml:lang="es">DO-06 Contenedor · cont_id</name>
+    </element>
+    <element identifier="id-DO7" xsi:type="DataObject">
+      <name xml:lang="es">DO-07 ReferenciaLocal · fuente + código local</name>
+    </element>
+    <element identifier="id-DO8" xsi:type="DataObject">
+      <name xml:lang="es">DO-08 ExcepciónOperativa · exc_id</name>
+    </element>
+    <element identifier="beta-c-e-AC-01" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-01 Identidad y genealogía de lote</name>
+    </element>
+    <element identifier="beta-c-e-AC-02" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-02 Ingesta de eventos de lote</name>
+    </element>
+    <element identifier="beta-c-e-AC-03" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-03 Historial y evidencia de lote</name>
+    </element>
+    <element identifier="beta-c-e-AC-04" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-04 Adaptadores de integración</name>
+    </element>
+    <element identifier="beta-c-e-AC-05" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-05 Catálogo y reglas de calidad del dato</name>
+    </element>
+    <element identifier="beta-c-e-AF-01" xsi:type="ApplicationFunction">
+      <name xml:lang="es">Normalizar, validar y correlacionar eventos</name>
+    </element>
+    <element identifier="beta-c-e-APP-01" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-01 Registro de cosecha y rótulo de jaba</name>
+    </element>
+    <element identifier="beta-c-e-APP-02" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-02 Excel de recepción y pesaje</name>
+    </element>
+    <element identifier="beta-c-e-APP-03" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-03 Línea de selección (sorters)</name>
+    </element>
+    <element identifier="beta-c-e-APP-04" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-04 Empaque, etiquetado y paletizado</name>
+    </element>
+    <element identifier="beta-c-e-APP-05" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-05 Registro de Calidad y laboratorio</name>
+    </element>
+    <element identifier="beta-c-e-APP-06" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-06 Termometría CABSA</name>
+    </element>
+    <element identifier="beta-c-e-APP-07" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-07 Termoregistros de ruta</name>
+    </element>
+    <element identifier="beta-c-e-APP-08" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-08 VUCE / SENASA (externo)</name>
+    </element>
+    <element identifier="beta-c-e-APP-09" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-09 ERP / WMS [NV]</name>
+    </element>
+    <element identifier="beta-c-e-APP-10" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-10 Conciliación manual pallet–envío</name>
+    </element>
+    <element identifier="beta-c-e-AS-01" xsi:type="ApplicationService">
+      <name xml:lang="es">AS-01 Identidad y genealogía</name>
+    </element>
+    <element identifier="beta-c-e-AS-02" xsi:type="ApplicationService">
+      <name xml:lang="es">AS-02 Registro de evento de lote</name>
+    </element>
+    <element identifier="beta-c-e-AS-03" xsi:type="ApplicationService">
+      <name xml:lang="es">AS-03 Consulta autorizada del historial</name>
+    </element>
+    <element identifier="beta-c-e-AS-04" xsi:type="ApplicationService">
+      <name xml:lang="es">AS-04 Consulta de estado de Calidad</name>
+    </element>
+    <element identifier="beta-c-e-AS-05" xsi:type="ApplicationService">
+      <name xml:lang="es">AS-05 Validación de reglas del dato</name>
+    </element>
+    <element identifier="beta-c-e-DO-HIST" xsi:type="DataObject">
+      <name xml:lang="es">Historial de lote (producto de datos)</name>
+    </element>
+    <element identifier="beta-c-e-IF-01" xsi:type="ApplicationInterface">
+      <name xml:lang="es">IF-01 EventoFraccionamiento v1</name>
+    </element>
+    <element identifier="beta-c-e-IF-02" xsi:type="ApplicationInterface">
+      <name xml:lang="es">IF-02 ResultadoCalidad v1</name>
+    </element>
+    <element identifier="beta-c-e-IF-03" xsi:type="ApplicationInterface">
+      <name xml:lang="es">IF-03 LecturaTemperatura v1</name>
+    </element>
+    <element identifier="beta-c-e-IF-04" xsi:type="ApplicationInterface">
+      <name xml:lang="es">IF-04 EventoEtapa v1</name>
+    </element>
+    <element identifier="beta-c-e-R-EXT" xsi:type="BusinessRole">
+      <name xml:lang="es">STK-08 Importadores · STK-09 SENASA</name>
+    </element>
+    <element identifier="beta-c-e-R-STK04" xsi:type="BusinessRole">
+      <name xml:lang="es">STK-04 Calidad e Inocuidad (Data Steward)</name>
+    </element>
+    <element identifier="beta-c-e-R-STK05" xsi:type="BusinessRole">
+      <name xml:lang="es">STK-05 Logística y Despacho</name>
+    </element>
+    <element identifier="beta-c-e-R-STK06" xsi:type="BusinessRole">
+      <name xml:lang="es">STK-06 Oficinas Comerciales</name>
+    </element>
+    <element identifier="beta-x-e-BP-E17" xsi:type="BusinessProcess">
+      <name xml:lang="es">E1 a E7 Registro de eventos de condición</name>
+    </element>
+    <element identifier="beta-x-e-BP-E35" xsi:type="BusinessProcess">
+      <name xml:lang="es">E3 y E5 Selección, empaque y paletizado</name>
+    </element>
+    <element identifier="beta-x-e-BP-E4" xsi:type="BusinessProcess">
+      <name xml:lang="es">E4 Control de calidad y liberación</name>
+    </element>
+    <element identifier="beta-x-e-BP-REC" xsi:type="BusinessProcess">
+      <name xml:lang="es">Atención de reclamo y auditoría</name>
+    </element>
+    <element identifier="beta-x-e-CAP-01" xsi:type="Capability">
+      <name xml:lang="es">CAP-01 Trazabilidad de lote</name>
+    </element>
+    <element identifier="beta-x-e-CAP-03" xsi:type="Capability">
+      <name xml:lang="es">CAP-03 Captura digital en origen</name>
+    </element>
+    <element identifier="beta-x-e-CAP-04" xsi:type="Capability">
+      <name xml:lang="es">CAP-04 Calidad e inocuidad con evidencia</name>
+    </element>
+    <element identifier="beta-x-e-CAP-06" xsi:type="Capability">
+      <name xml:lang="es">CAP-06 Visibilidad de exportación</name>
+    </element>
+    <element identifier="loc-t01" xsi:type="Location">
+      <name xml:lang="es">LOC-T01 · 42 Fundos</name>
+    </element>
+    <element identifier="loc-t02" xsi:type="Location">
+      <name xml:lang="es">LOC-T02 · Planta Olmos</name>
+    </element>
+    <element identifier="loc-t03" xsi:type="Location">
+      <name xml:lang="es">LOC-T03 · Planta Jayanca</name>
+    </element>
+    <element identifier="loc-t04" xsi:type="Location">
+      <name xml:lang="es">LOC-T04 · Planta Ica</name>
+    </element>
+    <element identifier="loc-t05" xsi:type="Location">
+      <name xml:lang="es">LOC-T05 · Cámaras</name>
+    </element>
+    <element identifier="loc-t06" xsi:type="Location">
+      <name xml:lang="es">LOC-T06 · Túneles</name>
+    </element>
+    <element identifier="loc-t07" xsi:type="Location">
+      <name xml:lang="es">LOC-T07 · Chancay/Aero</name>
+    </element>
+    <element identifier="loc-t08" xsi:type="Location">
+      <name xml:lang="es">LOC-T08 · Oficinas Lima</name>
+    </element>
+    <element identifier="loc-t09" xsi:type="Location">
+      <name xml:lang="es">LOC-T09 · Nube SaaS</name>
+    </element>
+    <element identifier="plc-asis" xsi:type="Node">
+      <name xml:lang="es">PLC refrigeración (AS-IS)</name>
+    </element>
+    <element identifier="termo-asis" xsi:type="Node">
+      <name xml:lang="es">Termógrafos CABSA (AS-IS)</name>
+    </element>
+    <element identifier="excel-asis" xsi:type="ApplicationComponent">
+      <name xml:lang="es">Excel conciliación (APP-05 cand.)</name>
+    </element>
+    <element identifier="erp-asis" xsi:type="ApplicationComponent">
+      <name xml:lang="es">ERP (AS-IS, consulta)</name>
+    </element>
+    <element identifier="qa-asis" xsi:type="ApplicationComponent">
+      <name xml:lang="es">QA App (AS-IS)</name>
+    </element>
+    <element identifier="l1-plc" xsi:type="Node">
+      <name xml:lang="es">L1 · PLC industrial (T-COMP-02)</name>
+    </element>
+    <element identifier="l1-pt100" xsi:type="Node">
+      <name xml:lang="es">L1 · Sensores Pt100</name>
+    </element>
+    <element identifier="l2-hmi" xsi:type="Node">
+      <name xml:lang="es">L2 · HMI/SCADA (T-COMP-03)</name>
+    </element>
+    <element identifier="l3-edge" xsi:type="Node">
+      <name xml:lang="es">L3 · Edge Gateway (T-COMP-01)</name>
+    </element>
+    <element identifier="l35-broker" xsi:type="Node">
+      <name xml:lang="es">L3.5 · Broker MQTT (T-COMP-07)</name>
+    </element>
+    <element identifier="l4-event" xsi:type="Node">
+      <name xml:lang="es">L4 · Event store (T-COMP-04)</name>
+    </element>
+    <element identifier="l4-data" xsi:type="Node">
+      <name xml:lang="es">L4 · Data Platform (T-COMP-05)</name>
+    </element>
+    <element identifier="l4-api" xsi:type="Node">
+      <name xml:lang="es">L4 · API Gateway (T-COMP-06)</name>
+    </element>
+    <element identifier="l4-iam" xsi:type="Node">
+      <name xml:lang="es">L4 · IAM OIDC (T-COMP-08)</name>
+    </element>
+    <element identifier="l4-repo" xsi:type="Node">
+      <name xml:lang="es">L4 · Repositorio apps (T-COMP-09)</name>
+    </element>
+    <element identifier="tabb-01" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-01 Captura industrial</name>
+    </element>
+    <element identifier="tabb-02" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-02 Gateway resiliente</name>
+    </element>
+    <element identifier="tabb-03" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-03 Mensajería IT/OT</name>
+    </element>
+    <element identifier="tabb-04" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-04 Plataforma de eventos</name>
+    </element>
+    <element identifier="tabb-05" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-05 API Gateway + IAM</name>
+    </element>
+    <element identifier="tabb-06" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">T-ABB-06 Repositorio de apps</name>
+    </element>
+    <element identifier="abbc-01" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">ABB-C01 Datos canónicos</name>
+    </element>
+    <element identifier="abbc-02" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">ABB-C02 Integración industrial</name>
+    </element>
+    <element identifier="abbc-03" xsi:type="TechnologyCollaboration">
+      <name xml:lang="es">ABB-C03 Acceso controlado</name>
+    </element>
+    <element identifier="p1" xsi:type="TechnologyProcess">
+      <name xml:lang="es">1. Lectura física Pt100 (L1)</name>
+    </element>
+    <element identifier="p2" xsi:type="TechnologyProcess">
+      <name xml:lang="es">2. Normalización SCADA (L2)</name>
+    </element>
+    <element identifier="p3" xsi:type="TechnologyProcess">
+      <name xml:lang="es">3. Edge publica event_id (L3)</name>
+    </element>
+    <element identifier="p4" xsi:type="TechnologyProcess">
+      <name xml:lang="es">4. AC-03 correlación por intervalo</name>
+    </element>
+    <element identifier="p5" xsi:type="TechnologyProcess">
+      <name xml:lang="es">5. Buffer 24h si no hay WAN (AR-A03)</name>
+    </element>
+    <element identifier="p6" xsi:type="TechnologyProcess">
+      <name xml:lang="es">6. Broker DMZ TLS mutuo (L3.5)</name>
+    </element>
+    <element identifier="p7" xsi:type="TechnologyProcess">
+      <name xml:lang="es">7. Event store idempotente (L4)</name>
+    </element>
+    <element identifier="p8" xsi:type="TechnologyProcess">
+      <name xml:lang="es">8. Data Platform enriquece</name>
+    </element>
+    <element identifier="p9" xsi:type="TechnologyProcess">
+      <name xml:lang="es">9. API Gateway AS-03 autorizada</name>
+    </element>
+    <element identifier="p10" xsi:type="TechnologyProcess">
+      <name xml:lang="es">10. APP-05 ResultadoCalidad (STK-04)</name>
+    </element>
+    <element identifier="nt-01" xsi:type="Node">
+      <name xml:lang="es">N-T01 Edge Gateway industrial</name>
+    </element>
+    <element identifier="nt-02" xsi:type="Node">
+      <name xml:lang="es">N-T02 Edge de reserva</name>
+    </element>
+    <element identifier="nt-03" xsi:type="Node">
+      <name xml:lang="es">N-T03 Terminal móvil offline-first</name>
+    </element>
+    <element identifier="nt-04" xsi:type="Node">
+      <name xml:lang="es">N-T04 Router WAN + respaldo móvil</name>
+    </element>
+    <element identifier="nt-05" xsi:type="Node">
+      <name xml:lang="es">N-T05 Firewall OT/DMZ</name>
+    </element>
+    <element identifier="nt-06" xsi:type="Node">
+      <name xml:lang="es">N-T06 Nodo DMZ (broker/proxy)</name>
+    </element>
+    <element identifier="nt-07" xsi:type="Node">
+      <name xml:lang="es">N-T07 HMI/SCADA + CABSA</name>
+    </element>
+    <element identifier="nt-08" xsi:type="Node">
+      <name xml:lang="es">N-T08 PLC refrig y túnel</name>
+    </element>
+    <element identifier="nt-09" xsi:type="Node">
+      <name xml:lang="es">N-T09 Switch OT (cada planta)</name>
+    </element>
+    <element identifier="nt-10" xsi:type="Node">
+      <name xml:lang="es">N-T10 Servidor Cloud (broker, event)</name>
+    </element>
+    <element identifier="nt-11" xsi:type="Node">
+      <name xml:lang="es">N-T11 Servidor Cloud (API, IAM)</name>
+    </element>
+    <element identifier="nt-12" xsi:type="Node">
+      <name xml:lang="es">N-T12 UPS (edge, red, firewall)</name>
+    </element>
+    <element identifier="nt-13" xsi:type="Node">
+      <name xml:lang="es">N-T13 Lectores RFID/código</name>
+    </element>
+    <element identifier="svc-01" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-01 Captura de evento industrial</name>
+    </element>
+    <element identifier="svc-02" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-02 Persistencia serie temporal</name>
+    </element>
+    <element identifier="svc-03" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-03 Historial de lote</name>
+    </element>
+    <element identifier="svc-04" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-04 Identidad y autorización</name>
+    </element>
+    <element identifier="svc-05" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-05 Mensajería IF-01..IF-04</name>
+    </element>
+    <element identifier="svc-06" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-06 Alojamiento app de calidad</name>
+    </element>
+    <element identifier="zt-01" xsi:type="Grouping">
+      <name xml:lang="es">ZT-01 OT Control (L1)</name>
+    </element>
+    <element identifier="zt-02" xsi:type="Grouping">
+      <name xml:lang="es">ZT-02 OT Supervisión (L2)</name>
+    </element>
+    <element identifier="zt-03" xsi:type="Grouping">
+      <name xml:lang="es">ZT-03 OT Industrial/Edge (L3)</name>
+    </element>
+    <element identifier="zt-04" xsi:type="Grouping">
+      <name xml:lang="es">ZT-04 DMZ Industrial (L3.5)</name>
+    </element>
+    <element identifier="zt-05" xsi:type="Grouping">
+      <name xml:lang="es">ZT-05 IT Empresa (L4)</name>
+    </element>
+    <element identifier="zt-06" xsi:type="Grouping">
+      <name xml:lang="es">ZT-06 Cloud (L4+)</name>
+    </element>
+    <element identifier="zt-07" xsi:type="Grouping">
+      <name xml:lang="es">ZT-07 Campo (L0-L1)</name>
+    </element>
+    <element identifier="net-ot" xsi:type="CommunicationNetwork">
+      <name xml:lang="es">Red OT (OPC UA)</name>
+    </element>
+    <element identifier="net-dmz" xsi:type="CommunicationNetwork">
+      <name xml:lang="es">Red DMZ (MQTT TLS mutuo)</name>
+    </element>
+    <element identifier="net-cloud" xsi:type="CommunicationNetwork">
+      <name xml:lang="es">WAN / Cloud (HTTPS)</name>
+    </element>
+    <element identifier="cd-01" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-01 Estado PLC → HMI/SCADA</name>
+    </element>
+    <element identifier="cd-02" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-02 Lecturas refrig/túnel</name>
+    </element>
+    <element identifier="cd-03" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-03 Termógrafos CABSA (CRD-05)</name>
+    </element>
+    <element identifier="cd-04" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-04 Datos selectora/pesadoras</name>
+    </element>
+    <element identifier="cd-05" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-05 Eventos fundo (IF-04)</name>
+    </element>
+    <element identifier="cd-06" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-06 Eventos fundo vía celular</name>
+    </element>
+    <element identifier="cd-07" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-07 Edge → broker local</name>
+    </element>
+    <element identifier="cd-08" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-08 DMZ → ingesta cloud</name>
+    </element>
+    <element identifier="cd-09" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-09 DMZ → data platform</name>
+    </element>
+    <element identifier="cd-10" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-10 IT Empresa → API Gateway</name>
+    </element>
+    <element identifier="px-01" xsi:type="Constraint">
+      <name xml:lang="es">PX-01 Cloud (ZT-06) → PLC (ZT-01) directa</name>
+    </element>
+    <element identifier="px-02" xsi:type="Constraint">
+      <name xml:lang="es">PX-02 IT Empresa (ZT-05) → OT Control (ZT-01) directa</name>
+    </element>
+    <element identifier="px-03" xsi:type="Constraint">
+      <name xml:lang="es">PX-03 Edge (ZT-03) escribe en PLC/SCADA</name>
+    </element>
+    <element identifier="px-04" xsi:type="Constraint">
+      <name xml:lang="es">PX-04 Cualquier consumidor cambia estado de Calidad</name>
+    </element>
+    <element identifier="ft-01" xsi:type="TechnologyEvent">
+      <name xml:lang="es">FT-01 Cae WAN de una planta (6h · 24h · 72h)</name>
+    </element>
+    <element identifier="ft-02" xsi:type="TechnologyEvent">
+      <name xml:lang="es">FT-02 Broker entrega 200 eventos duplicados</name>
+    </element>
+    <element identifier="ft-03" xsi:type="TechnologyEvent">
+      <name xml:lang="es">FT-03 Compromiso DMZ sospechado</name>
+    </element>
+    <element identifier="ft-04" xsi:type="TechnologyEvent">
+      <name xml:lang="es">FT-04 API historial no disponible</name>
+    </element>
+    <element identifier="ft-05" xsi:type="TechnologyEvent">
+      <name xml:lang="es">FT-05 Reloj de nodo desfasado o sin NTP</name>
+    </element>
+    <element identifier="obs-01" xsi:type="Assessment">
+      <name xml:lang="es">OBS-01 Edad evento más antiguo</name>
+    </element>
+    <element identifier="obs-02" xsi:type="Assessment">
+      <name xml:lang="es">OBS-02 Ocupación del buffer</name>
+    </element>
+    <element identifier="obs-03" xsi:type="Assessment">
+      <name xml:lang="es">OBS-03 Desfase de reloj</name>
+    </element>
+    <element identifier="obs-04" xsi:type="Assessment">
+      <name xml:lang="es">OBS-04 Duplicados rechazados</name>
+    </element>
+    <element identifier="obs-05" xsi:type="Assessment">
+      <name xml:lang="es">OBS-05 Eventos en excepción</name>
+    </element>
+    <element identifier="obs-06" xsi:type="Assessment">
+      <name xml:lang="es">OBS-06 Vencimiento certificados</name>
+    </element>
+    <element identifier="obs-07" xsi:type="Assessment">
+      <name xml:lang="es">OBS-07 Disponibilidad ingesta/consulta</name>
+    </element>
+    <element identifier="obs-08" xsi:type="Assessment">
+      <name xml:lang="es">OBS-08 Buffer edge-remote</name>
+    </element>
+    <element identifier="rto-1" xsi:type="Requirement">
+      <name xml:lang="es">Control local (PLC/SCADA) RTO=N/A</name>
+    </element>
+    <element identifier="rto-2" xsi:type="Requirement">
+      <name xml:lang="es">Edge Gateway (ZT-03) RTO=≤ 1 h con equipo reserva</name>
+    </element>
+    <element identifier="rto-3" xsi:type="Requirement">
+      <name xml:lang="es">Ingesta cloud (broker, event store) RTO=≤ 4 h</name>
+    </element>
+    <element identifier="rto-4" xsi:type="Requirement">
+      <name xml:lang="es">API de consulta historial RTO=≤ 8 h en campaña</name>
+    </element>
+    <element identifier="trc-01" xsi:type="WorkPackage">
+      <name xml:lang="es">T-RC01 Inventario OT, zonas y reglas base (Ola 0)</name>
+    </element>
+    <element identifier="trc-02" xsi:type="WorkPackage">
+      <name xml:lang="es">T-RC02 Edge offline e integración OT piloto (Ola 1)</name>
+    </element>
+    <element identifier="trc-03" xsi:type="WorkPackage">
+      <name xml:lang="es">T-RC03 Observabilidad, acceso y recuperación (Ola 1-2)</name>
+    </element>
+    <element identifier="plat-c" xsi:type="Plateau">
+      <name xml:lang="es">Fase C completada (D-RC01, D-RC02, A-RC01, A-RC02)</name>
+    </element>
+    <element identifier="plat-d" xsi:type="Plateau">
+      <name xml:lang="es">Fase D cerrada (gate D → E)</name>
+    </element>
+    <element identifier="plat-e" xsi:type="Plateau">
+      <name xml:lang="es">Fase E · Selección de SBB y work packages</name>
+    </element>
+    <element identifier="id-DO9" xsi:type="DataObject">
+      <name xml:lang="es">DO-09 Reclamo</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-r001" source="id-STK-02" target="id-E1" xsi:type="Assignment" />
+    <relationship identifier="id-r002" source="id-STK-03" target="id-E2" xsi:type="Assignment" />
+    <relationship identifier="id-r003" source="id-STK-03" target="id-E3" xsi:type="Assignment" />
+    <relationship identifier="id-r004" source="id-STK-03" target="id-E5" xsi:type="Assignment" />
+    <relationship identifier="id-r005" source="id-STK-03" target="id-E6" xsi:type="Assignment" />
+    <relationship identifier="id-r006" source="id-STK-04" target="id-E4" xsi:type="Assignment" />
+    <relationship identifier="id-r007" source="id-STK-05" target="id-E6" xsi:type="Assignment" />
+    <relationship identifier="id-r008" source="id-STK-05" target="id-E7" xsi:type="Assignment" />
+    <relationship identifier="id-r009" source="id-STK-06" target="id-E7" xsi:type="Assignment" />
+    <relationship identifier="id-r010" source="id-E1" target="id-E2" xsi:type="Flow">
+      <name xml:lang="es">H1</name>
+    </relationship>
+    <relationship identifier="id-r011" source="id-E2" target="id-E3" xsi:type="Flow">
+      <name xml:lang="es">H2</name>
+    </relationship>
+    <relationship identifier="id-r012" source="id-E3" target="id-E4" xsi:type="Flow">
+      <name xml:lang="es">H3</name>
+    </relationship>
+    <relationship identifier="id-r013" source="id-E4" target="id-E5" xsi:type="Flow">
+      <name xml:lang="es">H4</name>
+    </relationship>
+    <relationship identifier="id-r014" source="id-E5" target="id-E6" xsi:type="Flow">
+      <name xml:lang="es">H5</name>
+    </relationship>
+    <relationship identifier="id-r015" source="id-E6" target="id-E7" xsi:type="Flow">
+      <name xml:lang="es">H6</name>
+    </relationship>
+    <relationship identifier="id-r016" source="id-E7" target="id-STK-08" xsi:type="Flow">
+      <name xml:lang="es">H7</name>
+    </relationship>
+    <relationship identifier="id-r017" source="id-E1" target="id-O_JABA" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r018" source="id-E1" target="id-O_PESO" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r019" source="id-E2" target="id-O_LT" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r020" source="id-E2" target="id-O_PESO" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r021" source="id-E2" target="id-O_TEMP" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r022" source="id-E4" target="id-O_LIB" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r023" source="id-E5" target="id-O_ETQ" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r024" source="id-E5" target="id-O_PAL" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r025" source="id-E6" target="id-O_TEMP" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r026" source="id-E7" target="id-O_TEMP" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r027" source="id-E7" target="id-O_ENV" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r028" source="id-STK-04" target="id-DS" xsi:type="Assignment" />
+    <relationship identifier="id-r029" source="id-DS" target="id-RCL" xsi:type="Assignment" />
+    <relationship identifier="id-r030" source="id-STK-07" target="id-BSV02" xsi:type="Association" />
+    <relationship identifier="id-r031" source="id-BSV01" target="id-STK-03" xsi:type="Serving" />
+    <relationship identifier="id-r032" source="id-BSV01" target="id-STK-04" xsi:type="Serving" />
+    <relationship identifier="id-r033" source="id-BSV01" target="id-STK-05" xsi:type="Serving" />
+    <relationship identifier="id-r034" source="id-BSV02" target="id-STK-04" xsi:type="Serving" />
+    <relationship identifier="id-r035" source="id-BSV02" target="id-STK-05" xsi:type="Serving" />
+    <relationship identifier="id-r036" source="id-BSV03" target="id-STK-06" xsi:type="Serving" />
+    <relationship identifier="id-r037" source="id-BSV03" target="id-STK-01" xsi:type="Serving" />
+    <relationship identifier="id-r038" source="id-BSV03" target="id-STK-08" xsi:type="Serving" />
+    <relationship identifier="id-r039" source="id-BSV03" target="id-STK-09" xsi:type="Serving" />
+    <relationship identifier="id-r040" source="id-E1" target="id-BSV01" xsi:type="Realization" />
+    <relationship identifier="id-r041" source="id-E5" target="id-BSV01" xsi:type="Realization" />
+    <relationship identifier="id-r042" source="id-E2" target="id-BSV02" xsi:type="Realization" />
+    <relationship identifier="id-r043" source="id-E3" target="id-BSV02" xsi:type="Realization" />
+    <relationship identifier="id-r044" source="id-E4" target="id-BSV02" xsi:type="Realization" />
+    <relationship identifier="id-r045" source="id-E5" target="id-BSV02" xsi:type="Realization" />
+    <relationship identifier="id-r046" source="id-E6" target="id-BSV02" xsi:type="Realization" />
+    <relationship identifier="id-r047" source="id-E7" target="id-BSV02" xsi:type="Realization" />
+    <relationship identifier="id-r048" source="id-RCL" target="id-BSV03" xsi:type="Realization" />
+    <relationship identifier="id-r049" source="id-E1" target="id-EV1" xsi:type="Triggering" />
+    <relationship identifier="id-r050" source="id-E4" target="id-EV2" xsi:type="Triggering" />
+    <relationship identifier="id-r051" source="id-E5" target="id-EV3" xsi:type="Triggering" />
+    <relationship identifier="id-r052" source="id-E5" target="id-EV4" xsi:type="Triggering" />
+    <relationship identifier="id-r053" source="id-E7" target="id-EV5" xsi:type="Triggering" />
+    <relationship identifier="id-r054" source="id-E7" target="id-EV6" xsi:type="Triggering" />
+    <relationship identifier="id-r055" source="id-E2" target="id-EV7" xsi:type="Triggering" />
+    <relationship identifier="id-r056" source="id-BSV01" target="id-O_LOTE" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r057" source="id-BSV02" target="id-O_EVT" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r058" source="id-BSV03" target="id-O_HIS" xsi:type="Access" accessType="Read" />
+    <relationship identifier="id-r059" source="id-O_HIS" target="id-O_EVT" xsi:type="Aggregation" />
+    <relationship identifier="id-r060" source="id-O_EVT" target="id-O_LOTE" xsi:type="Association" />
+    <relationship identifier="id-r061" source="id-O_LOTE" target="id-O_JABA" xsi:type="Aggregation" />
+    <relationship identifier="id-r062" source="id-O_PAL" target="id-O_LOTE" xsi:type="Association" />
+    <relationship identifier="id-r063" source="id-O_ENV" target="id-O_PAL" xsi:type="Aggregation" />
+    <relationship identifier="id-r064" source="id-O_RCL" target="id-O_ENV" xsi:type="Association" />
+    <relationship identifier="id-r065" source="id-EV2" target="id-O_LIB" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r066" source="id-EV5" target="id-O_CUS" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r067" source="id-EV6" target="id-O_ENV" xsi:type="Access" accessType="Write" />
+    <relationship identifier="id-r068" source="id-RCL" target="id-O_RCL" xsi:type="Access" accessType="Read" />
+    <relationship identifier="c1-id-r001" source="id-E1" target="id-B_ROT" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r002" source="id-E2" target="id-D_ING" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r003" source="id-E2" target="id-D_PLT" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r004" source="id-E3" target="id-D_CORR" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r005" source="id-E4" target="id-D_MUE" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r006" source="id-E5" target="id-D_PAL" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r007" source="id-E6" target="id-D_PLT" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r008" source="id-E6" target="id-D_TRM" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r009" source="id-E7" target="id-D_CONC" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r010" source="id-E7" target="id-D_DOC" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r011" source="id-AC_XLS" target="id-D_ING" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r012" source="id-AC_XLS" target="id-D_PLT" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r013" source="id-AC_XLS" target="id-D_CONC" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r014" source="id-AC_SORT" target="id-D_CORR" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r015" source="id-AC_LAB" target="id-D_MUE" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r016" source="id-AC_CABSA" target="id-D_TRM" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r017" source="id-AC_ERP" target="id-D_DOC" xsi:type="Access" accessType="Write" />
+    <relationship identifier="c1-id-r018" source="id-B_ROT" target="id-D_ING" xsi:type="Association">
+      <name xml:lang="es">K-01</name>
+    </relationship>
+    <relationship identifier="c1-id-r019" source="id-D_ING" target="id-D_CORR" xsi:type="Association">
+      <name xml:lang="es">K-02</name>
+    </relationship>
+    <relationship identifier="c1-id-r020" source="id-D_CORR" target="id-D_MUE" xsi:type="Association">
+      <name xml:lang="es">K-03</name>
+    </relationship>
+    <relationship identifier="c1-id-r021" source="id-D_CORR" target="id-D_PAL" xsi:type="Association">
+      <name xml:lang="es">K-04</name>
+    </relationship>
+    <relationship identifier="c1-id-r022" source="id-D_CONC" target="id-D_DOC" xsi:type="Association">
+      <name xml:lang="es">K-05</name>
+    </relationship>
+    <relationship identifier="c1-id-r023" source="id-D_TRM" target="id-D_PAL" xsi:type="Association">
+      <name xml:lang="es">K-06</name>
+    </relationship>
+    <relationship identifier="c1-id-r024" source="id-DO1" target="id-O_LOTE" xsi:type="Realization" />
+    <relationship identifier="c1-id-r025" source="id-DO1" target="id-O_PAL" xsi:type="Realization" />
+    <relationship identifier="c1-id-r026" source="id-DO7" target="id-O_JABA" xsi:type="Realization" />
+    <relationship identifier="c1-id-r027" source="id-DO2" target="id-O_EVT" xsi:type="Realization" />
+    <relationship identifier="c1-id-r028" source="id-DO4" target="id-O_LIB" xsi:type="Realization" />
+    <relationship identifier="c1-id-r029" source="id-DO5" target="id-O_TEMP" xsi:type="Realization" />
+    <relationship identifier="c1-id-r030" source="id-DO6" target="id-O_ENV" xsi:type="Realization" />
+    <relationship identifier="c1-id-r031" source="id-DO2" target="id-DO1" xsi:type="Association">
+      <name xml:lang="es">CRD-01 · N:1</name>
+    </relationship>
+    <relationship identifier="c1-id-r032" source="id-DO3" target="id-DO1" xsi:type="Association">
+      <name xml:lang="es">CRD-02 · padre / hijo (N:M)</name>
+    </relationship>
+    <relationship identifier="c1-id-r033" source="id-DO4" target="id-DO1" xsi:type="Association">
+      <name xml:lang="es">CRD-03 · 0..N:1</name>
+    </relationship>
+    <relationship identifier="c1-id-r034" source="id-DO5" target="id-DO2" xsi:type="Association">
+      <name xml:lang="es">CRD-05 · por intervalo</name>
+    </relationship>
+    <relationship identifier="c1-id-r035" source="id-DO7" target="id-DO1" xsi:type="Association">
+      <name xml:lang="es">CRD-06 · N:1</name>
+    </relationship>
+    <relationship identifier="c1-id-r036" source="id-DO8" target="id-DO1" xsi:type="Association">
+      <name xml:lang="es">CRD-07 · N:M</name>
+    </relationship>
+    <relationship identifier="c1-id-r037" source="id-DO6" target="id-DO1" xsi:type="Aggregation">
+      <name xml:lang="es">CRD-04 · PALLET N:0..1</name>
+    </relationship>
+    <relationship identifier="c1-id-r038" source="id-STK-04" target="id-DO4" xsi:type="Access" accessType="Write">
+      <name xml:lang="es">escribe (única autoridad)</name>
+    </relationship>
+    <relationship identifier="c1-id-r039" source="id-STK-05" target="id-DO4" xsi:type="Access" accessType="Read">
+      <name xml:lang="es">consulta estado</name>
+    </relationship>
+    <relationship identifier="c1-id-r040" source="id-DS" target="id-DO7" xsi:type="Access" accessType="ReadWrite">
+      <name xml:lang="es">valida equivalencia</name>
+    </relationship>
+    <relationship identifier="beta-c-r01" source="beta-c-e-APP-01" target="beta-c-e-AF-01" xsi:type="Flow">
+      <name xml:lang="es">IF-04</name>
+    </relationship>
+    <relationship identifier="beta-c-r02" source="beta-c-e-APP-02" target="beta-c-e-AF-01" xsi:type="Flow">
+      <name xml:lang="es">IF-04</name>
+    </relationship>
+    <relationship identifier="beta-c-r03" source="beta-c-e-APP-04" target="beta-c-e-AF-01" xsi:type="Flow">
+      <name xml:lang="es">IF-01</name>
+    </relationship>
+    <relationship identifier="beta-c-r04" source="beta-c-e-APP-05" target="beta-c-e-AF-01" xsi:type="Flow">
+      <name xml:lang="es">IF-02</name>
+    </relationship>
+    <relationship identifier="beta-c-r05" source="beta-c-e-APP-06" target="beta-c-e-AC-04" xsi:type="Flow" />
+    <relationship identifier="beta-c-r06" source="beta-c-e-APP-07" target="beta-c-e-AC-04" xsi:type="Flow" />
+    <relationship identifier="beta-c-r07" source="beta-c-e-AC-04" target="beta-c-e-AF-01" xsi:type="Flow">
+      <name xml:lang="es">IF-03</name>
+    </relationship>
+    <relationship identifier="beta-c-r08" source="beta-c-e-AC-02" target="beta-c-e-AF-01" xsi:type="Assignment" />
+    <relationship identifier="beta-c-r09" source="beta-c-e-AF-01" target="beta-c-e-DO-HIST" xsi:type="Access">
+      <name xml:lang="es">escribe</name>
+    </relationship>
+    <relationship identifier="beta-c-r10" source="beta-c-e-AC-03" target="beta-c-e-DO-HIST" xsi:type="Access">
+      <name xml:lang="es">lee</name>
+    </relationship>
+    <relationship identifier="beta-c-r11" source="beta-c-e-AC-03" target="beta-c-e-AS-03" xsi:type="Realization" />
+    <relationship identifier="beta-c-r12" source="beta-c-e-AS-03" target="beta-c-e-R-STK04" xsi:type="Serving" />
+    <relationship identifier="beta-c-r13" source="beta-c-e-AS-03" target="beta-c-e-R-STK05" xsi:type="Serving" />
+    <relationship identifier="beta-c-r14" source="beta-c-e-AS-03" target="beta-c-e-R-STK06" xsi:type="Serving" />
+    <relationship identifier="beta-c-r15" source="beta-c-e-AS-03" target="beta-c-e-R-EXT" xsi:type="Serving">
+      <name xml:lang="es">REQ-03</name>
+    </relationship>
+    <relationship identifier="beta-c-r16" source="beta-c-e-APP-01" target="beta-c-e-APP-02" xsi:type="Flow">
+      <name xml:lang="es">rótulo</name>
+    </relationship>
+    <relationship identifier="beta-c-r17" source="beta-c-e-APP-05" target="beta-c-e-APP-04" xsi:type="Flow">
+      <name xml:lang="es">liberación</name>
+    </relationship>
+    <relationship identifier="beta-c-r18" source="beta-c-e-APP-02" target="beta-c-e-APP-10" xsi:type="Flow">
+      <name xml:lang="es">peso (Excel)</name>
+    </relationship>
+    <relationship identifier="beta-c-r19" source="beta-c-e-APP-04" target="beta-c-e-APP-10" xsi:type="Flow">
+      <name xml:lang="es">lista de empaque</name>
+    </relationship>
+    <relationship identifier="beta-c-r20" source="beta-c-e-APP-07" target="beta-c-e-APP-10" xsi:type="Flow">
+      <name xml:lang="es">lecturas</name>
+    </relationship>
+    <relationship identifier="beta-c-r21" source="beta-c-e-APP-10" target="beta-c-e-APP-08" xsi:type="Flow">
+      <name xml:lang="es">documentos SENASA</name>
+    </relationship>
+    <relationship identifier="beta-c-r22" source="beta-c-e-APP-09" target="beta-c-e-APP-10" xsi:type="Association">
+      <name xml:lang="es">[NV]</name>
+    </relationship>
+    <relationship identifier="beta-c-r23" source="beta-c-e-AS-01" target="id-BSV01" xsi:type="Serving" />
+    <relationship identifier="beta-c-r24" source="beta-c-e-AS-02" target="id-BSV02" xsi:type="Serving" />
+    <relationship identifier="beta-c-r25" source="beta-c-e-AS-03" target="id-BSV03" xsi:type="Serving" />
+    <relationship identifier="beta-c-r26" source="beta-c-e-AC-05" target="beta-c-e-AS-05" xsi:type="Realization" />
+    <relationship identifier="beta-c-r27" source="beta-c-e-AC-01" target="beta-c-e-AS-01" xsi:type="Realization" />
+    <relationship identifier="beta-c-r28" source="beta-c-e-AC-02" target="beta-c-e-AS-02" xsi:type="Realization" />
+    <relationship identifier="beta-c-r29" source="beta-c-e-APP-05" target="beta-c-e-AS-04" xsi:type="Realization" />
+    <relationship identifier="beta-c-r30" source="beta-c-e-AS-04" target="beta-c-e-AC-03" xsi:type="Serving">
+      <name xml:lang="es">no libera</name>
+    </relationship>
+    <relationship identifier="beta-c-r31" source="beta-c-e-AC-02" target="beta-c-e-AC-03" xsi:type="Flow">
+      <name xml:lang="es">validado</name>
+    </relationship>
+    <relationship identifier="beta-c-r32" source="beta-c-e-AC-01" target="beta-c-e-AC-02" xsi:type="Serving">
+      <name xml:lang="es">lot_id</name>
+    </relationship>
+    <relationship identifier="beta-c-r33" source="beta-c-e-AC-05" target="beta-c-e-AC-01" xsi:type="Serving">
+      <name xml:lang="es">reglas DQ</name>
+    </relationship>
+    <relationship identifier="beta-c-r34" source="beta-c-e-APP-01" target="beta-c-e-AC-02" xsi:type="Flow">
+      <name xml:lang="es">cosecha</name>
+    </relationship>
+    <relationship identifier="beta-c-r35" source="beta-c-e-APP-04" target="beta-c-e-AC-01" xsi:type="Flow">
+      <name xml:lang="es">SPLIT / MERGE</name>
+    </relationship>
+    <relationship identifier="beta-c-r36" source="beta-c-e-AC-04" target="beta-c-e-AC-02" xsi:type="Flow">
+      <name xml:lang="es">lecturas</name>
+    </relationship>
+    <relationship identifier="beta-c-r37" source="beta-c-e-APP-01" target="beta-c-e-IF-04" xsi:type="Flow" />
+    <relationship identifier="beta-c-r38" source="beta-c-e-APP-02" target="beta-c-e-IF-04" xsi:type="Flow" />
+    <relationship identifier="beta-c-r39" source="beta-c-e-AC-02" target="beta-c-e-IF-04" xsi:type="Composition" />
+    <relationship identifier="beta-c-r40" source="beta-c-e-APP-04" target="beta-c-e-IF-01" xsi:type="Flow" />
+    <relationship identifier="beta-c-r41" source="beta-c-e-AC-01" target="beta-c-e-IF-01" xsi:type="Composition" />
+    <relationship identifier="beta-c-r42" source="beta-c-e-APP-05" target="beta-c-e-IF-02" xsi:type="Flow" />
+    <relationship identifier="beta-c-r43" source="beta-c-e-AC-03" target="beta-c-e-IF-02" xsi:type="Composition" />
+    <relationship identifier="beta-c-r44" source="beta-c-e-AC-04" target="beta-c-e-IF-03" xsi:type="Flow" />
+    <relationship identifier="beta-c-r45" source="beta-c-e-AC-02" target="beta-c-e-IF-03" xsi:type="Composition" />
+    <relationship identifier="beta-c-r46" source="beta-c-e-AC-01" target="beta-c-e-AC-03" xsi:type="Serving">
+      <name xml:lang="es">genealogía</name>
+    </relationship>
+    <relationship identifier="beta-c-r47" source="beta-c-e-AS-03" target="beta-c-e-APP-09" xsi:type="Serving">
+      <name xml:lang="es">solo lectura</name>
+    </relationship>
+    <relationship identifier="beta-x-r01" source="id-BSV01" target="beta-x-e-CAP-01" xsi:type="Realization" />
+    <relationship identifier="beta-x-r02" source="id-BSV02" target="beta-x-e-CAP-03" xsi:type="Realization" />
+    <relationship identifier="beta-x-r03" source="id-BSV03" target="beta-x-e-CAP-06" xsi:type="Realization" />
+    <relationship identifier="beta-x-r04" source="beta-x-e-BP-E4" target="beta-x-e-CAP-04" xsi:type="Realization" />
+    <relationship identifier="beta-x-r05" source="beta-x-e-BP-E35" target="id-BSV01" xsi:type="Realization" />
+    <relationship identifier="beta-x-r06" source="beta-x-e-BP-E17" target="id-BSV02" xsi:type="Realization" />
+    <relationship identifier="beta-x-r07" source="beta-x-e-BP-REC" target="id-BSV03" xsi:type="Realization" />
+    <relationship identifier="beta-x-r08" source="beta-c-e-R-STK04" target="beta-x-e-BP-E4" xsi:type="Assignment">
+      <name xml:lang="es">decide liberar</name>
+    </relationship>
+    <relationship identifier="beta-x-r09" source="id-BSV03" target="beta-c-e-R-STK04" xsi:type="Serving" />
+    <relationship identifier="beta-x-r10" source="id-BSV03" target="beta-c-e-R-EXT" xsi:type="Serving">
+      <name xml:lang="es">REQ-03</name>
+    </relationship>
+    <relationship identifier="beta-x-r11" source="beta-c-e-AS-01" target="beta-x-e-BP-E35" xsi:type="Serving" />
+    <relationship identifier="beta-x-r12" source="beta-c-e-AS-02" target="beta-x-e-BP-E17" xsi:type="Serving" />
+    <relationship identifier="beta-x-r13" source="beta-c-e-AS-04" target="beta-x-e-BP-REC" xsi:type="Serving">
+      <name xml:lang="es">solo informa</name>
+    </relationship>
+    <relationship identifier="beta-x-r14" source="beta-c-e-AS-03" target="beta-x-e-BP-REC" xsi:type="Serving" />
+    <relationship identifier="beta-x-r19" source="beta-c-e-AC-01" target="id-DO1" xsi:type="Access" />
+    <relationship identifier="beta-x-r20" source="beta-c-e-AC-01" target="id-DO3" xsi:type="Access" />
+    <relationship identifier="beta-x-r21" source="beta-c-e-AC-02" target="id-DO2" xsi:type="Access" />
+    <relationship identifier="beta-x-r22" source="beta-c-e-APP-05" target="id-DO4" xsi:type="Access" />
+    <relationship identifier="beta-x-r23" source="beta-c-e-AC-03" target="beta-c-e-DO-HIST" xsi:type="Access" />
+    <relationship identifier="r1" source="loc-t02" target="plc-asis" xsi:type="Aggregation" />
+    <relationship identifier="r2" source="loc-t05" target="plc-asis" xsi:type="Aggregation" />
+    <relationship identifier="r3" source="loc-t05" target="termo-asis" xsi:type="Aggregation" />
+    <relationship identifier="r4" source="loc-t06" target="termo-asis" xsi:type="Aggregation" />
+    <relationship identifier="r5" source="loc-t02" target="excel-asis" xsi:type="Aggregation" />
+    <relationship identifier="r6" source="loc-t08" target="erp-asis" xsi:type="Aggregation" />
+    <relationship identifier="r7" source="loc-t08" target="qa-asis" xsi:type="Aggregation" />
+    <relationship identifier="tv02-r1" source="l1-plc" target="l2-hmi" xsi:type="Flow" />
+    <relationship identifier="tv02-r2" source="l1-pt100" target="l2-hmi" xsi:type="Flow" />
+    <relationship identifier="tv02-r3" source="l2-hmi" target="l3-edge" xsi:type="Flow" />
+    <relationship identifier="tv02-r4" source="l3-edge" target="l35-broker" xsi:type="Flow" />
+    <relationship identifier="tv02-r5" source="l35-broker" target="l4-event" xsi:type="Flow" />
+    <relationship identifier="tv02-r6" source="l4-event" target="l4-data" xsi:type="Flow" />
+    <relationship identifier="tv02-r7" source="l4-api" target="l4-event" xsi:type="Flow" />
+    <relationship identifier="r8" source="l4-api" target="l4-iam" xsi:type="Association" />
+    <relationship identifier="r9" source="l4-repo" target="beta-c-e-APP-05" xsi:type="Serving" />
+    <relationship identifier="tv03-r1" source="tabb-01" target="abbc-02" xsi:type="Serving" />
+    <relationship identifier="tv03-r2" source="tabb-02" target="abbc-02" xsi:type="Serving" />
+    <relationship identifier="tv03-r3" source="tabb-03" target="abbc-02" xsi:type="Serving" />
+    <relationship identifier="tv03-r4" source="tabb-03" target="abbc-03" xsi:type="Serving" />
+    <relationship identifier="tv03-r5" source="tabb-04" target="abbc-01" xsi:type="Serving" />
+    <relationship identifier="tv03-r6" source="tabb-05" target="abbc-03" xsi:type="Serving" />
+    <relationship identifier="tv03-r7" source="tabb-06" target="abbc-03" xsi:type="Serving" />
+    <relationship identifier="tv04-r1" source="p1" target="p2" xsi:type="Triggering" />
+    <relationship identifier="tv04-r2" source="p2" target="p3" xsi:type="Triggering" />
+    <relationship identifier="tv04-r3" source="p3" target="p4" xsi:type="Triggering" />
+    <relationship identifier="tv04-r4" source="p4" target="p5" xsi:type="Triggering" />
+    <relationship identifier="tv04-r5" source="p5" target="p6" xsi:type="Triggering" />
+    <relationship identifier="tv04-r6" source="p6" target="p7" xsi:type="Triggering" />
+    <relationship identifier="tv04-r7" source="p7" target="p8" xsi:type="Triggering" />
+    <relationship identifier="tv04-r8" source="p8" target="p9" xsi:type="Triggering" />
+    <relationship identifier="tv04-r9" source="p9" target="p10" xsi:type="Triggering" />
+    <relationship identifier="tv05-r1" source="nt-01" target="nt-02" xsi:type="Association" />
+    <relationship identifier="tv05-r2" source="nt-01" target="nt-06" xsi:type="Association" />
+    <relationship identifier="tv05-r3" source="nt-01" target="nt-04" xsi:type="Association" />
+    <relationship identifier="tv05-r4" source="nt-05" target="nt-01" xsi:type="Association" />
+    <relationship identifier="tv05-r5" source="nt-05" target="nt-06" xsi:type="Association" />
+    <relationship identifier="tv05-r6" source="nt-08" target="nt-07" xsi:type="Association" />
+    <relationship identifier="tv05-r7" source="nt-07" target="nt-01" xsi:type="Association" />
+    <relationship identifier="tv05-r8" source="nt-03" target="nt-04" xsi:type="Association" />
+    <relationship identifier="tv05-r9" source="nt-04" target="nt-10" xsi:type="Association" />
+    <relationship identifier="r10" source="nt-10" target="nt-11" xsi:type="Association" />
+    <relationship identifier="r11" source="nt-12" target="nt-01" xsi:type="Assignment" />
+    <relationship identifier="tv06-r1" source="svc-01" target="beta-c-e-AC-02" xsi:type="Serving" />
+    <relationship identifier="tv06-r2" source="svc-02" target="beta-c-e-AC-04" xsi:type="Serving" />
+    <relationship identifier="tv06-r3" source="svc-03" target="beta-c-e-AC-03" xsi:type="Serving" />
+    <relationship identifier="tv06-r4" source="svc-04" target="beta-c-e-AC-03" xsi:type="Serving" />
+    <relationship identifier="tv06-r5" source="svc-04" target="beta-c-e-APP-05" xsi:type="Serving" />
+    <relationship identifier="tv06-r6" source="svc-05" target="beta-c-e-AC-01" xsi:type="Serving" />
+    <relationship identifier="tv06-r7" source="svc-05" target="beta-c-e-AC-02" xsi:type="Serving" />
+    <relationship identifier="tv06-r8" source="svc-06" target="beta-c-e-APP-05" xsi:type="Serving" />
+    <relationship identifier="tv07-r1" source="zt-01" target="net-ot" xsi:type="Association" />
+    <relationship identifier="tv07-r2" source="zt-02" target="net-ot" xsi:type="Association" />
+    <relationship identifier="tv07-r3" source="net-ot" target="zt-03" xsi:type="Association" />
+    <relationship identifier="tv07-r4" source="zt-03" target="net-dmz" xsi:type="Association" />
+    <relationship identifier="tv07-r5" source="zt-04" target="net-dmz" xsi:type="Association" />
+    <relationship identifier="tv07-r6" source="net-dmz" target="net-cloud" xsi:type="Association" />
+    <relationship identifier="tv07-r7" source="net-cloud" target="zt-06" xsi:type="Association" />
+    <relationship identifier="tv07-r8" source="zt-05" target="net-cloud" xsi:type="Association" />
+    <relationship identifier="tv07-r9" source="zt-07" target="net-dmz" xsi:type="Association" />
+    <relationship identifier="tv08-r1" source="cd-01" target="cd-02" xsi:type="Association" />
+    <relationship identifier="tv08-r2" source="cd-02" target="cd-03" xsi:type="Association" />
+    <relationship identifier="tv08-r3" source="cd-03" target="cd-04" xsi:type="Association" />
+    <relationship identifier="tv08-r4" source="cd-04" target="cd-05" xsi:type="Association" />
+    <relationship identifier="tv08-r5" source="cd-05" target="cd-06" xsi:type="Association" />
+    <relationship identifier="tv08-r6" source="cd-06" target="cd-07" xsi:type="Association" />
+    <relationship identifier="tv08-r7" source="cd-07" target="cd-08" xsi:type="Association" />
+    <relationship identifier="tv08-r8" source="cd-08" target="cd-09" xsi:type="Association" />
+    <relationship identifier="tv08-r9" source="cd-09" target="cd-10" xsi:type="Association" />
+    <relationship identifier="tv10-r1" source="plat-c" target="trc-01" xsi:type="Triggering" />
+    <relationship identifier="tv10-r2" source="trc-01" target="trc-02" xsi:type="Triggering" />
+    <relationship identifier="tv10-r3" source="trc-02" target="trc-03" xsi:type="Triggering" />
+    <relationship identifier="tv10-r4" source="trc-03" target="plat-d" xsi:type="Triggering" />
+    <relationship identifier="tv10-r5" source="plat-d" target="plat-e" xsi:type="Triggering" />
+    <relationship identifier="xv02-r1" source="beta-c-e-AC-01" target="id-BSV01" xsi:type="Realization" />
+    <relationship identifier="xv02-r2" source="beta-c-e-AC-02" target="id-BSV01" xsi:type="Realization" />
+    <relationship identifier="xv02-r3" source="beta-c-e-APP-05" target="id-BSV02" xsi:type="Realization" />
+    <relationship identifier="xv02-r4" source="beta-c-e-AC-03" target="id-BSV03" xsi:type="Realization" />
+    <relationship identifier="xv02-r7" source="beta-c-e-AC-03" target="id-DO9" xsi:type="Access" />
+    <relationship identifier="xv02-r9" source="tabb-02" target="beta-c-e-AC-02" xsi:type="Serving" />
+    <relationship identifier="xv02-r10" source="tabb-04" target="beta-c-e-AC-02" xsi:type="Serving" />
+    <relationship identifier="xv02-r11" source="tabb-05" target="beta-c-e-AC-03" xsi:type="Serving" />
+    <relationship identifier="r12" source="tabb-06" target="beta-c-e-APP-05" xsi:type="Serving" />
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="id-view-v01" xsi:type="Diagram">
+        <name xml:lang="es">B-V01 Baseline (AS-IS)</name>
+        <node identifier="n-v01-STK-01" elementRef="id-STK-01" xsi:type="Element" x="600" y="70" w="210" h="60">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-STK-07" elementRef="id-STK-07" xsi:type="Element" x="940" y="70" w="210" h="60">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-STK-02" elementRef="id-STK-02" xsi:type="Element" x="40" y="170" w="200" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-STK-03" elementRef="id-STK-03" xsi:type="Element" x="370" y="170" w="200" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-STK-04" elementRef="id-STK-04" xsi:type="Element" x="700" y="170" w="200" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-STK-05" elementRef="id-STK-05" xsi:type="Element" x="1030" y="170" w="200" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-STK-06" elementRef="id-STK-06" xsi:type="Element" x="1360" y="170" w="200" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-E1" elementRef="id-E1" xsi:type="Element" x="30" y="330" w="190" h="100">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-E2" elementRef="id-E2" xsi:type="Element" x="266" y="330" w="190" h="100">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-E3" elementRef="id-E3" xsi:type="Element" x="503" y="330" w="190" h="100">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-E4" elementRef="id-E4" xsi:type="Element" x="740" y="330" w="190" h="100">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-E5" elementRef="id-E5" xsi:type="Element" x="976" y="330" w="190" h="100">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-E6" elementRef="id-E6" xsi:type="Element" x="1213" y="330" w="190" h="100">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-E7" elementRef="id-E7" xsi:type="Element" x="1450" y="330" w="190" h="100">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-STK-08" elementRef="id-STK-08" xsi:type="Element" x="1700" y="330" w="270" h="100">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-STK-09" elementRef="id-STK-09" xsi:type="Element" x="1700" y="170" w="270" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-O_JABA" elementRef="id-O_JABA" xsi:type="Element" x="30" y="560" w="180" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-O_PESO" elementRef="id-O_PESO" xsi:type="Element" x="260" y="560" w="180" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-O_LT" elementRef="id-O_LT" xsi:type="Element" x="490" y="560" w="180" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-O_TEMP" elementRef="id-O_TEMP" xsi:type="Element" x="720" y="560" w="180" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-O_LIB" elementRef="id-O_LIB" xsi:type="Element" x="950" y="560" w="180" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-O_ETQ" elementRef="id-O_ETQ" xsi:type="Element" x="1180" y="560" w="180" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-O_PAL" elementRef="id-O_PAL" xsi:type="Element" x="1410" y="560" w="180" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-O_ENV" elementRef="id-O_ENV" xsi:type="Element" x="1640" y="560" w="180" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v01-F1" xsi:type="Label" x="30" y="700" w="300" h="60">
+          <label xml:lang="es">F1 · E1–E2 · hora de corte a mano; 45 min sin registro</label>
+          <style>
+            <fillColor r="253" g="236" b="234" />
+          </style>
+        </node>
+        <node identifier="n-v01-F2" xsi:type="Label" x="360" y="700" w="300" h="60">
+          <label xml:lang="es">F2 · E3–E4 · lote de campo no confirmado en la línea</label>
+          <style>
+            <fillColor r="253" g="236" b="234" />
+          </style>
+        </node>
+        <node identifier="n-v01-F3" xsi:type="Label" x="690" y="700" w="300" h="60">
+          <label xml:lang="es">F3 · E5 · split/merge sin vínculo padre/hijo</label>
+          <style>
+            <fillColor r="253" g="236" b="234" />
+          </style>
+        </node>
+        <node identifier="n-v01-F4" xsi:type="Label" x="1020" y="700" w="300" h="60">
+          <label xml:lang="es">F4 · E6–E7 · pallet conciliado a mano con el envío</label>
+          <style>
+            <fillColor r="253" g="236" b="234" />
+          </style>
+        </node>
+        <node identifier="n-v01-F5" xsi:type="Label" x="1350" y="700" w="300" h="60">
+          <label xml:lang="es">F5 · E2, E6, E7 · temperatura sin vínculo al lote</label>
+          <style>
+            <fillColor r="253" g="236" b="234" />
+          </style>
+        </node>
+        <node identifier="n-v01-F6" xsi:type="Label" x="1680" y="700" w="300" h="60">
+          <label xml:lang="es">F6 · Transversal · sin dueño del dato ni KPI común</label>
+          <style>
+            <fillColor r="253" g="236" b="234" />
+          </style>
+        </node>
+        <connection identifier="c-v01-r001" relationshipRef="id-r001" xsi:type="Relationship" source="n-v01-STK-02" target="n-v01-E1" />
+        <connection identifier="c-v01-r002" relationshipRef="id-r002" xsi:type="Relationship" source="n-v01-STK-03" target="n-v01-E2" />
+        <connection identifier="c-v01-r003" relationshipRef="id-r003" xsi:type="Relationship" source="n-v01-STK-03" target="n-v01-E3" />
+        <connection identifier="c-v01-r004" relationshipRef="id-r004" xsi:type="Relationship" source="n-v01-STK-03" target="n-v01-E5" />
+        <connection identifier="c-v01-r005" relationshipRef="id-r005" xsi:type="Relationship" source="n-v01-STK-03" target="n-v01-E6" />
+        <connection identifier="c-v01-r006" relationshipRef="id-r006" xsi:type="Relationship" source="n-v01-STK-04" target="n-v01-E4" />
+        <connection identifier="c-v01-r007" relationshipRef="id-r007" xsi:type="Relationship" source="n-v01-STK-05" target="n-v01-E6" />
+        <connection identifier="c-v01-r008" relationshipRef="id-r008" xsi:type="Relationship" source="n-v01-STK-05" target="n-v01-E7" />
+        <connection identifier="c-v01-r009" relationshipRef="id-r009" xsi:type="Relationship" source="n-v01-STK-06" target="n-v01-E7" />
+        <connection identifier="c-v01-r010" relationshipRef="id-r010" xsi:type="Relationship" source="n-v01-E1" target="n-v01-E2" />
+        <connection identifier="c-v01-r011" relationshipRef="id-r011" xsi:type="Relationship" source="n-v01-E2" target="n-v01-E3" />
+        <connection identifier="c-v01-r012" relationshipRef="id-r012" xsi:type="Relationship" source="n-v01-E3" target="n-v01-E4" />
+        <connection identifier="c-v01-r013" relationshipRef="id-r013" xsi:type="Relationship" source="n-v01-E4" target="n-v01-E5" />
+        <connection identifier="c-v01-r014" relationshipRef="id-r014" xsi:type="Relationship" source="n-v01-E5" target="n-v01-E6" />
+        <connection identifier="c-v01-r015" relationshipRef="id-r015" xsi:type="Relationship" source="n-v01-E6" target="n-v01-E7" />
+        <connection identifier="c-v01-r016" relationshipRef="id-r016" xsi:type="Relationship" source="n-v01-E7" target="n-v01-STK-08" />
+        <connection identifier="c-v01-r017" relationshipRef="id-r017" xsi:type="Relationship" source="n-v01-E1" target="n-v01-O_JABA" />
+        <connection identifier="c-v01-r018" relationshipRef="id-r018" xsi:type="Relationship" source="n-v01-E1" target="n-v01-O_PESO" />
+        <connection identifier="c-v01-r019" relationshipRef="id-r019" xsi:type="Relationship" source="n-v01-E2" target="n-v01-O_LT" />
+        <connection identifier="c-v01-r020" relationshipRef="id-r020" xsi:type="Relationship" source="n-v01-E2" target="n-v01-O_PESO" />
+        <connection identifier="c-v01-r021" relationshipRef="id-r021" xsi:type="Relationship" source="n-v01-E2" target="n-v01-O_TEMP" />
+        <connection identifier="c-v01-r022" relationshipRef="id-r022" xsi:type="Relationship" source="n-v01-E4" target="n-v01-O_LIB" />
+        <connection identifier="c-v01-r023" relationshipRef="id-r023" xsi:type="Relationship" source="n-v01-E5" target="n-v01-O_ETQ" />
+        <connection identifier="c-v01-r024" relationshipRef="id-r024" xsi:type="Relationship" source="n-v01-E5" target="n-v01-O_PAL" />
+        <connection identifier="c-v01-r025" relationshipRef="id-r025" xsi:type="Relationship" source="n-v01-E6" target="n-v01-O_TEMP" />
+        <connection identifier="c-v01-r026" relationshipRef="id-r026" xsi:type="Relationship" source="n-v01-E7" target="n-v01-O_TEMP" />
+        <connection identifier="c-v01-r027" relationshipRef="id-r027" xsi:type="Relationship" source="n-v01-E7" target="n-v01-O_ENV" />
+      </view>
+      <view identifier="id-view-v02" xsi:type="Diagram">
+        <name xml:lang="es">B-V02 Target (TO-BE)</name>
+        <node identifier="n-v02-STK-01" elementRef="id-STK-01" xsi:type="Element" x="20" y="70" w="190" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-STK-02" elementRef="id-STK-02" xsi:type="Element" x="241" y="70" w="190" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-STK-03" elementRef="id-STK-03" xsi:type="Element" x="462" y="70" w="190" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-STK-04" elementRef="id-STK-04" xsi:type="Element" x="683" y="70" w="190" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-STK-05" elementRef="id-STK-05" xsi:type="Element" x="905" y="70" w="190" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-STK-06" elementRef="id-STK-06" xsi:type="Element" x="1126" y="70" w="190" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-STK-07" elementRef="id-STK-07" xsi:type="Element" x="1347" y="70" w="190" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-STK-08" elementRef="id-STK-08" xsi:type="Element" x="1568" y="70" w="190" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-STK-09" elementRef="id-STK-09" xsi:type="Element" x="1790" y="70" w="190" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-BSV01" elementRef="id-BSV01" xsi:type="Element" x="330" y="230" w="300" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-BSV02" elementRef="id-BSV02" xsi:type="Element" x="730" y="230" w="300" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-BSV03" elementRef="id-BSV03" xsi:type="Element" x="1130" y="230" w="300" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-DS" elementRef="id-DS" xsi:type="Element" x="1640" y="235" w="220" h="70">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-E1" elementRef="id-E1" xsi:type="Element" x="20" y="400" w="185" h="95">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-E2" elementRef="id-E2" xsi:type="Element" x="245" y="400" w="185" h="95">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-E3" elementRef="id-E3" xsi:type="Element" x="471" y="400" w="185" h="95">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-E4" elementRef="id-E4" xsi:type="Element" x="697" y="400" w="185" h="95">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-E5" elementRef="id-E5" xsi:type="Element" x="923" y="400" w="185" h="95">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-E6" elementRef="id-E6" xsi:type="Element" x="1149" y="400" w="185" h="95">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-E7" elementRef="id-E7" xsi:type="Element" x="1375" y="400" w="185" h="95">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-RCL" elementRef="id-RCL" xsi:type="Element" x="1640" y="400" w="300" h="95">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-EV7" elementRef="id-EV7" xsi:type="Element" x="20" y="580" w="200" h="60">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-EV1" elementRef="id-EV1" xsi:type="Element" x="266" y="580" w="200" h="60">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-EV2" elementRef="id-EV2" xsi:type="Element" x="513" y="580" w="200" h="60">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-EV3" elementRef="id-EV3" xsi:type="Element" x="760" y="580" w="200" h="60">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-EV4" elementRef="id-EV4" xsi:type="Element" x="1006" y="580" w="200" h="60">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-EV5" elementRef="id-EV5" xsi:type="Element" x="1253" y="580" w="200" h="60">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-EV6" elementRef="id-EV6" xsi:type="Element" x="1500" y="580" w="200" h="60">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-O_LIB" elementRef="id-O_LIB" xsi:type="Element" x="20" y="740" w="200" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-O_HIS" elementRef="id-O_HIS" xsi:type="Element" x="271" y="740" w="200" h="75">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-O_EVT" elementRef="id-O_EVT" xsi:type="Element" x="522" y="740" w="200" h="75">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-O_LOTE" elementRef="id-O_LOTE" xsi:type="Element" x="774" y="740" w="200" h="75">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-O_PAL" elementRef="id-O_PAL" xsi:type="Element" x="1025" y="740" w="200" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-O_ENV" elementRef="id-O_ENV" xsi:type="Element" x="1277" y="740" w="200" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-O_RCL" elementRef="id-O_RCL" xsi:type="Element" x="1528" y="740" w="200" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-v02-O_CUS" elementRef="id-O_CUS" xsi:type="Element" x="1780" y="740" w="200" h="75">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-v02-O_JABA" elementRef="id-O_JABA" xsi:type="Element" x="774" y="880" w="200" h="75">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <connection identifier="c-v02-r010" relationshipRef="id-r010" xsi:type="Relationship" source="n-v02-E1" target="n-v02-E2" />
+        <connection identifier="c-v02-r011" relationshipRef="id-r011" xsi:type="Relationship" source="n-v02-E2" target="n-v02-E3" />
+        <connection identifier="c-v02-r012" relationshipRef="id-r012" xsi:type="Relationship" source="n-v02-E3" target="n-v02-E4" />
+        <connection identifier="c-v02-r013" relationshipRef="id-r013" xsi:type="Relationship" source="n-v02-E4" target="n-v02-E5" />
+        <connection identifier="c-v02-r014" relationshipRef="id-r014" xsi:type="Relationship" source="n-v02-E5" target="n-v02-E6" />
+        <connection identifier="c-v02-r015" relationshipRef="id-r015" xsi:type="Relationship" source="n-v02-E6" target="n-v02-E7" />
+        <connection identifier="c-v02-r016" relationshipRef="id-r016" xsi:type="Relationship" source="n-v02-E7" target="n-v02-STK-08" />
+        <connection identifier="c-v02-r028" relationshipRef="id-r028" xsi:type="Relationship" source="n-v02-STK-04" target="n-v02-DS" />
+        <connection identifier="c-v02-r029" relationshipRef="id-r029" xsi:type="Relationship" source="n-v02-DS" target="n-v02-RCL" />
+        <connection identifier="c-v02-r030" relationshipRef="id-r030" xsi:type="Relationship" source="n-v02-STK-07" target="n-v02-BSV02" />
+        <connection identifier="c-v02-r031" relationshipRef="id-r031" xsi:type="Relationship" source="n-v02-BSV01" target="n-v02-STK-03" />
+        <connection identifier="c-v02-r032" relationshipRef="id-r032" xsi:type="Relationship" source="n-v02-BSV01" target="n-v02-STK-04" />
+        <connection identifier="c-v02-r033" relationshipRef="id-r033" xsi:type="Relationship" source="n-v02-BSV01" target="n-v02-STK-05" />
+        <connection identifier="c-v02-r034" relationshipRef="id-r034" xsi:type="Relationship" source="n-v02-BSV02" target="n-v02-STK-04" />
+        <connection identifier="c-v02-r035" relationshipRef="id-r035" xsi:type="Relationship" source="n-v02-BSV02" target="n-v02-STK-05" />
+        <connection identifier="c-v02-r036" relationshipRef="id-r036" xsi:type="Relationship" source="n-v02-BSV03" target="n-v02-STK-06" />
+        <connection identifier="c-v02-r037" relationshipRef="id-r037" xsi:type="Relationship" source="n-v02-BSV03" target="n-v02-STK-01" />
+        <connection identifier="c-v02-r038" relationshipRef="id-r038" xsi:type="Relationship" source="n-v02-BSV03" target="n-v02-STK-08" />
+        <connection identifier="c-v02-r039" relationshipRef="id-r039" xsi:type="Relationship" source="n-v02-BSV03" target="n-v02-STK-09" />
+        <connection identifier="c-v02-r040" relationshipRef="id-r040" xsi:type="Relationship" source="n-v02-E1" target="n-v02-BSV01" />
+        <connection identifier="c-v02-r041" relationshipRef="id-r041" xsi:type="Relationship" source="n-v02-E5" target="n-v02-BSV01" />
+        <connection identifier="c-v02-r042" relationshipRef="id-r042" xsi:type="Relationship" source="n-v02-E2" target="n-v02-BSV02" />
+        <connection identifier="c-v02-r043" relationshipRef="id-r043" xsi:type="Relationship" source="n-v02-E3" target="n-v02-BSV02" />
+        <connection identifier="c-v02-r044" relationshipRef="id-r044" xsi:type="Relationship" source="n-v02-E4" target="n-v02-BSV02" />
+        <connection identifier="c-v02-r045" relationshipRef="id-r045" xsi:type="Relationship" source="n-v02-E5" target="n-v02-BSV02" />
+        <connection identifier="c-v02-r046" relationshipRef="id-r046" xsi:type="Relationship" source="n-v02-E6" target="n-v02-BSV02" />
+        <connection identifier="c-v02-r047" relationshipRef="id-r047" xsi:type="Relationship" source="n-v02-E7" target="n-v02-BSV02" />
+        <connection identifier="c-v02-r048" relationshipRef="id-r048" xsi:type="Relationship" source="n-v02-RCL" target="n-v02-BSV03" />
+        <connection identifier="c-v02-r049" relationshipRef="id-r049" xsi:type="Relationship" source="n-v02-E1" target="n-v02-EV1" />
+        <connection identifier="c-v02-r050" relationshipRef="id-r050" xsi:type="Relationship" source="n-v02-E4" target="n-v02-EV2" />
+        <connection identifier="c-v02-r051" relationshipRef="id-r051" xsi:type="Relationship" source="n-v02-E5" target="n-v02-EV3" />
+        <connection identifier="c-v02-r052" relationshipRef="id-r052" xsi:type="Relationship" source="n-v02-E5" target="n-v02-EV4" />
+        <connection identifier="c-v02-r053" relationshipRef="id-r053" xsi:type="Relationship" source="n-v02-E7" target="n-v02-EV5" />
+        <connection identifier="c-v02-r054" relationshipRef="id-r054" xsi:type="Relationship" source="n-v02-E7" target="n-v02-EV6" />
+        <connection identifier="c-v02-r055" relationshipRef="id-r055" xsi:type="Relationship" source="n-v02-E2" target="n-v02-EV7" />
+        <connection identifier="c-v02-r056" relationshipRef="id-r056" xsi:type="Relationship" source="n-v02-BSV01" target="n-v02-O_LOTE" />
+        <connection identifier="c-v02-r057" relationshipRef="id-r057" xsi:type="Relationship" source="n-v02-BSV02" target="n-v02-O_EVT" />
+        <connection identifier="c-v02-r058" relationshipRef="id-r058" xsi:type="Relationship" source="n-v02-BSV03" target="n-v02-O_HIS" />
+        <connection identifier="c-v02-r059" relationshipRef="id-r059" xsi:type="Relationship" source="n-v02-O_HIS" target="n-v02-O_EVT" />
+        <connection identifier="c-v02-r060" relationshipRef="id-r060" xsi:type="Relationship" source="n-v02-O_EVT" target="n-v02-O_LOTE" />
+        <connection identifier="c-v02-r061" relationshipRef="id-r061" xsi:type="Relationship" source="n-v02-O_LOTE" target="n-v02-O_JABA" />
+        <connection identifier="c-v02-r062" relationshipRef="id-r062" xsi:type="Relationship" source="n-v02-O_PAL" target="n-v02-O_LOTE" />
+        <connection identifier="c-v02-r063" relationshipRef="id-r063" xsi:type="Relationship" source="n-v02-O_ENV" target="n-v02-O_PAL" />
+        <connection identifier="c-v02-r064" relationshipRef="id-r064" xsi:type="Relationship" source="n-v02-O_RCL" target="n-v02-O_ENV" />
+        <connection identifier="c-v02-r065" relationshipRef="id-r065" xsi:type="Relationship" source="n-v02-EV2" target="n-v02-O_LIB" />
+        <connection identifier="c-v02-r066" relationshipRef="id-r066" xsi:type="Relationship" source="n-v02-EV5" target="n-v02-O_CUS" />
+        <connection identifier="c-v02-r067" relationshipRef="id-r067" xsi:type="Relationship" source="n-v02-EV6" target="n-v02-O_ENV" />
+        <connection identifier="c-v02-r068" relationshipRef="id-r068" xsi:type="Relationship" source="n-v02-RCL" target="n-v02-O_RCL" />
+      </view>
+      <view identifier="id-view-dv01" xsi:type="Diagram">
+        <name xml:lang="es">D-V01 Baseline de datos (CN-C01)</name>
+        <documentation xml:lang="es">Concern CN-C01: dónde y con qué claves están hoy los datos del lote. Fuentes SRC-01..07 y claves K-01..K-06 sin equivalencia demostrada; fuentes y claves son supuestos SV/NV del equipo, no inventario de Beta.</documentation>
+        <node identifier="n-dv01-E1" elementRef="id-E1" xsi:type="Element" x="30" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv01-E2" elementRef="id-E2" xsi:type="Element" x="315" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv01-E3" elementRef="id-E3" xsi:type="Element" x="600" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv01-E4" elementRef="id-E4" xsi:type="Element" x="885" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv01-E5" elementRef="id-E5" xsi:type="Element" x="1170" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv01-E6" elementRef="id-E6" xsi:type="Element" x="1455" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv01-E7" elementRef="id-E7" xsi:type="Element" x="1740" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv01-B_ROT" elementRef="id-B_ROT" xsi:type="Element" x="30" y="300" w="250" h="80">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv01-D_ING" elementRef="id-D_ING" xsi:type="Element" x="330" y="300" w="250" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv01-D_CORR" elementRef="id-D_CORR" xsi:type="Element" x="630" y="300" w="250" h="80">
+          <style>
+            <fillColor r="230" g="230" b="230" />
+            <lineColor r="128" g="128" b="128" />
+          </style>
+        </node>
+        <node identifier="n-dv01-D_MUE" elementRef="id-D_MUE" xsi:type="Element" x="930" y="300" w="250" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv01-D_PAL" elementRef="id-D_PAL" xsi:type="Element" x="930" y="500" w="250" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv01-D_DOC" elementRef="id-D_DOC" xsi:type="Element" x="1700" y="300" w="270" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv01-D_PLT" elementRef="id-D_PLT" xsi:type="Element" x="330" y="500" w="250" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv01-D_TRM" elementRef="id-D_TRM" xsi:type="Element" x="1230" y="520" w="250" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv01-D_CONC" elementRef="id-D_CONC" xsi:type="Element" x="1700" y="500" w="270" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv01-AC_XLS" elementRef="id-AC_XLS" xsi:type="Element" x="330" y="700" w="250" h="70">
+          <style>
+            <fillColor r="181" g="255" b="255" />
+            <lineColor r="0" g="150" b="168" />
+          </style>
+        </node>
+        <node identifier="n-dv01-AC_SORT" elementRef="id-AC_SORT" xsi:type="Element" x="630" y="700" w="250" h="70">
+          <style>
+            <fillColor r="181" g="255" b="255" />
+            <lineColor r="0" g="150" b="168" />
+          </style>
+        </node>
+        <node identifier="n-dv01-AC_LAB" elementRef="id-AC_LAB" xsi:type="Element" x="930" y="700" w="250" h="70">
+          <style>
+            <fillColor r="230" g="230" b="230" />
+            <lineColor r="128" g="128" b="128" />
+          </style>
+        </node>
+        <node identifier="n-dv01-AC_CABSA" elementRef="id-AC_CABSA" xsi:type="Element" x="1230" y="700" w="250" h="70">
+          <style>
+            <fillColor r="181" g="255" b="255" />
+            <lineColor r="0" g="150" b="168" />
+          </style>
+        </node>
+        <node identifier="n-dv01-AC_ERP" elementRef="id-AC_ERP" xsi:type="Element" x="1700" y="700" w="270" h="70">
+          <style>
+            <fillColor r="230" g="230" b="230" />
+            <lineColor r="128" g="128" b="128" />
+          </style>
+        </node>
+        <node identifier="n-dv01-N1" xsi:type="Label" x="30" y="850" w="460" h="48">
+          <label xml:lang="es">K-01..K-06: claves locales sin equivalencia demostrada (§3.1.2)</label>
+          <style>
+            <fillColor r="253" g="236" b="234" />
+          </style>
+        </node>
+        <node identifier="n-dv01-N2" xsi:type="Label" x="520" y="850" w="460" h="48">
+          <label xml:lang="es">K-07 PTI ≠ lote · K-08 relojes y zona horaria distintos</label>
+          <style>
+            <fillColor r="253" g="236" b="234" />
+          </style>
+        </node>
+        <node identifier="n-dv01-N3" xsi:type="Label" x="1010" y="850" w="460" h="48">
+          <label xml:lang="es">Gris: fuente o campo NV (NV-C02..C04)</label>
+          <style>
+            <fillColor r="253" g="236" b="234" />
+          </style>
+        </node>
+        <node identifier="n-dv01-N4" xsi:type="Label" x="1500" y="850" w="460" h="48">
+          <label xml:lang="es">Ninguna fuente registra un lot_id común</label>
+          <style>
+            <fillColor r="253" g="236" b="234" />
+          </style>
+        </node>
+        <connection identifier="c-dv01-r001" relationshipRef="c1-id-r001" xsi:type="Relationship" source="n-dv01-E1" target="n-dv01-B_ROT" />
+        <connection identifier="c-dv01-r002" relationshipRef="c1-id-r002" xsi:type="Relationship" source="n-dv01-E2" target="n-dv01-D_ING" />
+        <connection identifier="c-dv01-r003" relationshipRef="c1-id-r003" xsi:type="Relationship" source="n-dv01-E2" target="n-dv01-D_PLT" />
+        <connection identifier="c-dv01-r004" relationshipRef="c1-id-r004" xsi:type="Relationship" source="n-dv01-E3" target="n-dv01-D_CORR" />
+        <connection identifier="c-dv01-r005" relationshipRef="c1-id-r005" xsi:type="Relationship" source="n-dv01-E4" target="n-dv01-D_MUE" />
+        <connection identifier="c-dv01-r006" relationshipRef="c1-id-r006" xsi:type="Relationship" source="n-dv01-E5" target="n-dv01-D_PAL" />
+        <connection identifier="c-dv01-r007" relationshipRef="c1-id-r007" xsi:type="Relationship" source="n-dv01-E6" target="n-dv01-D_PLT" />
+        <connection identifier="c-dv01-r008" relationshipRef="c1-id-r008" xsi:type="Relationship" source="n-dv01-E6" target="n-dv01-D_TRM" />
+        <connection identifier="c-dv01-r009" relationshipRef="c1-id-r009" xsi:type="Relationship" source="n-dv01-E7" target="n-dv01-D_CONC" />
+        <connection identifier="c-dv01-r010" relationshipRef="c1-id-r010" xsi:type="Relationship" source="n-dv01-E7" target="n-dv01-D_DOC" />
+        <connection identifier="c-dv01-r011" relationshipRef="c1-id-r011" xsi:type="Relationship" source="n-dv01-AC_XLS" target="n-dv01-D_ING" />
+        <connection identifier="c-dv01-r012" relationshipRef="c1-id-r012" xsi:type="Relationship" source="n-dv01-AC_XLS" target="n-dv01-D_PLT" />
+        <connection identifier="c-dv01-r013" relationshipRef="c1-id-r013" xsi:type="Relationship" source="n-dv01-AC_XLS" target="n-dv01-D_CONC" />
+        <connection identifier="c-dv01-r014" relationshipRef="c1-id-r014" xsi:type="Relationship" source="n-dv01-AC_SORT" target="n-dv01-D_CORR" />
+        <connection identifier="c-dv01-r015" relationshipRef="c1-id-r015" xsi:type="Relationship" source="n-dv01-AC_LAB" target="n-dv01-D_MUE" />
+        <connection identifier="c-dv01-r016" relationshipRef="c1-id-r016" xsi:type="Relationship" source="n-dv01-AC_CABSA" target="n-dv01-D_TRM" />
+        <connection identifier="c-dv01-r017" relationshipRef="c1-id-r017" xsi:type="Relationship" source="n-dv01-AC_ERP" target="n-dv01-D_DOC" />
+        <connection identifier="c-dv01-r018" relationshipRef="c1-id-r018" xsi:type="Relationship" source="n-dv01-B_ROT" target="n-dv01-D_ING" />
+        <connection identifier="c-dv01-r019" relationshipRef="c1-id-r019" xsi:type="Relationship" source="n-dv01-D_ING" target="n-dv01-D_CORR" />
+        <connection identifier="c-dv01-r020" relationshipRef="c1-id-r020" xsi:type="Relationship" source="n-dv01-D_CORR" target="n-dv01-D_MUE" />
+        <connection identifier="c-dv01-r021" relationshipRef="c1-id-r021" xsi:type="Relationship" source="n-dv01-D_CORR" target="n-dv01-D_PAL" />
+        <connection identifier="c-dv01-r022" relationshipRef="c1-id-r022" xsi:type="Relationship" source="n-dv01-D_CONC" target="n-dv01-D_DOC" />
+        <connection identifier="c-dv01-r023" relationshipRef="c1-id-r023" xsi:type="Relationship" source="n-dv01-D_TRM" target="n-dv01-D_PAL" />
+      </view>
+      <view identifier="id-view-dv02" xsi:type="Diagram">
+        <name xml:lang="es">D-V02 Target conceptual de datos (CN-C02)</name>
+        <documentation xml:lang="es">Concern CN-C02: cómo se conserva la genealogía del lote con split, merge y HOLD. Modelo conceptual, no DER físico. Cardinalidades CRD-01..07 y reglas UQ en C-00 y C1; solo STK-04 escribe ResultadoCalidad.</documentation>
+        <node identifier="n-dv02-BO_JABA" elementRef="id-O_JABA" xsi:type="Element" x="30" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv02-BO_LOTE" elementRef="id-O_LOTE" xsi:type="Element" x="315" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv02-BO_PAL" elementRef="id-O_PAL" xsi:type="Element" x="600" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv02-BO_EVT" elementRef="id-O_EVT" xsi:type="Element" x="885" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv02-BO_LIB" elementRef="id-O_LIB" xsi:type="Element" x="1170" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv02-BO_TEMP" elementRef="id-O_TEMP" xsi:type="Element" x="1455" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv02-BO_ENV" elementRef="id-O_ENV" xsi:type="Element" x="1740" y="80" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv02-DO7" elementRef="id-DO7" xsi:type="Element" x="30" y="330" w="260" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv02-DO1" elementRef="id-DO1" xsi:type="Element" x="620" y="330" w="300" h="90">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv02-DO3" elementRef="id-DO3" xsi:type="Element" x="330" y="560" w="280" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv02-DO2" elementRef="id-DO2" xsi:type="Element" x="1010" y="250" w="260" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv02-DO4" elementRef="id-DO4" xsi:type="Element" x="1370" y="400" w="270" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv02-DO5" elementRef="id-DO5" xsi:type="Element" x="1010" y="560" w="260" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv02-DO6" elementRef="id-DO6" xsi:type="Element" x="1700" y="560" w="270" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv02-DO8" elementRef="id-DO8" xsi:type="Element" x="650" y="560" w="260" h="80">
+          <style>
+            <fillColor r="198" g="232" b="176" />
+            <lineColor r="78" g="154" b="46" />
+          </style>
+        </node>
+        <node identifier="n-dv02-DS" elementRef="id-DS" xsi:type="Element" x="30" y="560" w="230" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv02-STK-04" elementRef="id-STK-04" xsi:type="Element" x="1370" y="760" w="270" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <node identifier="n-dv02-STK-05" elementRef="id-STK-05" xsi:type="Element" x="1700" y="760" w="270" h="70">
+          <style>
+            <fillColor r="255" g="255" b="181" />
+            <lineColor r="181" g="168" b="0" />
+          </style>
+        </node>
+        <connection identifier="c-dv02-r024" relationshipRef="c1-id-r024" xsi:type="Relationship" source="n-dv02-DO1" target="n-dv02-BO_LOTE" />
+        <connection identifier="c-dv02-r025" relationshipRef="c1-id-r025" xsi:type="Relationship" source="n-dv02-DO1" target="n-dv02-BO_PAL" />
+        <connection identifier="c-dv02-r026" relationshipRef="c1-id-r026" xsi:type="Relationship" source="n-dv02-DO7" target="n-dv02-BO_JABA" />
+        <connection identifier="c-dv02-r027" relationshipRef="c1-id-r027" xsi:type="Relationship" source="n-dv02-DO2" target="n-dv02-BO_EVT" />
+        <connection identifier="c-dv02-r028" relationshipRef="c1-id-r028" xsi:type="Relationship" source="n-dv02-DO4" target="n-dv02-BO_LIB" />
+        <connection identifier="c-dv02-r029" relationshipRef="c1-id-r029" xsi:type="Relationship" source="n-dv02-DO5" target="n-dv02-BO_TEMP" />
+        <connection identifier="c-dv02-r030" relationshipRef="c1-id-r030" xsi:type="Relationship" source="n-dv02-DO6" target="n-dv02-BO_ENV" />
+        <connection identifier="c-dv02-r031" relationshipRef="c1-id-r031" xsi:type="Relationship" source="n-dv02-DO2" target="n-dv02-DO1" />
+        <connection identifier="c-dv02-r032" relationshipRef="c1-id-r032" xsi:type="Relationship" source="n-dv02-DO3" target="n-dv02-DO1" />
+        <connection identifier="c-dv02-r033" relationshipRef="c1-id-r033" xsi:type="Relationship" source="n-dv02-DO4" target="n-dv02-DO1" />
+        <connection identifier="c-dv02-r034" relationshipRef="c1-id-r034" xsi:type="Relationship" source="n-dv02-DO5" target="n-dv02-DO2" />
+        <connection identifier="c-dv02-r035" relationshipRef="c1-id-r035" xsi:type="Relationship" source="n-dv02-DO7" target="n-dv02-DO1" />
+        <connection identifier="c-dv02-r036" relationshipRef="c1-id-r036" xsi:type="Relationship" source="n-dv02-DO8" target="n-dv02-DO1" />
+        <connection identifier="c-dv02-r037" relationshipRef="c1-id-r037" xsi:type="Relationship" source="n-dv02-DO6" target="n-dv02-DO1" />
+        <connection identifier="c-dv02-r038" relationshipRef="c1-id-r038" xsi:type="Relationship" source="n-dv02-STK-04" target="n-dv02-DO4" />
+        <connection identifier="c-dv02-r039" relationshipRef="c1-id-r039" xsi:type="Relationship" source="n-dv02-STK-05" target="n-dv02-DO4" />
+        <connection identifier="c-dv02-r040" relationshipRef="c1-id-r040" xsi:type="Relationship" source="n-dv02-DS" target="n-dv02-DO7" />
+      </view>
+      <view identifier="beta-c-view-D-V03" xsi:type="Diagram">
+        <name xml:lang="es">D-V03 Linaje y difusión del dato del lote</name>
+        <documentation xml:lang="es">¿Cómo viaja y se valida la evidencia del lote? · Lectores: STK-04 Data Steward, STK-07 · VP01</documentation>
+        <node identifier="beta-c-n-D-V03-APP-01" elementRef="beta-c-e-APP-01" xsi:type="Element" x="30" y="30" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-APP-02" elementRef="beta-c-e-APP-02" xsi:type="Element" x="30" y="140" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-APP-04" elementRef="beta-c-e-APP-04" xsi:type="Element" x="30" y="250" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-APP-05" elementRef="beta-c-e-APP-05" xsi:type="Element" x="30" y="360" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-APP-06" elementRef="beta-c-e-APP-06" xsi:type="Element" x="30" y="480" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-APP-07" elementRef="beta-c-e-APP-07" xsi:type="Element" x="30" y="590" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-AC-02" elementRef="beta-c-e-AC-02" xsi:type="Element" x="360" y="60" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-AF-01" elementRef="beta-c-e-AF-01" xsi:type="Element" x="360" y="270" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-AC-04" elementRef="beta-c-e-AC-04" xsi:type="Element" x="360" y="535" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-DO-HIST" elementRef="beta-c-e-DO-HIST" xsi:type="Element" x="690" y="270" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-AC-03" elementRef="beta-c-e-AC-03" xsi:type="Element" x="690" y="470" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-AS-03" elementRef="beta-c-e-AS-03" xsi:type="Element" x="1020" y="470" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-R-STK04" elementRef="beta-c-e-R-STK04" xsi:type="Element" x="1350" y="40" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-R-STK05" elementRef="beta-c-e-R-STK05" xsi:type="Element" x="1350" y="200" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-R-STK06" elementRef="beta-c-e-R-STK06" xsi:type="Element" x="1350" y="360" w="230" h="86" />
+        <node identifier="beta-c-n-D-V03-R-EXT" elementRef="beta-c-e-R-EXT" xsi:type="Element" x="1350" y="540" w="230" h="86" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r01" relationshipRef="beta-c-r01" xsi:type="Relationship" source="beta-c-n-D-V03-APP-01" target="beta-c-n-D-V03-AF-01" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r02" relationshipRef="beta-c-r02" xsi:type="Relationship" source="beta-c-n-D-V03-APP-02" target="beta-c-n-D-V03-AF-01" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r03" relationshipRef="beta-c-r03" xsi:type="Relationship" source="beta-c-n-D-V03-APP-04" target="beta-c-n-D-V03-AF-01" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r04" relationshipRef="beta-c-r04" xsi:type="Relationship" source="beta-c-n-D-V03-APP-05" target="beta-c-n-D-V03-AF-01" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r05" relationshipRef="beta-c-r05" xsi:type="Relationship" source="beta-c-n-D-V03-APP-06" target="beta-c-n-D-V03-AC-04" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r06" relationshipRef="beta-c-r06" xsi:type="Relationship" source="beta-c-n-D-V03-APP-07" target="beta-c-n-D-V03-AC-04" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r07" relationshipRef="beta-c-r07" xsi:type="Relationship" source="beta-c-n-D-V03-AC-04" target="beta-c-n-D-V03-AF-01" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r08" relationshipRef="beta-c-r08" xsi:type="Relationship" source="beta-c-n-D-V03-AC-02" target="beta-c-n-D-V03-AF-01" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r09" relationshipRef="beta-c-r09" xsi:type="Relationship" source="beta-c-n-D-V03-AF-01" target="beta-c-n-D-V03-DO-HIST" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r10" relationshipRef="beta-c-r10" xsi:type="Relationship" source="beta-c-n-D-V03-AC-03" target="beta-c-n-D-V03-DO-HIST" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r11" relationshipRef="beta-c-r11" xsi:type="Relationship" source="beta-c-n-D-V03-AC-03" target="beta-c-n-D-V03-AS-03" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r12" relationshipRef="beta-c-r12" xsi:type="Relationship" source="beta-c-n-D-V03-AS-03" target="beta-c-n-D-V03-R-STK04" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r13" relationshipRef="beta-c-r13" xsi:type="Relationship" source="beta-c-n-D-V03-AS-03" target="beta-c-n-D-V03-R-STK05" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r14" relationshipRef="beta-c-r14" xsi:type="Relationship" source="beta-c-n-D-V03-AS-03" target="beta-c-n-D-V03-R-STK06" />
+        <connection identifier="beta-c-c-D-V03-beta-c-r15" relationshipRef="beta-c-r15" xsi:type="Relationship" source="beta-c-n-D-V03-AS-03" target="beta-c-n-D-V03-R-EXT" />
+      </view>
+      <view identifier="beta-c-view-AP-V01" xsi:type="Diagram">
+        <name xml:lang="es">AP-V01 Portafolio de aplicaciones actual (Baseline)</name>
+        <documentation xml:lang="es">¿Qué aplicaciones y registros cooperan hoy y dónde se pierde la identidad del lote? · Lectores: STK-07, STK-03 · VP01</documentation>
+        <node identifier="beta-c-n-AP-V01-APP-01" elementRef="beta-c-e-APP-01" xsi:type="Element" x="30" y="40" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V01-APP-02" elementRef="beta-c-e-APP-02" xsi:type="Element" x="360" y="40" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V01-APP-03" elementRef="beta-c-e-APP-03" xsi:type="Element" x="690" y="40" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V01-APP-05" elementRef="beta-c-e-APP-05" xsi:type="Element" x="1020" y="40" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V01-APP-04" elementRef="beta-c-e-APP-04" xsi:type="Element" x="1350" y="40" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V01-APP-06" elementRef="beta-c-e-APP-06" xsi:type="Element" x="360" y="290" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V01-APP-09" elementRef="beta-c-e-APP-09" xsi:type="Element" x="690" y="290" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V01-APP-10" elementRef="beta-c-e-APP-10" xsi:type="Element" x="1020" y="290" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V01-APP-07" elementRef="beta-c-e-APP-07" xsi:type="Element" x="1350" y="290" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V01-APP-08" elementRef="beta-c-e-APP-08" xsi:type="Element" x="1350" y="500" w="230" h="86" />
+        <connection identifier="beta-c-c-AP-V01-beta-c-r16" relationshipRef="beta-c-r16" xsi:type="Relationship" source="beta-c-n-AP-V01-APP-01" target="beta-c-n-AP-V01-APP-02" />
+        <connection identifier="beta-c-c-AP-V01-beta-c-r17" relationshipRef="beta-c-r17" xsi:type="Relationship" source="beta-c-n-AP-V01-APP-05" target="beta-c-n-AP-V01-APP-04" />
+        <connection identifier="beta-c-c-AP-V01-beta-c-r18" relationshipRef="beta-c-r18" xsi:type="Relationship" source="beta-c-n-AP-V01-APP-02" target="beta-c-n-AP-V01-APP-10" />
+        <connection identifier="beta-c-c-AP-V01-beta-c-r19" relationshipRef="beta-c-r19" xsi:type="Relationship" source="beta-c-n-AP-V01-APP-04" target="beta-c-n-AP-V01-APP-10" />
+        <connection identifier="beta-c-c-AP-V01-beta-c-r20" relationshipRef="beta-c-r20" xsi:type="Relationship" source="beta-c-n-AP-V01-APP-07" target="beta-c-n-AP-V01-APP-10" />
+        <connection identifier="beta-c-c-AP-V01-beta-c-r21" relationshipRef="beta-c-r21" xsi:type="Relationship" source="beta-c-n-AP-V01-APP-10" target="beta-c-n-AP-V01-APP-08" />
+        <connection identifier="beta-c-c-AP-V01-beta-c-r22" relationshipRef="beta-c-r22" xsi:type="Relationship" source="beta-c-n-AP-V01-APP-09" target="beta-c-n-AP-V01-APP-10" />
+      </view>
+      <view identifier="beta-c-view-AP-V02" xsi:type="Diagram">
+        <name xml:lang="es">AP-V02 Arquitectura de aplicaciones objetivo (Target lógico)</name>
+        <documentation xml:lang="es">¿Qué componentes y servicios se requieren para BSV-01 a BSV-03? · Lectores: STK-07, STK-04 · VP01</documentation>
+        <node identifier="beta-c-n-AP-V02-BSV-01" elementRef="id-BSV01" xsi:type="Element" x="360" y="30" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-BSV-02" elementRef="id-BSV02" xsi:type="Element" x="690" y="30" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-BSV-03" elementRef="id-BSV03" xsi:type="Element" x="1020" y="30" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-AS-05" elementRef="beta-c-e-AS-05" xsi:type="Element" x="30" y="200" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-AS-01" elementRef="beta-c-e-AS-01" xsi:type="Element" x="360" y="200" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-AS-02" elementRef="beta-c-e-AS-02" xsi:type="Element" x="690" y="200" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-AS-03" elementRef="beta-c-e-AS-03" xsi:type="Element" x="1020" y="200" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-AS-04" elementRef="beta-c-e-AS-04" xsi:type="Element" x="1350" y="200" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-AC-05" elementRef="beta-c-e-AC-05" xsi:type="Element" x="30" y="370" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-AC-01" elementRef="beta-c-e-AC-01" xsi:type="Element" x="360" y="370" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-AC-02" elementRef="beta-c-e-AC-02" xsi:type="Element" x="690" y="370" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-AC-03" elementRef="beta-c-e-AC-03" xsi:type="Element" x="1020" y="370" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-APP-05" elementRef="beta-c-e-APP-05" xsi:type="Element" x="1350" y="370" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-APP-01" elementRef="beta-c-e-APP-01" xsi:type="Element" x="30" y="560" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-APP-04" elementRef="beta-c-e-APP-04" xsi:type="Element" x="360" y="560" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-AC-04" elementRef="beta-c-e-AC-04" xsi:type="Element" x="690" y="560" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-APP-06" elementRef="beta-c-e-APP-06" xsi:type="Element" x="1020" y="560" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V02-APP-07" elementRef="beta-c-e-APP-07" xsi:type="Element" x="1020" y="700" w="230" h="86" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r23" relationshipRef="beta-c-r23" xsi:type="Relationship" source="beta-c-n-AP-V02-AS-01" target="beta-c-n-AP-V02-BSV-01" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r24" relationshipRef="beta-c-r24" xsi:type="Relationship" source="beta-c-n-AP-V02-AS-02" target="beta-c-n-AP-V02-BSV-02" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r25" relationshipRef="beta-c-r25" xsi:type="Relationship" source="beta-c-n-AP-V02-AS-03" target="beta-c-n-AP-V02-BSV-03" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r26" relationshipRef="beta-c-r26" xsi:type="Relationship" source="beta-c-n-AP-V02-AC-05" target="beta-c-n-AP-V02-AS-05" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r27" relationshipRef="beta-c-r27" xsi:type="Relationship" source="beta-c-n-AP-V02-AC-01" target="beta-c-n-AP-V02-AS-01" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r28" relationshipRef="beta-c-r28" xsi:type="Relationship" source="beta-c-n-AP-V02-AC-02" target="beta-c-n-AP-V02-AS-02" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r11" relationshipRef="beta-c-r11" xsi:type="Relationship" source="beta-c-n-AP-V02-AC-03" target="beta-c-n-AP-V02-AS-03" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r29" relationshipRef="beta-c-r29" xsi:type="Relationship" source="beta-c-n-AP-V02-APP-05" target="beta-c-n-AP-V02-AS-04" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r30" relationshipRef="beta-c-r30" xsi:type="Relationship" source="beta-c-n-AP-V02-AS-04" target="beta-c-n-AP-V02-AC-03" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r31" relationshipRef="beta-c-r31" xsi:type="Relationship" source="beta-c-n-AP-V02-AC-02" target="beta-c-n-AP-V02-AC-03" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r32" relationshipRef="beta-c-r32" xsi:type="Relationship" source="beta-c-n-AP-V02-AC-01" target="beta-c-n-AP-V02-AC-02" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r33" relationshipRef="beta-c-r33" xsi:type="Relationship" source="beta-c-n-AP-V02-AC-05" target="beta-c-n-AP-V02-AC-01" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r34" relationshipRef="beta-c-r34" xsi:type="Relationship" source="beta-c-n-AP-V02-APP-01" target="beta-c-n-AP-V02-AC-02" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r35" relationshipRef="beta-c-r35" xsi:type="Relationship" source="beta-c-n-AP-V02-APP-04" target="beta-c-n-AP-V02-AC-01" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r05" relationshipRef="beta-c-r05" xsi:type="Relationship" source="beta-c-n-AP-V02-APP-06" target="beta-c-n-AP-V02-AC-04" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r06" relationshipRef="beta-c-r06" xsi:type="Relationship" source="beta-c-n-AP-V02-APP-07" target="beta-c-n-AP-V02-AC-04" />
+        <connection identifier="beta-c-c-AP-V02-beta-c-r36" relationshipRef="beta-c-r36" xsi:type="Relationship" source="beta-c-n-AP-V02-AC-04" target="beta-c-n-AP-V02-AC-02" />
+      </view>
+      <view identifier="beta-c-view-AP-V03" xsi:type="Diagram">
+        <name xml:lang="es">AP-V03 Cooperación de aplicaciones e interfaces</name>
+        <documentation xml:lang="es">¿Quién publica y quién consume cada dato, y con qué contrato? · Lectores: STK-07, STK-04, STK-05 · VP01 · VP02</documentation>
+        <node identifier="beta-c-n-AP-V03-APP-04" elementRef="beta-c-e-APP-04" xsi:type="Element" x="30" y="40" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-APP-05" elementRef="beta-c-e-APP-05" xsi:type="Element" x="30" y="170" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-APP-01" elementRef="beta-c-e-APP-01" xsi:type="Element" x="30" y="320" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-APP-02" elementRef="beta-c-e-APP-02" xsi:type="Element" x="30" y="430" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-APP-06" elementRef="beta-c-e-APP-06" xsi:type="Element" x="30" y="580" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-APP-07" elementRef="beta-c-e-APP-07" xsi:type="Element" x="30" y="690" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-IF-01" elementRef="beta-c-e-IF-01" xsi:type="Element" x="360" y="40" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-IF-02" elementRef="beta-c-e-IF-02" xsi:type="Element" x="360" y="170" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-IF-04" elementRef="beta-c-e-IF-04" xsi:type="Element" x="360" y="375" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-AC-04" elementRef="beta-c-e-AC-04" xsi:type="Element" x="360" y="635" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-AC-01" elementRef="beta-c-e-AC-01" xsi:type="Element" x="690" y="40" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-AC-02" elementRef="beta-c-e-AC-02" xsi:type="Element" x="690" y="375" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-IF-03" elementRef="beta-c-e-IF-03" xsi:type="Element" x="690" y="635" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-AC-03" elementRef="beta-c-e-AC-03" xsi:type="Element" x="1020" y="210" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-AS-03" elementRef="beta-c-e-AS-03" xsi:type="Element" x="1350" y="210" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-R-STK04" elementRef="beta-c-e-R-STK04" xsi:type="Element" x="1350" y="30" w="230" h="86" />
+        <node identifier="beta-c-n-AP-V03-APP-09" elementRef="beta-c-e-APP-09" xsi:type="Element" x="1350" y="400" w="230" h="86" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r37" relationshipRef="beta-c-r37" xsi:type="Relationship" source="beta-c-n-AP-V03-APP-01" target="beta-c-n-AP-V03-IF-04" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r38" relationshipRef="beta-c-r38" xsi:type="Relationship" source="beta-c-n-AP-V03-APP-02" target="beta-c-n-AP-V03-IF-04" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r39" relationshipRef="beta-c-r39" xsi:type="Relationship" source="beta-c-n-AP-V03-AC-02" target="beta-c-n-AP-V03-IF-04" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r40" relationshipRef="beta-c-r40" xsi:type="Relationship" source="beta-c-n-AP-V03-APP-04" target="beta-c-n-AP-V03-IF-01" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r41" relationshipRef="beta-c-r41" xsi:type="Relationship" source="beta-c-n-AP-V03-AC-01" target="beta-c-n-AP-V03-IF-01" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r42" relationshipRef="beta-c-r42" xsi:type="Relationship" source="beta-c-n-AP-V03-APP-05" target="beta-c-n-AP-V03-IF-02" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r43" relationshipRef="beta-c-r43" xsi:type="Relationship" source="beta-c-n-AP-V03-AC-03" target="beta-c-n-AP-V03-IF-02" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r05" relationshipRef="beta-c-r05" xsi:type="Relationship" source="beta-c-n-AP-V03-APP-06" target="beta-c-n-AP-V03-AC-04" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r06" relationshipRef="beta-c-r06" xsi:type="Relationship" source="beta-c-n-AP-V03-APP-07" target="beta-c-n-AP-V03-AC-04" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r44" relationshipRef="beta-c-r44" xsi:type="Relationship" source="beta-c-n-AP-V03-AC-04" target="beta-c-n-AP-V03-IF-03" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r45" relationshipRef="beta-c-r45" xsi:type="Relationship" source="beta-c-n-AP-V03-AC-02" target="beta-c-n-AP-V03-IF-03" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r31" relationshipRef="beta-c-r31" xsi:type="Relationship" source="beta-c-n-AP-V03-AC-02" target="beta-c-n-AP-V03-AC-03" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r46" relationshipRef="beta-c-r46" xsi:type="Relationship" source="beta-c-n-AP-V03-AC-01" target="beta-c-n-AP-V03-AC-03" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r11" relationshipRef="beta-c-r11" xsi:type="Relationship" source="beta-c-n-AP-V03-AC-03" target="beta-c-n-AP-V03-AS-03" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r47" relationshipRef="beta-c-r47" xsi:type="Relationship" source="beta-c-n-AP-V03-AS-03" target="beta-c-n-AP-V03-APP-09" />
+        <connection identifier="beta-c-c-AP-V03-beta-c-r12" relationshipRef="beta-c-r12" xsi:type="Relationship" source="beta-c-n-AP-V03-AS-03" target="beta-c-n-AP-V03-R-STK04" />
+      </view>
+      <view identifier="beta-x-view-X-V01" xsi:type="Diagram">
+        <name xml:lang="es">X-V01 Vista cross-layer: valor → negocio → aplicaciones → datos</name>
+        <documentation xml:lang="es">¿Cómo se conectan valor, dato y software? · Lectores: STK-01, Architecture Board · CN-C07</documentation>
+        <node identifier="beta-x-n-X-V01-CAP-01" elementRef="beta-x-e-CAP-01" xsi:type="Element" x="30" y="30" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-CAP-03" elementRef="beta-x-e-CAP-03" xsi:type="Element" x="650" y="30" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-CAP-04" elementRef="beta-x-e-CAP-04" xsi:type="Element" x="960" y="30" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-R-EXT" elementRef="beta-c-e-R-EXT" xsi:type="Element" x="1270" y="30" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-CAP-06" elementRef="beta-x-e-CAP-06" xsi:type="Element" x="1580" y="30" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-BSV-01" elementRef="id-BSV01" xsi:type="Element" x="30" y="190" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-BSV-02" elementRef="id-BSV02" xsi:type="Element" x="650" y="190" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-R-STK04" elementRef="beta-c-e-R-STK04" xsi:type="Element" x="1270" y="190" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-BSV-03" elementRef="id-BSV03" xsi:type="Element" x="1580" y="190" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-BP-E35" elementRef="beta-x-e-BP-E35" xsi:type="Element" x="30" y="350" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-BP-E17" elementRef="beta-x-e-BP-E17" xsi:type="Element" x="650" y="350" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-BP-E4" elementRef="beta-x-e-BP-E4" xsi:type="Element" x="960" y="350" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-BP-REC" elementRef="beta-x-e-BP-REC" xsi:type="Element" x="1580" y="350" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-AS-01" elementRef="beta-c-e-AS-01" xsi:type="Element" x="30" y="510" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-AS-02" elementRef="beta-c-e-AS-02" xsi:type="Element" x="650" y="510" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-AS-04" elementRef="beta-c-e-AS-04" xsi:type="Element" x="960" y="510" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-AS-03" elementRef="beta-c-e-AS-03" xsi:type="Element" x="1580" y="510" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-AC-01" elementRef="beta-c-e-AC-01" xsi:type="Element" x="30" y="670" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-AC-02" elementRef="beta-c-e-AC-02" xsi:type="Element" x="650" y="670" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-APP-05" elementRef="beta-c-e-APP-05" xsi:type="Element" x="960" y="670" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-AC-03" elementRef="beta-c-e-AC-03" xsi:type="Element" x="1580" y="670" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-DO-01" elementRef="id-DO1" xsi:type="Element" x="30" y="830" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-DO-03" elementRef="id-DO3" xsi:type="Element" x="340" y="830" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-DO-02" elementRef="id-DO2" xsi:type="Element" x="650" y="830" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-DO-04" elementRef="id-DO4" xsi:type="Element" x="960" y="830" w="230" h="86" />
+        <node identifier="beta-x-n-X-V01-DO-HIST" elementRef="beta-c-e-DO-HIST" xsi:type="Element" x="1580" y="830" w="230" h="86" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r01" relationshipRef="beta-x-r01" xsi:type="Relationship" source="beta-x-n-X-V01-BSV-01" target="beta-x-n-X-V01-CAP-01" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r02" relationshipRef="beta-x-r02" xsi:type="Relationship" source="beta-x-n-X-V01-BSV-02" target="beta-x-n-X-V01-CAP-03" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r03" relationshipRef="beta-x-r03" xsi:type="Relationship" source="beta-x-n-X-V01-BSV-03" target="beta-x-n-X-V01-CAP-06" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r04" relationshipRef="beta-x-r04" xsi:type="Relationship" source="beta-x-n-X-V01-BP-E4" target="beta-x-n-X-V01-CAP-04" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r05" relationshipRef="beta-x-r05" xsi:type="Relationship" source="beta-x-n-X-V01-BP-E35" target="beta-x-n-X-V01-BSV-01" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r06" relationshipRef="beta-x-r06" xsi:type="Relationship" source="beta-x-n-X-V01-BP-E17" target="beta-x-n-X-V01-BSV-02" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r07" relationshipRef="beta-x-r07" xsi:type="Relationship" source="beta-x-n-X-V01-BP-REC" target="beta-x-n-X-V01-BSV-03" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r08" relationshipRef="beta-x-r08" xsi:type="Relationship" source="beta-x-n-X-V01-R-STK04" target="beta-x-n-X-V01-BP-E4" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r09" relationshipRef="beta-x-r09" xsi:type="Relationship" source="beta-x-n-X-V01-BSV-03" target="beta-x-n-X-V01-R-STK04" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r10" relationshipRef="beta-x-r10" xsi:type="Relationship" source="beta-x-n-X-V01-BSV-03" target="beta-x-n-X-V01-R-EXT" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r11" relationshipRef="beta-x-r11" xsi:type="Relationship" source="beta-x-n-X-V01-AS-01" target="beta-x-n-X-V01-BP-E35" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r12" relationshipRef="beta-x-r12" xsi:type="Relationship" source="beta-x-n-X-V01-AS-02" target="beta-x-n-X-V01-BP-E17" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r13" relationshipRef="beta-x-r13" xsi:type="Relationship" source="beta-x-n-X-V01-AS-04" target="beta-x-n-X-V01-BP-REC" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r14" relationshipRef="beta-x-r14" xsi:type="Relationship" source="beta-x-n-X-V01-AS-03" target="beta-x-n-X-V01-BP-REC" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r15" relationshipRef="beta-c-r27" xsi:type="Relationship" source="beta-x-n-X-V01-AC-01" target="beta-x-n-X-V01-AS-01" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r16" relationshipRef="beta-c-r28" xsi:type="Relationship" source="beta-x-n-X-V01-AC-02" target="beta-x-n-X-V01-AS-02" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r17" relationshipRef="beta-c-r29" xsi:type="Relationship" source="beta-x-n-X-V01-APP-05" target="beta-x-n-X-V01-AS-04" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r18" relationshipRef="beta-c-r11" xsi:type="Relationship" source="beta-x-n-X-V01-AC-03" target="beta-x-n-X-V01-AS-03" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r19" relationshipRef="beta-x-r19" xsi:type="Relationship" source="beta-x-n-X-V01-AC-01" target="beta-x-n-X-V01-DO-01" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r20" relationshipRef="beta-x-r20" xsi:type="Relationship" source="beta-x-n-X-V01-AC-01" target="beta-x-n-X-V01-DO-03" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r21" relationshipRef="beta-x-r21" xsi:type="Relationship" source="beta-x-n-X-V01-AC-02" target="beta-x-n-X-V01-DO-02" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r22" relationshipRef="beta-x-r22" xsi:type="Relationship" source="beta-x-n-X-V01-APP-05" target="beta-x-n-X-V01-DO-04" />
+        <connection identifier="beta-x-c-X-V01-beta-x-r23" relationshipRef="beta-x-r23" xsi:type="Relationship" source="beta-x-n-X-V01-AC-03" target="beta-x-n-X-V01-DO-HIST" />
+      </view>
+      <view identifier="T-V01" xsi:type="Diagram">
+        <name xml:lang="es">T-V01 Baseline Environments &amp; Locations</name>
+        <node identifier="n-loc-t01" elementRef="loc-t01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t02" elementRef="loc-t02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t03" elementRef="loc-t03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t04" elementRef="loc-t04" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t05" elementRef="loc-t05" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t06" elementRef="loc-t06" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t07" elementRef="loc-t07" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t08" elementRef="loc-t08" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-loc-t09" elementRef="loc-t09" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-plc-asis" elementRef="plc-asis" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-termo-asis" elementRef="termo-asis" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-excel-asis" elementRef="excel-asis" x="670" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-erp-asis" elementRef="erp-asis" x="10" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-qa-asis" elementRef="qa-asis" x="230" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="c-r1" relationshipRef="r1" source="n-loc-t02" target="n-plc-asis" xsi:type="Relationship" />
+        <connection identifier="c-r2" relationshipRef="r2" source="n-loc-t05" target="n-plc-asis" xsi:type="Relationship" />
+        <connection identifier="c-r3" relationshipRef="r3" source="n-loc-t05" target="n-termo-asis" xsi:type="Relationship" />
+        <connection identifier="c-r4" relationshipRef="r4" source="n-loc-t06" target="n-termo-asis" xsi:type="Relationship" />
+        <connection identifier="c-r5" relationshipRef="r5" source="n-loc-t02" target="n-excel-asis" xsi:type="Relationship" />
+        <connection identifier="c-r6" relationshipRef="r6" source="n-loc-t08" target="n-erp-asis" xsi:type="Relationship" />
+        <connection identifier="c-r7" relationshipRef="r7" source="n-loc-t08" target="n-qa-asis" xsi:type="Relationship" />
+      </view>
+      <view identifier="T-V02" xsi:type="Diagram">
+        <name xml:lang="es">T-V02 Target ISA-95</name>
+        <node identifier="n-l1-plc" elementRef="l1-plc" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l1-pt100" elementRef="l1-pt100" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l2-hmi" elementRef="l2-hmi" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l3-edge" elementRef="l3-edge" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l35-broker" elementRef="l35-broker" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l4-event" elementRef="l4-event" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l4-data" elementRef="l4-data" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l4-api" elementRef="l4-api" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l4-iam" elementRef="l4-iam" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-l4-repo" elementRef="l4-repo" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-app-05" elementRef="beta-c-e-APP-05" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="tv02-c-r1" relationshipRef="tv02-r1" source="n-l1-plc" target="n-l2-hmi" xsi:type="Relationship" />
+        <connection identifier="tv02-c-r2" relationshipRef="tv02-r2" source="n-l1-pt100" target="n-l2-hmi" xsi:type="Relationship" />
+        <connection identifier="tv02-c-r3" relationshipRef="tv02-r3" source="n-l2-hmi" target="n-l3-edge" xsi:type="Relationship" />
+        <connection identifier="tv02-c-r4" relationshipRef="tv02-r4" source="n-l3-edge" target="n-l35-broker" xsi:type="Relationship" />
+        <connection identifier="tv02-c-r5" relationshipRef="tv02-r5" source="n-l35-broker" target="n-l4-event" xsi:type="Relationship" />
+        <connection identifier="tv02-c-r6" relationshipRef="tv02-r6" source="n-l4-event" target="n-l4-data" xsi:type="Relationship" />
+        <connection identifier="tv02-c-r7" relationshipRef="tv02-r7" source="n-l4-api" target="n-l4-event" xsi:type="Relationship" />
+        <connection identifier="c-r8" relationshipRef="r8" source="n-l4-api" target="n-l4-iam" xsi:type="Relationship" />
+        <connection identifier="c-r9" relationshipRef="r9" source="n-l4-repo" target="n-app-05" xsi:type="Relationship" />
+      </view>
+      <view identifier="T-V03" xsi:type="Diagram">
+        <name xml:lang="es">T-V03 Platform Decomposition</name>
+        <node identifier="n-tabb-01" elementRef="tabb-01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-tabb-02" elementRef="tabb-02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-tabb-03" elementRef="tabb-03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-tabb-04" elementRef="tabb-04" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-tabb-05" elementRef="tabb-05" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-tabb-06" elementRef="tabb-06" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-abbc-01" elementRef="abbc-01" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-abbc-02" elementRef="abbc-02" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-abbc-03" elementRef="abbc-03" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="tv03-c-r1" relationshipRef="tv03-r1" source="n-tabb-01" target="n-abbc-02" xsi:type="Relationship" />
+        <connection identifier="tv03-c-r2" relationshipRef="tv03-r2" source="n-tabb-02" target="n-abbc-02" xsi:type="Relationship" />
+        <connection identifier="tv03-c-r3" relationshipRef="tv03-r3" source="n-tabb-03" target="n-abbc-02" xsi:type="Relationship" />
+        <connection identifier="tv03-c-r4" relationshipRef="tv03-r4" source="n-tabb-03" target="n-abbc-03" xsi:type="Relationship" />
+        <connection identifier="tv03-c-r5" relationshipRef="tv03-r5" source="n-tabb-04" target="n-abbc-01" xsi:type="Relationship" />
+        <connection identifier="tv03-c-r6" relationshipRef="tv03-r6" source="n-tabb-05" target="n-abbc-03" xsi:type="Relationship" />
+        <connection identifier="tv03-c-r7" relationshipRef="tv03-r7" source="n-tabb-06" target="n-abbc-03" xsi:type="Relationship" />
+      </view>
+      <view identifier="T-V04" xsi:type="Diagram">
+        <name xml:lang="es">T-V04 Processing End-to-End</name>
+        <node identifier="n-p1" elementRef="p1" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p2" elementRef="p2" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p3" elementRef="p3" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p4" elementRef="p4" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p5" elementRef="p5" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p6" elementRef="p6" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p7" elementRef="p7" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p8" elementRef="p8" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p9" elementRef="p9" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-p10" elementRef="p10" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="tv04-c-r1" relationshipRef="tv04-r1" source="n-p1" target="n-p2" xsi:type="Relationship" />
+        <connection identifier="tv04-c-r2" relationshipRef="tv04-r2" source="n-p2" target="n-p3" xsi:type="Relationship" />
+        <connection identifier="tv04-c-r3" relationshipRef="tv04-r3" source="n-p3" target="n-p4" xsi:type="Relationship" />
+        <connection identifier="tv04-c-r4" relationshipRef="tv04-r4" source="n-p4" target="n-p5" xsi:type="Relationship" />
+        <connection identifier="tv04-c-r5" relationshipRef="tv04-r5" source="n-p5" target="n-p6" xsi:type="Relationship" />
+        <connection identifier="tv04-c-r6" relationshipRef="tv04-r6" source="n-p6" target="n-p7" xsi:type="Relationship" />
+        <connection identifier="tv04-c-r7" relationshipRef="tv04-r7" source="n-p7" target="n-p8" xsi:type="Relationship" />
+        <connection identifier="tv04-c-r8" relationshipRef="tv04-r8" source="n-p8" target="n-p9" xsi:type="Relationship" />
+        <connection identifier="tv04-c-r9" relationshipRef="tv04-r9" source="n-p9" target="n-p10" xsi:type="Relationship" />
+      </view>
+      <view identifier="T-V05" xsi:type="Diagram">
+        <name xml:lang="es">T-V05 Nodos y hardware</name>
+        <node identifier="n-nt-01" elementRef="nt-01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-02" elementRef="nt-02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-03" elementRef="nt-03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-04" elementRef="nt-04" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-05" elementRef="nt-05" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-06" elementRef="nt-06" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-07" elementRef="nt-07" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-08" elementRef="nt-08" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-09" elementRef="nt-09" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-10" elementRef="nt-10" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-11" elementRef="nt-11" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-12" elementRef="nt-12" x="670" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-nt-13" elementRef="nt-13" x="10" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="tv05-c-r1" relationshipRef="tv05-r1" source="n-nt-01" target="n-nt-02" xsi:type="Relationship" />
+        <connection identifier="tv05-c-r2" relationshipRef="tv05-r2" source="n-nt-01" target="n-nt-06" xsi:type="Relationship" />
+        <connection identifier="tv05-c-r3" relationshipRef="tv05-r3" source="n-nt-01" target="n-nt-04" xsi:type="Relationship" />
+        <connection identifier="tv05-c-r4" relationshipRef="tv05-r4" source="n-nt-05" target="n-nt-01" xsi:type="Relationship" />
+        <connection identifier="tv05-c-r5" relationshipRef="tv05-r5" source="n-nt-05" target="n-nt-06" xsi:type="Relationship" />
+        <connection identifier="tv05-c-r6" relationshipRef="tv05-r6" source="n-nt-08" target="n-nt-07" xsi:type="Relationship" />
+        <connection identifier="tv05-c-r7" relationshipRef="tv05-r7" source="n-nt-07" target="n-nt-01" xsi:type="Relationship" />
+        <connection identifier="tv05-c-r8" relationshipRef="tv05-r8" source="n-nt-03" target="n-nt-04" xsi:type="Relationship" />
+        <connection identifier="tv05-c-r9" relationshipRef="tv05-r9" source="n-nt-04" target="n-nt-10" xsi:type="Relationship" />
+        <connection identifier="c-r10" relationshipRef="r10" source="n-nt-10" target="n-nt-11" xsi:type="Relationship" />
+        <connection identifier="c-r11" relationshipRef="r11" source="n-nt-12" target="n-nt-01" xsi:type="Relationship" />
+      </view>
+      <view identifier="T-V06" xsi:type="Diagram">
+        <name xml:lang="es">T-V06 Technology Services</name>
+        <node identifier="n-svc-01" elementRef="svc-01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-svc-02" elementRef="svc-02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-svc-03" elementRef="svc-03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-svc-04" elementRef="svc-04" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-svc-05" elementRef="svc-05" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-svc-06" elementRef="svc-06" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-ac-01" elementRef="beta-c-e-AC-01" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-ac-02" elementRef="beta-c-e-AC-02" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-ac-03" elementRef="beta-c-e-AC-04" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-ac-05" elementRef="beta-c-e-AC-03" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="tv06-n-app-05" elementRef="beta-c-e-APP-05" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="tv06-c-r1" relationshipRef="tv06-r1" source="n-svc-01" target="n-ac-02" xsi:type="Relationship" />
+        <connection identifier="tv06-c-r2" relationshipRef="tv06-r2" source="n-svc-02" target="n-ac-03" xsi:type="Relationship" />
+        <connection identifier="tv06-c-r3" relationshipRef="tv06-r3" source="n-svc-03" target="n-ac-05" xsi:type="Relationship" />
+        <connection identifier="tv06-c-r4" relationshipRef="tv06-r4" source="n-svc-04" target="n-ac-05" xsi:type="Relationship" />
+        <connection identifier="tv06-c-r5" relationshipRef="tv06-r5" source="n-svc-04" target="tv06-n-app-05" xsi:type="Relationship" />
+        <connection identifier="tv06-c-r6" relationshipRef="tv06-r6" source="n-svc-05" target="n-ac-01" xsi:type="Relationship" />
+        <connection identifier="tv06-c-r7" relationshipRef="tv06-r7" source="n-svc-05" target="n-ac-02" xsi:type="Relationship" />
+        <connection identifier="tv06-c-r8" relationshipRef="tv06-r8" source="n-svc-06" target="tv06-n-app-05" xsi:type="Relationship" />
+      </view>
+      <view identifier="T-V07" xsi:type="Diagram">
+        <name xml:lang="es">T-V07 Redes y zonas IT/OT</name>
+        <node identifier="n-zt-01" elementRef="zt-01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-zt-02" elementRef="zt-02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-zt-03" elementRef="zt-03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-zt-04" elementRef="zt-04" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-zt-05" elementRef="zt-05" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-zt-06" elementRef="zt-06" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-zt-07" elementRef="zt-07" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-net-ot" elementRef="net-ot" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-net-dmz" elementRef="net-dmz" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-net-cloud" elementRef="net-cloud" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="tv07-c-r1" relationshipRef="tv07-r1" source="n-zt-01" target="n-net-ot" xsi:type="Relationship" />
+        <connection identifier="tv07-c-r2" relationshipRef="tv07-r2" source="n-zt-02" target="n-net-ot" xsi:type="Relationship" />
+        <connection identifier="tv07-c-r3" relationshipRef="tv07-r3" source="n-net-ot" target="n-zt-03" xsi:type="Relationship" />
+        <connection identifier="tv07-c-r4" relationshipRef="tv07-r4" source="n-zt-03" target="n-net-dmz" xsi:type="Relationship" />
+        <connection identifier="tv07-c-r5" relationshipRef="tv07-r5" source="n-zt-04" target="n-net-dmz" xsi:type="Relationship" />
+        <connection identifier="tv07-c-r6" relationshipRef="tv07-r6" source="n-net-dmz" target="n-net-cloud" xsi:type="Relationship" />
+        <connection identifier="tv07-c-r7" relationshipRef="tv07-r7" source="n-net-cloud" target="n-zt-06" xsi:type="Relationship" />
+        <connection identifier="tv07-c-r8" relationshipRef="tv07-r8" source="n-zt-05" target="n-net-cloud" xsi:type="Relationship" />
+        <connection identifier="tv07-c-r9" relationshipRef="tv07-r9" source="n-zt-07" target="n-net-dmz" xsi:type="Relationship" />
+      </view>
+      <view identifier="T-V08" xsi:type="Diagram">
+        <name xml:lang="es">T-V08 Matriz de conduits</name>
+        <node identifier="n-cd-01" elementRef="cd-01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-02" elementRef="cd-02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-03" elementRef="cd-03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-04" elementRef="cd-04" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-05" elementRef="cd-05" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-06" elementRef="cd-06" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-07" elementRef="cd-07" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-08" elementRef="cd-08" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-09" elementRef="cd-09" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-10" elementRef="cd-10" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-px-01" elementRef="px-01" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-px-02" elementRef="px-02" x="670" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-px-03" elementRef="px-03" x="10" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-px-04" elementRef="px-04" x="230" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="tv08-c-r1" relationshipRef="tv08-r1" source="n-cd-01" target="n-cd-02" xsi:type="Relationship" />
+        <connection identifier="tv08-c-r2" relationshipRef="tv08-r2" source="n-cd-02" target="n-cd-03" xsi:type="Relationship" />
+        <connection identifier="tv08-c-r3" relationshipRef="tv08-r3" source="n-cd-03" target="n-cd-04" xsi:type="Relationship" />
+        <connection identifier="tv08-c-r4" relationshipRef="tv08-r4" source="n-cd-04" target="n-cd-05" xsi:type="Relationship" />
+        <connection identifier="tv08-c-r5" relationshipRef="tv08-r5" source="n-cd-05" target="n-cd-06" xsi:type="Relationship" />
+        <connection identifier="tv08-c-r6" relationshipRef="tv08-r6" source="n-cd-06" target="n-cd-07" xsi:type="Relationship" />
+        <connection identifier="tv08-c-r7" relationshipRef="tv08-r7" source="n-cd-07" target="n-cd-08" xsi:type="Relationship" />
+        <connection identifier="tv08-c-r8" relationshipRef="tv08-r8" source="n-cd-08" target="n-cd-09" xsi:type="Relationship" />
+        <connection identifier="tv08-c-r9" relationshipRef="tv08-r9" source="n-cd-09" target="n-cd-10" xsi:type="Relationship" />
+      </view>
+      <view identifier="T-V09" xsi:type="Diagram">
+        <name xml:lang="es">T-V09 Disponibilidad y continuidad</name>
+        <node identifier="n-ft-01" elementRef="ft-01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-ft-02" elementRef="ft-02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-ft-03" elementRef="ft-03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-ft-04" elementRef="ft-04" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-ft-05" elementRef="ft-05" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-obs-01" elementRef="obs-01" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-obs-02" elementRef="obs-02" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-obs-03" elementRef="obs-03" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-obs-04" elementRef="obs-04" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-obs-05" elementRef="obs-05" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-obs-06" elementRef="obs-06" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-obs-07" elementRef="obs-07" x="670" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-obs-08" elementRef="obs-08" x="10" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-rto-1" elementRef="rto-1" x="230" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-rto-2" elementRef="rto-2" x="450" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-rto-3" elementRef="rto-3" x="670" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-rto-4" elementRef="rto-4" x="10" y="370" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+      </view>
+      <view identifier="T-V10" xsi:type="Diagram">
+        <name xml:lang="es">T-V10 Roadmap tecnológico candidato</name>
+        <node identifier="n-trc-01" elementRef="trc-01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-trc-02" elementRef="trc-02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-trc-03" elementRef="trc-03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-plat-c" elementRef="plat-c" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-plat-d" elementRef="plat-d" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-plat-e" elementRef="plat-e" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="tv10-c-r1" relationshipRef="tv10-r1" source="n-plat-c" target="n-trc-01" xsi:type="Relationship" />
+        <connection identifier="tv10-c-r2" relationshipRef="tv10-r2" source="n-trc-01" target="n-trc-02" xsi:type="Relationship" />
+        <connection identifier="tv10-c-r3" relationshipRef="tv10-r3" source="n-trc-02" target="n-trc-03" xsi:type="Relationship" />
+        <connection identifier="tv10-c-r4" relationshipRef="tv10-r4" source="n-trc-03" target="n-plat-d" xsi:type="Relationship" />
+        <connection identifier="tv10-c-r5" relationshipRef="tv10-r5" source="n-plat-d" target="n-plat-e" xsi:type="Relationship" />
+      </view>
+      <view identifier="X-V02" xsi:type="Diagram">
+        <name xml:lang="es">X-V02 Vista integrada 4 capas</name>
+        <node identifier="n-bsv-01" elementRef="id-BSV01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-bsv-02" elementRef="id-BSV02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-bsv-03" elementRef="id-BSV03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-do-01" elementRef="id-DO1" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-do-08" elementRef="id-DO2" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-do-09" elementRef="id-DO9" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-qr" elementRef="id-DO4" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="xv02-n-ac-01" elementRef="beta-c-e-AC-01" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="xv02-n-ac-02" elementRef="beta-c-e-AC-02" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="xv02-n-ac-05" elementRef="beta-c-e-AC-03" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="xv02-n-app-05" elementRef="beta-c-e-APP-05" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="xv02-n-tabb-02" elementRef="tabb-02" x="670" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="xv02-n-tabb-04" elementRef="tabb-04" x="10" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="xv02-n-tabb-05" elementRef="tabb-05" x="230" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="xv02-n-tabb-06" elementRef="tabb-06" x="450" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="xv02-c-r1" relationshipRef="xv02-r1" source="xv02-n-ac-01" target="n-bsv-01" xsi:type="Relationship" />
+        <connection identifier="xv02-c-r2" relationshipRef="xv02-r2" source="xv02-n-ac-02" target="n-bsv-01" xsi:type="Relationship" />
+        <connection identifier="xv02-c-r3" relationshipRef="xv02-r3" source="xv02-n-app-05" target="n-bsv-02" xsi:type="Relationship" />
+        <connection identifier="xv02-c-r4" relationshipRef="xv02-r4" source="xv02-n-ac-05" target="n-bsv-03" xsi:type="Relationship" />
+        <connection identifier="xv02-c-r5" relationshipRef="beta-x-r19" source="xv02-n-ac-01" target="n-do-01" xsi:type="Relationship" />
+        <connection identifier="xv02-c-r6" relationshipRef="beta-x-r21" source="xv02-n-ac-02" target="n-do-08" xsi:type="Relationship" />
+        <connection identifier="xv02-c-r7" relationshipRef="xv02-r7" source="xv02-n-ac-05" target="n-do-09" xsi:type="Relationship" />
+        <connection identifier="xv02-c-r8" relationshipRef="beta-x-r22" source="xv02-n-app-05" target="n-qr" xsi:type="Relationship" />
+        <connection identifier="xv02-c-r9" relationshipRef="xv02-r9" source="xv02-n-tabb-02" target="xv02-n-ac-02" xsi:type="Relationship" />
+        <connection identifier="xv02-c-r10" relationshipRef="xv02-r10" source="xv02-n-tabb-04" target="xv02-n-ac-02" xsi:type="Relationship" />
+        <connection identifier="xv02-c-r11" relationshipRef="xv02-r11" source="xv02-n-tabb-05" target="xv02-n-ac-05" xsi:type="Relationship" />
+        <connection identifier="c-r12" relationshipRef="r12" source="xv02-n-tabb-06" target="xv02-n-app-05" xsi:type="Relationship" />
+      </view>
+    </diagrams>
+  </views>
+</model>

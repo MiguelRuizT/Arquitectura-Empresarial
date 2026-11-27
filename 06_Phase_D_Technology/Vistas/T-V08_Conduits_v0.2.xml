@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd" identifier="model-T-V08">
+  <name xml:lang="es">PC3 Fase D · Matriz de conduits · Grupo 03</name>
+  <documentation xml:lang="es">Vista T-V08 extraída literalmente de los informes integrados del Grupo 03.</documentation>
+  <elements>
+    <element identifier="cd-01" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-01 Estado PLC → HMI/SCADA</name>
+    </element>
+    <element identifier="cd-02" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-02 Lecturas refrig/túnel</name>
+    </element>
+    <element identifier="cd-03" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-03 Termógrafos CABSA (CRD-05)</name>
+    </element>
+    <element identifier="cd-04" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-04 Datos selectora/pesadoras</name>
+    </element>
+    <element identifier="cd-05" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-05 Eventos fundo (IF-04)</name>
+    </element>
+    <element identifier="cd-06" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-06 Eventos fundo vía celular</name>
+    </element>
+    <element identifier="cd-07" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-07 Edge → broker local</name>
+    </element>
+    <element identifier="cd-08" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-08 DMZ → ingesta cloud</name>
+    </element>
+    <element identifier="cd-09" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-09 DMZ → data platform</name>
+    </element>
+    <element identifier="cd-10" xsi:type="TechnologyInterface">
+      <name xml:lang="es">CD-10 IT Empresa → API Gateway</name>
+    </element>
+    <element identifier="px-01" xsi:type="Constraint">
+      <name xml:lang="es">PX-01 Cloud (ZT-06) → PLC (ZT-01) directa</name>
+    </element>
+    <element identifier="px-02" xsi:type="Constraint">
+      <name xml:lang="es">PX-02 IT Empresa (ZT-05) → OT Control (ZT-01) directa</name>
+    </element>
+    <element identifier="px-03" xsi:type="Constraint">
+      <name xml:lang="es">PX-03 Edge (ZT-03) escribe en PLC/SCADA</name>
+    </element>
+    <element identifier="px-04" xsi:type="Constraint">
+      <name xml:lang="es">PX-04 Cualquier consumidor cambia estado de Calidad</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="r1" source="cd-01" target="cd-02" xsi:type="Association" />
+    <relationship identifier="r2" source="cd-02" target="cd-03" xsi:type="Association" />
+    <relationship identifier="r3" source="cd-03" target="cd-04" xsi:type="Association" />
+    <relationship identifier="r4" source="cd-04" target="cd-05" xsi:type="Association" />
+    <relationship identifier="r5" source="cd-05" target="cd-06" xsi:type="Association" />
+    <relationship identifier="r6" source="cd-06" target="cd-07" xsi:type="Association" />
+    <relationship identifier="r7" source="cd-07" target="cd-08" xsi:type="Association" />
+    <relationship identifier="r8" source="cd-08" target="cd-09" xsi:type="Association" />
+    <relationship identifier="r9" source="cd-09" target="cd-10" xsi:type="Association" />
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="T-V08" xsi:type="Diagram">
+        <name xml:lang="es">Matriz de conduits</name>
+        <node identifier="n-cd-01" elementRef="cd-01" x="10" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-02" elementRef="cd-02" x="230" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-03" elementRef="cd-03" x="450" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-04" elementRef="cd-04" x="670" y="10" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-05" elementRef="cd-05" x="10" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-06" elementRef="cd-06" x="230" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-07" elementRef="cd-07" x="450" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-08" elementRef="cd-08" x="670" y="100" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-09" elementRef="cd-09" x="10" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-cd-10" elementRef="cd-10" x="230" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-px-01" elementRef="px-01" x="450" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-px-02" elementRef="px-02" x="670" y="190" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-px-03" elementRef="px-03" x="10" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <node identifier="n-px-04" elementRef="px-04" x="230" y="280" w="200" h="70" xsi:type="Element">
+          <style>
+            <fillColor r="200" g="215" b="235" />
+            <lineColor r="90" g="120" b="160" />
+          </style>
+        </node>
+        <connection identifier="c-r1" relationshipRef="r1" source="n-cd-01" target="n-cd-02" xsi:type="Relationship" />
+        <connection identifier="c-r2" relationshipRef="r2" source="n-cd-02" target="n-cd-03" xsi:type="Relationship" />
+        <connection identifier="c-r3" relationshipRef="r3" source="n-cd-03" target="n-cd-04" xsi:type="Relationship" />
+        <connection identifier="c-r4" relationshipRef="r4" source="n-cd-04" target="n-cd-05" xsi:type="Relationship" />
+        <connection identifier="c-r5" relationshipRef="r5" source="n-cd-05" target="n-cd-06" xsi:type="Relationship" />
+        <connection identifier="c-r6" relationshipRef="r6" source="n-cd-06" target="n-cd-07" xsi:type="Relationship" />
+        <connection identifier="c-r7" relationshipRef="r7" source="n-cd-07" target="n-cd-08" xsi:type="Relationship" />
+        <connection identifier="c-r8" relationshipRef="r8" source="n-cd-08" target="n-cd-09" xsi:type="Relationship" />
+        <connection identifier="c-r9" relationshipRef="r9" source="n-cd-09" target="n-cd-10" xsi:type="Relationship" />
+      </view>
+    </diagrams>
+  </views>
+</model>

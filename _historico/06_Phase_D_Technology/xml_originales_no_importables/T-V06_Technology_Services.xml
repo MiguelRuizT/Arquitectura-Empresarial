@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd"
+       identifier="model-phased-ruben">
+  <name xml:lang="es">PC3 Fase D · Bloque 6.1-7.3 · Grupo 03</name>
+  <documentation xml:lang="es">Vista T-V06 Technology Services · Int. 4 Julio Rubén</documentation>
+  <elements>
+    <element identifier="svc-01" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-01 Captura de evento industrial</name>
+    </element>
+    <element identifier="svc-02" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-02 Persistencia serie temporal</name>
+    </element>
+    <element identifier="svc-03" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-03 Historial de lote</name>
+    </element>
+    <element identifier="svc-04" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-04 Identidad y autorización</name>
+    </element>
+    <element identifier="svc-05" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-05 Mensajería IF-01..IF-04</name>
+    </element>
+    <element identifier="svc-06" xsi:type="TechnologyService">
+      <name xml:lang="es">T-SVC-06 Alojamiento app de calidad</name>
+    </element>
+    <element identifier="ac-01" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-01 Registro de lote</name>
+    </element>
+    <element identifier="ac-02" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-02 Captura eventos</name>
+    </element>
+    <element identifier="ac-03" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-03 Enlace termoregistros</name>
+    </element>
+    <element identifier="ac-05" xsi:type="ApplicationComponent">
+      <name xml:lang="es">AC-05 Consultas</name>
+    </element>
+    <element identifier="app-05" xsi:type="ApplicationComponent">
+      <name xml:lang="es">APP-05 ResultadoCalidad</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="r1" source="svc-01" target="ac-02" xsi:type="UsedByRelationship"/>
+    <relationship identifier="r2" source="svc-02" target="ac-03" xsi:type="UsedByRelationship"/>
+    <relationship identifier="r3" source="svc-03" target="ac-05" xsi:type="UsedByRelationship"/>
+    <relationship identifier="r4" source="svc-04" target="ac-05" xsi:type="UsedByRelationship"/>
+    <relationship identifier="r5" source="svc-04" target="app-05" xsi:type="UsedByRelationship"/>
+    <relationship identifier="r6" source="svc-05" target="ac-01" xsi:type="UsedByRelationship"/>
+    <relationship identifier="r7" source="svc-05" target="ac-02" xsi:type="UsedByRelationship"/>
+    <relationship identifier="r8" source="svc-06" target="app-05" xsi:type="UsedByRelationship"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="T-V06" xsi:type="Diagram">
+        <name xml:lang="es">Technology Services</name>
+      <node identifier="n-svc-01" elementRef="svc-01" x="10" y="10" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-svc-02" elementRef="svc-02" x="230" y="10" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-svc-03" elementRef="svc-03" x="450" y="10" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-svc-04" elementRef="svc-04" x="670" y="10" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-svc-05" elementRef="svc-05" x="10" y="100" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-svc-06" elementRef="svc-06" x="230" y="100" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-ac-01" elementRef="ac-01" x="450" y="100" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-ac-02" elementRef="ac-02" x="670" y="100" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-ac-03" elementRef="ac-03" x="10" y="190" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-ac-05" elementRef="ac-05" x="230" y="190" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <node identifier="n-app-05" elementRef="app-05" x="450" y="190" w="200" h="70">
+        <style>
+          <fillColor r="200" g="215" b="235"/>
+          <lineColor r="90" g="120" b="160"/>
+        </style>
+      </node>
+      <connection identifier="c-r1" relationshipRef="r1" source="n-svc-01" target="n-ac-02"/>
+      <connection identifier="c-r2" relationshipRef="r2" source="n-svc-02" target="n-ac-03"/>
+      <connection identifier="c-r3" relationshipRef="r3" source="n-svc-03" target="n-ac-05"/>
+      <connection identifier="c-r4" relationshipRef="r4" source="n-svc-04" target="n-ac-05"/>
+      <connection identifier="c-r5" relationshipRef="r5" source="n-svc-04" target="n-app-05"/>
+      <connection identifier="c-r6" relationshipRef="r6" source="n-svc-05" target="n-ac-01"/>
+      <connection identifier="c-r7" relationshipRef="r7" source="n-svc-05" target="n-ac-02"/>
+      <connection identifier="c-r8" relationshipRef="r8" source="n-svc-06" target="n-app-05"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

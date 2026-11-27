@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="910" height="350" viewBox="0 0 910 350" font-family="Arial, Helvetica, sans-serif">
+<defs><marker id="arrOpen" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#333" stroke-width="1.3"/></marker><marker id="arrFill" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 z" fill="#333"/></marker><marker id="triHollow" markerWidth="14" markerHeight="14" refX="13" refY="7" orient="auto"><path d="M1,1 L13,7 L1,13 z" fill="#fff" stroke="#333"/></marker><marker id="dot" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><circle cx="4" cy="4" r="3" fill="#333"/></marker><marker id="diaFill" markerWidth="16" markerHeight="10" refX="1" refY="5" orient="auto"><path d="M1,5 L8,1 L15,5 L8,9 z" fill="#333"/></marker><marker id="diaHollow" markerWidth="16" markerHeight="10" refX="1" refY="5" orient="auto"><path d="M1,5 L8,1 L15,5 L8,9 z" fill="#fff" stroke="#333"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="20" y="28" font-size="18" font-weight="bold" fill="#222">T-V06 Technology Services</text>
+<line x1="210.0" y1="98.6" x2="670.0" y2="161.4" stroke="#333" stroke-width="1.3" marker-end="url(#arrOpen)"/>
+<line x1="287.2" y1="120.0" x2="152.8" y2="230.0" stroke="#333" stroke-width="1.3" marker-end="url(#arrOpen)"/>
+<line x1="507.2" y1="120.0" x2="372.8" y2="230.0" stroke="#333" stroke-width="1.3" marker-end="url(#arrOpen)"/>
+<line x1="684.4" y1="120.0" x2="415.6" y2="230.0" stroke="#333" stroke-width="1.3" marker-end="url(#arrOpen)"/>
+<line x1="727.2" y1="120.0" x2="592.8" y2="230.0" stroke="#333" stroke-width="1.3" marker-end="url(#arrOpen)"/>
+<line x1="210.0" y1="175.0" x2="450.0" y2="175.0" stroke="#333" stroke-width="1.3" marker-end="url(#arrOpen)"/>
+<line x1="210.0" y1="175.0" x2="670.0" y2="175.0" stroke="#333" stroke-width="1.3" marker-end="url(#arrOpen)"/>
+<line x1="415.6" y1="210.0" x2="464.4" y2="230.0" stroke="#333" stroke-width="1.3" marker-end="url(#arrOpen)"/>
+<rect x="10" y="50" width="200" height="70" rx="10" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="205" y="62" font-size="9" fill="#666" text-anchor="end" font-style="italic">Servicio tecnológico</text>
+<text x="110.0" y="84.0" font-size="11.5" fill="#111" text-anchor="middle">T-SVC-01 Captura de evento</text>
+<text x="110.0" y="98.0" font-size="11.5" fill="#111" text-anchor="middle">industrial</text>
+<rect x="230" y="50" width="200" height="70" rx="10" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="425" y="62" font-size="9" fill="#666" text-anchor="end" font-style="italic">Servicio tecnológico</text>
+<text x="330.0" y="84.0" font-size="11.5" fill="#111" text-anchor="middle">T-SVC-02 Persistencia serie</text>
+<text x="330.0" y="98.0" font-size="11.5" fill="#111" text-anchor="middle">temporal</text>
+<rect x="450" y="50" width="200" height="70" rx="10" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="645" y="62" font-size="9" fill="#666" text-anchor="end" font-style="italic">Servicio tecnológico</text>
+<text x="550.0" y="91.0" font-size="11.5" fill="#111" text-anchor="middle">T-SVC-03 Historial de lote</text>
+<rect x="670" y="50" width="200" height="70" rx="10" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="865" y="62" font-size="9" fill="#666" text-anchor="end" font-style="italic">Servicio tecnológico</text>
+<text x="770.0" y="84.0" font-size="11.5" fill="#111" text-anchor="middle">T-SVC-04 Identidad y</text>
+<text x="770.0" y="98.0" font-size="11.5" fill="#111" text-anchor="middle">autorización</text>
+<rect x="10" y="140" width="200" height="70" rx="10" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="205" y="152" font-size="9" fill="#666" text-anchor="end" font-style="italic">Servicio tecnológico</text>
+<text x="110.0" y="174.0" font-size="11.5" fill="#111" text-anchor="middle">T-SVC-05 Mensajería</text>
+<text x="110.0" y="188.0" font-size="11.5" fill="#111" text-anchor="middle">IF-01..IF-04</text>
+<rect x="230" y="140" width="200" height="70" rx="10" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="425" y="152" font-size="9" fill="#666" text-anchor="end" font-style="italic">Servicio tecnológico</text>
+<text x="330.0" y="174.0" font-size="11.5" fill="#111" text-anchor="middle">T-SVC-06 Alojamiento app de</text>
+<text x="330.0" y="188.0" font-size="11.5" fill="#111" text-anchor="middle">calidad</text>
+<rect x="450" y="140" width="200" height="70" rx="0" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="645" y="152" font-size="9" fill="#666" text-anchor="end" font-style="italic">Componente de aplicación</text>
+<text x="550.0" y="174.0" font-size="11.5" fill="#111" text-anchor="middle">AC-01 Identidad y genealogía de</text>
+<text x="550.0" y="188.0" font-size="11.5" fill="#111" text-anchor="middle">lote</text>
+<rect x="670" y="140" width="200" height="70" rx="0" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="865" y="152" font-size="9" fill="#666" text-anchor="end" font-style="italic">Componente de aplicación</text>
+<text x="770.0" y="174.0" font-size="11.5" fill="#111" text-anchor="middle">AC-02 Ingesta de eventos de</text>
+<text x="770.0" y="188.0" font-size="11.5" fill="#111" text-anchor="middle">lote</text>
+<rect x="10" y="230" width="200" height="70" rx="0" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="205" y="242" font-size="9" fill="#666" text-anchor="end" font-style="italic">Componente de aplicación</text>
+<text x="110.0" y="264.0" font-size="11.5" fill="#111" text-anchor="middle">AC-04 Adaptadores de</text>
+<text x="110.0" y="278.0" font-size="11.5" fill="#111" text-anchor="middle">integración</text>
+<rect x="230" y="230" width="200" height="70" rx="0" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="425" y="242" font-size="9" fill="#666" text-anchor="end" font-style="italic">Componente de aplicación</text>
+<text x="330.0" y="264.0" font-size="11.5" fill="#111" text-anchor="middle">AC-03 Historial y evidencia de</text>
+<text x="330.0" y="278.0" font-size="11.5" fill="#111" text-anchor="middle">lote</text>
+<rect x="450" y="230" width="200" height="70" rx="0" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="645" y="242" font-size="9" fill="#666" text-anchor="end" font-style="italic">Componente de aplicación</text>
+<text x="550.0" y="264.0" font-size="11.5" fill="#111" text-anchor="middle">APP-05 Registro de Calidad y</text>
+<text x="550.0" y="278.0" font-size="11.5" fill="#111" text-anchor="middle">laboratorio</text>
+<text x="20" y="338" font-size="10" fill="#777">Generado desde el modelo integrado SI605_PC3_Grupo03_Beta_Modelo_Integrado_v0.3 (Open Exchange XML) · Grupo 03 · v0.3</text>
+</svg>

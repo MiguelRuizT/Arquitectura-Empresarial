@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Model.xsd"
+       identifier="model-T-V07">
+  <name xml:lang="es">PC3 Fase D · Redes y zonas IT/OT · Grupo 03</name>
+  <documentation xml:lang="es">Vista T-V07 extraída literalmente de los informes integrados del Grupo 03.</documentation>
+  <elements>
+    <element identifier="zt-01" xsi:type="Grouping">
+      <name xml:lang="es">ZT-01 OT Control (L1)</name>
+    </element>
+    <element identifier="zt-02" xsi:type="Grouping">
+      <name xml:lang="es">ZT-02 OT Supervisión (L2)</name>
+    </element>
+    <element identifier="zt-03" xsi:type="Grouping">
+      <name xml:lang="es">ZT-03 OT Industrial/Edge (L3)</name>
+    </element>
+    <element identifier="zt-04" xsi:type="Grouping">
+      <name xml:lang="es">ZT-04 DMZ Industrial (L3.5)</name>
+    </element>
+    <element identifier="zt-05" xsi:type="Grouping">
+      <name xml:lang="es">ZT-05 IT Empresa (L4)</name>
+    </element>
+    <element identifier="zt-06" xsi:type="Grouping">
+      <name xml:lang="es">ZT-06 Cloud (L4+)</name>
+    </element>
+    <element identifier="zt-07" xsi:type="Grouping">
+      <name xml:lang="es">ZT-07 Campo (L0-L1)</name>
+    </element>
+    <element identifier="net-ot" xsi:type="CommunicationNetwork">
+      <name xml:lang="es">Red OT (OPC UA)</name>
+    </element>
+    <element identifier="net-dmz" xsi:type="CommunicationNetwork">
+      <name xml:lang="es">Red DMZ (MQTT TLS mutuo)</name>
+    </element>
+    <element identifier="net-cloud" xsi:type="CommunicationNetwork">
+      <name xml:lang="es">WAN / Cloud (HTTPS)</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="r1" source="zt-01" target="net-ot" xsi:type="AssociationRelationship"/>
+    <relationship identifier="r2" source="zt-02" target="net-ot" xsi:type="AssociationRelationship"/>
+    <relationship identifier="r3" source="net-ot" target="zt-03" xsi:type="AssociationRelationship"/>
+    <relationship identifier="r4" source="zt-03" target="net-dmz" xsi:type="AssociationRelationship"/>
+    <relationship identifier="r5" source="zt-04" target="net-dmz" xsi:type="AssociationRelationship"/>
+    <relationship identifier="r6" source="net-dmz" target="net-cloud" xsi:type="AssociationRelationship"/>
+    <relationship identifier="r7" source="net-cloud" target="zt-06" xsi:type="AssociationRelationship"/>
+    <relationship identifier="r8" source="zt-05" target="net-cloud" xsi:type="AssociationRelationship"/>
+    <relationship identifier="r9" source="zt-07" target="net-dmz" xsi:type="AssociationRelationship"/>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="T-V07" xsi:type="Diagram">
+        <name xml:lang="es">Redes y zonas IT/OT</name>
+      <node identifier="n-zt-01" elementRef="zt-01" x="10" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-zt-02" elementRef="zt-02" x="230" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-zt-03" elementRef="zt-03" x="450" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-zt-04" elementRef="zt-04" x="670" y="10" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-zt-05" elementRef="zt-05" x="10" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-zt-06" elementRef="zt-06" x="230" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-zt-07" elementRef="zt-07" x="450" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-net-ot" elementRef="net-ot" x="670" y="100" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-net-dmz" elementRef="net-dmz" x="10" y="190" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <node identifier="n-net-cloud" elementRef="net-cloud" x="230" y="190" w="200" h="70">
+        <style><fillColor r="200" g="215" b="235"/><lineColor r="90" g="120" b="160"/></style>
+      </node>
+      <connection identifier="c-r1" relationshipRef="r1" source="n-zt-01" target="n-net-ot"/>
+      <connection identifier="c-r2" relationshipRef="r2" source="n-zt-02" target="n-net-ot"/>
+      <connection identifier="c-r3" relationshipRef="r3" source="n-net-ot" target="n-zt-03"/>
+      <connection identifier="c-r4" relationshipRef="r4" source="n-zt-03" target="n-net-dmz"/>
+      <connection identifier="c-r5" relationshipRef="r5" source="n-zt-04" target="n-net-dmz"/>
+      <connection identifier="c-r6" relationshipRef="r6" source="n-net-dmz" target="n-net-cloud"/>
+      <connection identifier="c-r7" relationshipRef="r7" source="n-net-cloud" target="n-zt-06"/>
+      <connection identifier="c-r8" relationshipRef="r8" source="n-zt-05" target="n-net-cloud"/>
+      <connection identifier="c-r9" relationshipRef="r9" source="n-zt-07" target="n-net-dmz"/>
+      </view>
+    </diagrams>
+  </views>
+</model>

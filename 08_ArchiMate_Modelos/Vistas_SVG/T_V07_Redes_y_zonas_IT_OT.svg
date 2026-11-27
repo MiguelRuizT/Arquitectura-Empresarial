@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="910" height="350" viewBox="0 0 910 350" font-family="Arial, Helvetica, sans-serif">
+<defs><marker id="arrOpen" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#333" stroke-width="1.3"/></marker><marker id="arrFill" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto"><path d="M1,1 L11,6 L1,11 z" fill="#333"/></marker><marker id="triHollow" markerWidth="14" markerHeight="14" refX="13" refY="7" orient="auto"><path d="M1,1 L13,7 L1,13 z" fill="#fff" stroke="#333"/></marker><marker id="dot" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><circle cx="4" cy="4" r="3" fill="#333"/></marker><marker id="diaFill" markerWidth="16" markerHeight="10" refX="1" refY="5" orient="auto"><path d="M1,5 L8,1 L15,5 L8,9 z" fill="#333"/></marker><marker id="diaHollow" markerWidth="16" markerHeight="10" refX="1" refY="5" orient="auto"><path d="M1,5 L8,1 L15,5 L8,9 z" fill="#fff" stroke="#333"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="20" y="28" font-size="18" font-weight="bold" fill="#222">T-V07 Redes y zonas IT/OT</text>
+<line x1="210.0" y1="98.6" x2="670.0" y2="161.4" stroke="#333" stroke-width="1.3"/>
+<line x1="430.0" y1="105.5" x2="670.0" y2="154.5" stroke="#333" stroke-width="1.3"/>
+<line x1="684.4" y1="140.0" x2="635.6" y2="120.0" stroke="#333" stroke-width="1.3"/>
+<line x1="464.4" y1="120.0" x2="195.6" y2="230.0" stroke="#333" stroke-width="1.3"/>
+<line x1="670.0" y1="112.3" x2="210.0" y2="237.7" stroke="#333" stroke-width="1.3"/>
+<line x1="210.0" y1="265.0" x2="230.0" y2="265.0" stroke="#333" stroke-width="1.3"/>
+<line x1="330.0" y1="230.0" x2="330.0" y2="210.0" stroke="#333" stroke-width="1.3"/>
+<line x1="195.6" y1="210.0" x2="244.4" y2="230.0" stroke="#333" stroke-width="1.3"/>
+<line x1="450.0" y1="195.5" x2="210.0" y2="244.5" stroke="#333" stroke-width="1.3"/>
+<rect x="10" y="50" width="200" height="70" fill="#c8d7eb" fill-opacity="0.5" stroke="#5a78a0" stroke-dasharray="5,3"/>
+<text x="205" y="62" font-size="9" fill="#666" text-anchor="end" font-style="italic">Agrupación</text>
+<text x="110.0" y="91.0" font-size="11.5" fill="#111" text-anchor="middle">ZT-01 OT Control (L1)</text>
+<rect x="230" y="50" width="200" height="70" fill="#c8d7eb" fill-opacity="0.5" stroke="#5a78a0" stroke-dasharray="5,3"/>
+<text x="425" y="62" font-size="9" fill="#666" text-anchor="end" font-style="italic">Agrupación</text>
+<text x="330.0" y="91.0" font-size="11.5" fill="#111" text-anchor="middle">ZT-02 OT Supervisión (L2)</text>
+<rect x="450" y="50" width="200" height="70" fill="#c8d7eb" fill-opacity="0.5" stroke="#5a78a0" stroke-dasharray="5,3"/>
+<text x="645" y="62" font-size="9" fill="#666" text-anchor="end" font-style="italic">Agrupación</text>
+<text x="550.0" y="91.0" font-size="11.5" fill="#111" text-anchor="middle">ZT-03 OT Industrial/Edge (L3)</text>
+<rect x="670" y="50" width="200" height="70" fill="#c8d7eb" fill-opacity="0.5" stroke="#5a78a0" stroke-dasharray="5,3"/>
+<text x="865" y="62" font-size="9" fill="#666" text-anchor="end" font-style="italic">Agrupación</text>
+<text x="770.0" y="91.0" font-size="11.5" fill="#111" text-anchor="middle">ZT-04 DMZ Industrial (L3.5)</text>
+<rect x="10" y="140" width="200" height="70" fill="#c8d7eb" fill-opacity="0.5" stroke="#5a78a0" stroke-dasharray="5,3"/>
+<text x="205" y="152" font-size="9" fill="#666" text-anchor="end" font-style="italic">Agrupación</text>
+<text x="110.0" y="181.0" font-size="11.5" fill="#111" text-anchor="middle">ZT-05 IT Empresa (L4)</text>
+<rect x="230" y="140" width="200" height="70" fill="#c8d7eb" fill-opacity="0.5" stroke="#5a78a0" stroke-dasharray="5,3"/>
+<text x="425" y="152" font-size="9" fill="#666" text-anchor="end" font-style="italic">Agrupación</text>
+<text x="330.0" y="181.0" font-size="11.5" fill="#111" text-anchor="middle">ZT-06 Cloud (L4+)</text>
+<rect x="450" y="140" width="200" height="70" fill="#c8d7eb" fill-opacity="0.5" stroke="#5a78a0" stroke-dasharray="5,3"/>
+<text x="645" y="152" font-size="9" fill="#666" text-anchor="end" font-style="italic">Agrupación</text>
+<text x="550.0" y="181.0" font-size="11.5" fill="#111" text-anchor="middle">ZT-07 Campo (L0-L1)</text>
+<rect x="670" y="140" width="200" height="70" rx="0" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="865" y="152" font-size="9" fill="#666" text-anchor="end" font-style="italic">Red de comunicación</text>
+<text x="770.0" y="181.0" font-size="11.5" fill="#111" text-anchor="middle">Red OT (OPC UA)</text>
+<rect x="10" y="230" width="200" height="70" rx="0" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="205" y="242" font-size="9" fill="#666" text-anchor="end" font-style="italic">Red de comunicación</text>
+<text x="110.0" y="271.0" font-size="11.5" fill="#111" text-anchor="middle">Red DMZ (MQTT TLS mutuo)</text>
+<rect x="230" y="230" width="200" height="70" rx="0" fill="#c8d7eb" stroke="#5a78a0" stroke-width="1.2"/>
+<text x="425" y="242" font-size="9" fill="#666" text-anchor="end" font-style="italic">Red de comunicación</text>
+<text x="330.0" y="271.0" font-size="11.5" fill="#111" text-anchor="middle">WAN / Cloud (HTTPS)</text>
+<text x="20" y="338" font-size="10" fill="#777">Generado desde el modelo integrado SI605_PC3_Grupo03_Beta_Modelo_Integrado_v0.3 (Open Exchange XML) · Grupo 03 · v0.3</text>
+</svg>
